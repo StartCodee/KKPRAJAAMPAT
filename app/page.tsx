@@ -1,65 +1,122 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const timelineData = [
+    {
+      year: "55.000",
+      subYear: "tahun lalu",
+      title: "Jejak Awal Manusia Modern",
+      description: "Manusia modern (Homo sapiens) diperkirakan telah mengunjungi Raja Ampat sekitar 55.000 tahun lalu, berdasarkan temuan arkeologis di Gua Mololo, Pulau Waigeo."
+    },
+    {
+      year: "Abad",
+      subYear: "ke-15",
+      title: "Pengaruh Kesultanan Tidore",
+      description: "Migrasi dan interaksi pesisir berlanjut hingga abad ke-15, ketika Kesultanan Tidore memperluas pengaruhnya di Raja Ampat dan pesisir Papua."
+    },
+    {
+      year: "1860",
+      title: "Ekspedisi Wallacea",
+      description: "Raja Ampat menjadi bagian dari ekspedisi ilmiah Alfred Russel Wallace pada tahun 1860. Kunjungan ini menempatkan Raja Ampat dalam peta ilmiah dunia."
+    },
+    {
+      year: "1869",
+      title: "The Malay Archipelago",
+      description: "Hasil ekspedisi Wallace diterbitkan dalam buku The Malay Archipelago, yang mengonfirmasi kekayaan hayati Raja Ampat sebagai pusat studi evolusi."
+    },
+    {
+      year: "Era Modern",
+      title: "Warisan Wallacea",
+      description: "Untuk memperingati ekspedisi Wallacea, mitra pembangunan membangun ulang gubuk di lokasi yang diyakini pernah disinggahi Wallace di sekitar Kampung Pulau."
+    }
+  ];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main
+      className="min-h-screen bg-fixed bg-center bg-cover"
+      style={{ backgroundImage: "url('/images/Foto 4-1 oleh Nikka Gunadharma.jpg')" }}
+    >
+      {/* Hero Section (Transparan, hanya konten) */}
+      <section className="relative h-[60vh] flex flex-col items-center justify-center text-white">
+        <div className="absolute inset-0 bg-black/40" /> {/* Overlay gelap untuk keterbacaan */}
+        <div className="relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-6xl md:text-8xl font-bold tracking-tight"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            Tentang
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-2xl mt-2 font-light italic"
+          >
+            Sejarah
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Timeline Section dengan background putih 10% */}
+      <section className="bg-white/10 py-20 px-6 md:px-20 backdrop-blur-sm">
+        {/* Card Biru dengan opacity 80% seperti kode Anda */}
+        <section className="bg-[#004267]/80 py-20 px-6 md:px-20 rounded-3xl relative overflow-hidden shadow-2xl">
+
+          <div className="max-w-5xl mx-auto relative">
+            {/* ANIMASI GARIS TENGAH */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              style={{ originY: 0 }}
+              className="absolute left-[40%] md:left-[50%] top-0 bottom-0 w-1 bg-white/30 -translate-x-1/2"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+            {timelineData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="flex mb-20 last:mb-0 relative z-10"
+              >
+                {/* Kolom Kiri: Tahun */}
+                <div className="w-[40%] md:w-[50%] pr-8 md:pr-16 text-right flex flex-col justify-center">
+                  <h2 className="text-white text-4xl md:text-6xl font-bold leading-none">
+                    {item.year}
+                  </h2>
+                  {item.subYear && (
+                    <p className="text-white text-xl md:text-2xl mt-2">{item.subYear}</p>
+                  )}
+                </div>
+
+                {/* ANIMASI TITIK PUTIH */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + (index * 0.1) }}
+                  className="absolute left-[40%] md:left-[50%] w-4 h-4 bg-white rounded-full -translate-x-1/2 mt-4 shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+                />
+
+                {/* Kolom Kanan: Konten */}
+                <div className="w-[60%] md:w-[50%] pl-8 md:pl-16">
+                  <h3 className="text-white text-xl md:text-2xl font-bold mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </section>
+    </main>
   );
 }
