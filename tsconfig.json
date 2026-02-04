@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/Component/Navbar"  ],
   "exclude": ["node_modules"]
 }
