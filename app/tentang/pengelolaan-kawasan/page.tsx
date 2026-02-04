@@ -4,22 +4,6 @@ import Navbar from "@/app/Component/Navbar";
 import Link from "next/link";
 
 export default function PengelolaanKawasan() {
-  const textVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  };
-
-  const containerVariants = {
-    visible: {
-      transition: {
-        staggerChildren: 0.2 // Memberikan efek muncul berurutan antar elemen
-      }
-    }
-  };
   return (
     <main
       className="min-h-screen bg-fixed bg-center bg-cover"
@@ -58,14 +42,34 @@ export default function PengelolaanKawasan() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.2 // Memberikan efek muncul berurutan antar elemen
+                }
+              }
+            }}
             className="flex flex-col md:flex-row gap-16 items-start"
           >
             <div className="md:w-2/3 space-y-6">
-              <motion.h2 variants={textVariants} className="text-white text-5xl font-bold">
+              <motion.h2 variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: "easeOut" }
+                }
+              }} className="text-white text-5xl font-bold">
                 Siapa kami?
               </motion.h2>
-              <motion.p variants={textVariants} className="text-gray-200 text-lg leading-relaxed text-justify">
+              <motion.p variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: "easeOut" }
+                }
+              }} className="text-gray-200 text-lg leading-relaxed text-justify">
                 Badan Layanan Umum Daerah Unit Pelaksana Teknis Daerah (BLUD UPTD) Pengelolaan Kawasan Konservasi di Perairan (KKP) Kepulauan Raja Ampat adalah nama resmi kami sebagai Satuan Unit Organisasi Pengelola (SUOP) yang melaksanaan pengelolaan kawasan konservasi di <b>tujuh area</b> seluas <b>1.982.396,39 hektar</b>.
               </motion.p>
             </div>
@@ -130,7 +134,14 @@ export default function PengelolaanKawasan() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={textVariants}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: "easeOut" }
+                }
+              }}
             >
               Sebagai SUOP bagi KKP Kepulauan Raja Ampat, kami berwenang untuk mengelola pemanfaatan yang secara umum mencakup aktivitas perikanan, budi daya, pariwisata, penelitian dan pendidikan, pembangunan infrastruktur, pemanfaatan air laut (untuk tujuan selain energi), transportasi, serta pelaksanaan adat istiadat dan ritual keagamaan.
               <br /><br />
@@ -148,16 +159,43 @@ export default function PengelolaanKawasan() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={containerVariants}
+                variants={{
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.2 // Memberikan efek muncul berurutan antar elemen
+                    }
+                  }
+                }}
                 className="space-y-4"
               >
-                <motion.h2 variants={textVariants} className="text-4xl font-bold border-l-4 border-white pl-6 text-white">
+                <motion.h2 variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
+                }} className="text-4xl font-bold border-l-4 border-white pl-6 text-white">
                   Sekilas Tentang Kawasan Kelola Kami
                 </motion.h2>
-                <motion.p variants={textVariants} className="text-lg text-gray-100">
+                <motion.p variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
+                }} className="text-lg text-gray-100">
                   Kawasan konservasi perairan adalah area laut dan pesisir yang dilindungi dan dikelola dengan sistem zonasi untuk menjaga keutuhan keanekaragaman dan sumber daya alam hayati, ekosistem laut, serta mampu mendukung kesejahteraan masyarakat lokal secara berkelanjutan.
                 </motion.p>
-                <motion.p variants={textVariants} className="text-sm opacity-80 text-gray-200 italic">
+                <motion.p variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
+                }} className="text-sm opacity-80 text-gray-200 italic">
                   Untuk keterangan lebih terperinci mengenai apa yang boleh dan tidak boleh dilakukan di KKP Kepulauan Raja Ampat, silakan <Link href="/panduan" className="underline hover:text-blue-300 transition-colors">klik di sini</Link>.
                 </motion.p>
               </motion.div>
