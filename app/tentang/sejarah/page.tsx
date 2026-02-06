@@ -89,7 +89,7 @@ export default function Sejarah() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="flex mb-20 last:mb-0 relative z-10"
+                className="flex items-center mb-20 last:mb-0 relative z-10"
               >
                 {/* Kolom Kiri: Tahun */}
                 <div className="w-[40%] md:w-[50%] pr-8 md:pr-16 text-right flex flex-col justify-center">
@@ -130,7 +130,7 @@ export default function Sejarah() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 3 * 0.1 }}
-              className="flex mb-20 last:mb-0 relative z-10"
+              className="flex items-center mb-20 last:mb-0 relative z-10"
             >
               {/* Kolom Kiri: Tahun */}
               <div className="w-[40%] md:w-[50%] pr-8 md:pr-16 text-right flex flex-col justify-center">
