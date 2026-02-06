@@ -108,7 +108,7 @@ export default function Sejarah() {
                   whileInView={{ scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
-                  className="absolute left-[40px] md:left-1/2 -translate-x-1/2 -mt-2"
+                  className="absolute left-[40px] md:left-1/2 -translate-x-1/2 { item.subyear ? '-mt-2' : ''}"
                 >
                   <CustomMarker />
                 </motion.div>
