@@ -58,13 +58,13 @@ export default function SosialBudaya() {
             </motion.div>
 
             <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
-              <div className="w-3/4 relative">
+              <div className="w-1/2 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 2-4 oleh Yakonias Thonak.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 h-full object-cover relative z-20" />
+                <img src="/images/Foto 1-2 oleh Nikka Gunadharma.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
               </div>
             </div>
           </motion.section>
@@ -90,13 +90,13 @@ export default function SosialBudaya() {
             </motion.div>
 
             <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
-              <div className="w-1/2 relative">
+              <div className="w-3/4 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 1-2 oleh Nikka Gunadharma.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
+                <img src="/images/Foto 2-4 oleh Yakonias Thonak.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 h-full object-cover relative z-20" />
               </div>
             </div>
           </motion.section>
