@@ -144,7 +144,7 @@ export default function Keindahan() {
             </p>
             <div className="space-y-4">
               <p className="text-xs uppercase tracking-widest opacity-60">Baca buku ini sebelum kamu mengunjungi Raja Ampat!</p>
-              <button className="bg-white text-[#004267] px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-2xl text-[#004267] px-8 py-4 rounded-md font-bold hover:bg-gray-100 transition-colors">
                 Unduh Buku Etika Berwisata di Raja Ampat
               </button>
             </div>
