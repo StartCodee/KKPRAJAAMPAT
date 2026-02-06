@@ -7,7 +7,7 @@ export default function Keindahan() {
   return (
     <main
       className="min-h-screen bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/Foto 6-3 oleh Rens Lewerissa.JPG')" }}
+      style={{ backgroundImage: "url('/images/Foto 1-1 oleh Rens Lewerissa.JPG')" }}
     >
 
       <Navbar />
