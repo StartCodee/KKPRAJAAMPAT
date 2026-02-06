@@ -37,12 +37,15 @@ export default function Navbar() {
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link href="/tentang/pengelolaan-kawasan" className="block px-6 py-2 normal-case tracking-normal">Pengelolaan Kawasan</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link href="/tentang/sejarah" className="block px-6 py-2 normal-case tracking-normal">Sejarah</Link>
-                                    </li>
+                                    </li>                                 
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link href="/tentang/keindahan-raja-ampat" className="block px-6 py-2 normal-case tracking-normal">Keindahan Raja Ampat</Link>
+                                    </li>
+                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/tentang/sejarah" className="block px-6 py-2 normal-case tracking-normal">Sejarah</Link>
+                                    </li>
+                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/tentang/sosial-budaya" className="block px-6 py-2 normal-case tracking-normal">Sosial Budaya</Link>
                                     </li>
                                 </motion.ul>
                             )}
