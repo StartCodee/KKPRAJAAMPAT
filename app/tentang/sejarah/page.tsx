@@ -67,7 +67,7 @@ export default function Sejarah() {
       </section>
 
       {/* Timeline Section dengan background putih 10% */}
-      <section className="bg-white/10 py-20 px-6 md:px-20 backdrop-blur-sm">
+      <section className="bg-black/40 py-20 px-6 md:px-20 backdrop-blur-sm">
         {/* Card Biru dengan opacity 80% seperti kode Anda */}
         <section className="bg-[#004267]/80 py-20 px-6 md:px-20 rounded-3xl relative overflow-hidden shadow-2xl">
 

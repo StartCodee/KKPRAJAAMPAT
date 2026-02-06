@@ -35,7 +35,7 @@ export default function PengelolaanKawasan() {
       </section>
 
 
-      <section className="bg-white/10 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
+      <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
         {/* Statistik & Siapa Kami */}
         <section className="max-w-7xl mx-auto py-24 px-8">
           <motion.div

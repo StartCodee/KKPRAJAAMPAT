@@ -34,7 +34,7 @@ export default function Keindahan() {
       </section>
 
 
-      <section className="bg-white/10 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
+      <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
         {/* Section 1: Teks Kiri, muncul dari arah foto (X diperbesar) */}
         <motion.section
           initial="hidden"
