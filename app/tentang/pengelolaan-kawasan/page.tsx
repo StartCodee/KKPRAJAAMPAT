@@ -7,7 +7,7 @@ export default function PengelolaanKawasan() {
   return (
     <main
       className="min-h-screen bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/Foto 6-3 oleh Rens Lewerissa.JPG')" }}
+      style={{ backgroundImage: "url('/images/Foto 8-4 oleh Abdi Hasan.JPG')" }}
     >
 
       <Navbar />
