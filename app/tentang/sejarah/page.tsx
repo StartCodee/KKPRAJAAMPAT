@@ -79,7 +79,8 @@ export default function Sejarah() {
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               style={{ originY: 0 }}
-              className="absolute left-[40%] md:left-[50%] top-0 bottom-0 w-1 bg-white/30 -translate-x-1/2"
+              /* mt-8 agar garis mulai dari ikon pertama, mb-24 agar berhenti di ikon terakhir */
+              className="absolute left-[40%] md:left-[50%] top-0 bottom-0 w-1 bg-white/30 -translate-x-1/2 my-28"
             />
 
             {timelineData.map((item, index) => (
