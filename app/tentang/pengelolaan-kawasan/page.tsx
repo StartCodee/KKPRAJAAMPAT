@@ -115,8 +115,8 @@ export default function PengelolaanKawasan() {
 
                 {/* Teks Content */}
                 <div className="relative z-10">
-                  <span className="text-6xl font-bold block">1,9jt</span>
-                  <span className="text-xs tracking-widest opacity-70">Hektare</span>
+                  <span className="text-6xl font-bold block">1,9</span>
+                  <span className="text-xs tracking-widest opacity-70">Juta Hektare</span>
                 </div>
               </motion.div>
             </div>
@@ -200,7 +200,7 @@ export default function PengelolaanKawasan() {
                 </motion.p>
               </motion.div>
 
-              <div className="bg-[#004267]/90 backdrop-blur-md rounded-2xl py-24 px-8 text-white overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row gap-16 items-start relative">
+              <div className="group bg-[#004267]/90 backdrop-blur-md rounded-2xl py-24 px-8 text-white overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row gap-16 items-start relative">
                 {/* Foto Statis di Kiri */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
@@ -240,7 +240,7 @@ export default function PengelolaanKawasan() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                 className="w-full absolute left-0 bottom-0 pointer-events-none z-0 opacity-10 drop-shadow-2xl">
+                 className="w-full absolute left-0 bottom-0 pointer-events-none z-0 opacity-10 drop-shadow-2xl transition-transform group-hover:scale-110 duration-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="w-full" height="auto" viewBox="0 0 673 97" fill="none">
                     <path d="M405.621 46.6914C403.881 50.6914 405.171 56.0714 408.421 58.3914C409.348 59.0305 410.421 59.4259 411.541 59.5413C412.661 59.6566 413.793 59.4882 414.831 59.0514C416.971 62.2814 419.481 67.3014 419.611 75.4514C419.774 82.8547 417.379 90.0878 412.831 95.9314C421.238 96.675 429.697 96.608 438.091 95.7314C424.231 79.7314 423.541 60.2314 420.001 50.4914C419.861 42.6014 409.751 37.3214 405.621 46.6914Z" fill="white" />
                     <path d="M531.75 51.4226C526.75 18.2626 498.75 14.6926 488.85 37.6526C485.92 44.4126 486.33 53.3826 490.85 58.8626C492.12 35.5726 519.74 34.4426 524.94 53.6026C520 42.0226 503.94 45.4626 499.81 56.8326C496.49 65.9526 503.2 74.0626 509.31 71.0626C512.31 69.5326 513.93 64.7526 512.26 61.4326C511.33 59.5926 509.51 57.8626 510.07 55.8326C511.5 50.5726 523.18 55.7226 522.3 67.2326C521.66 75.6326 511.08 91.0026 496.82 78.2326C480.14 63.2326 474.55 24.5226 474.15 1.5126C470.23 1.4226 466.3 2.6326 462.42 2.4426C429.06 0.812604 422.42 2.1426 420.33 12.4426C417.72 25.0426 429.63 31.5926 434.74 24.1226C437.07 20.7226 437.56 8.2926 450.86 11.6926C458.32 13.6026 459.43 18.1526 460.31 24.4626C471.88 107.833 540.68 110.633 531.75 51.4226Z" fill="white" />
