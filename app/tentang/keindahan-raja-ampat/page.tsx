@@ -140,7 +140,7 @@ export default function Keindahan() {
         <section className="max-w-7xl mx-auto px-8 pb-20">
           <div className="bg-[#004267]/80 rounded-xl p-10 text-center text-gray-200 space-y-8">
             <p className="text-lg leading-relaxed max-w-5xl mx-auto font-light">
-              75% jenis terumbu karang yang ada di dunia dapat ditemukan di bawah permukaan laut Raja Ampat, menjadikannya ‘rumah’ bagi lebih dari 1.600 jenis ikan karang, 699 jenis moluska, setidak-tidaknya 15 jenis mamalia laut, 5 jenis penyu, dan beragam spesies penting (focal) seperti pari dan hiu. Raja Ampat adalah satu dari sedikit lokasi di dunia yang mana pari manta karang dan pari manta oseanik berbagi habitat yang sama.
+              75% jenis terumbu karang yang ada di dunia dapat ditemukan di bawah permukaan laut Raja Ampat, menjadikannya ‘rumah’ bagi lebih dari 1.600 jenis ikan karang, 699 jenis moluska, setidak-tidaknya 15 jenis mamalia laut, 5 jenis penyu, dan beragam spesies penting (<span className="italic">focal</span>) seperti pari dan hiu. Raja Ampat adalah satu dari sedikit lokasi di dunia yang mana pari manta karang dan pari manta oseanik berbagi habitat yang sama.
             </p>
             <div className="space-y-4">
               <p className="text-xs uppercase tracking-widest opacity-60">Baca buku ini sebelum kamu mengunjungi Raja Ampat!</p>
