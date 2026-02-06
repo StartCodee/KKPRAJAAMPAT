@@ -83,7 +83,7 @@ export default function PengelolaanKawasan() {
                     hidden: { scale: 0.8, opacity: 0 },
                     visible: { scale: 1, opacity: 1, transition: { type: "spring", bounce: 0.4 } }
                   }}
-                  className="bg-black/10 text-white p-8 rounded-2xl flex-1 text-center shadow-xl border border-white/10 relative overflow-hidden group"
+                  className="bg-[#3B99AA]/40 text-white p-8 rounded-2xl flex-1 text-center shadow-xl border border-white/10 relative overflow-hidden group"
                 >
                   {/* SVG di dalam Card */}
                   <div className="absolute -bottom-10 -left-10 w-32 opacity-20 pointer-events-none z-0 rotate-12 transition-transform group-hover:scale-110 duration-500">
@@ -105,7 +105,7 @@ export default function PengelolaanKawasan() {
                     hidden: { scale: 0.8, opacity: 0 },
                     visible: { scale: 1, opacity: 1, transition: { type: "spring", bounce: 0.4 } }
                   }}
-                  className="bg-black/10 text-white p-8 rounded-2xl flex-1 text-center shadow-xl border border-white/10 relative overflow-hidden group"
+                  className="bg-[#3B99AA]/40 text-white p-8 rounded-2xl flex-1 text-center shadow-xl border border-white/10 relative overflow-hidden group"
                 >
                   {/* SVG di dalam Card */}
                   <div className="absolute -bottom-10 -right-10 w-32 opacity-20 pointer-events-none z-0 -rotate-12 transition-transform group-hover:scale-110 duration-500">
@@ -129,7 +129,7 @@ export default function PengelolaanKawasan() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="mt-16 bg-black/10 backdrop-blur-md p-10 rounded-3xl space-y-6 text-white leading-relaxed text-justify border border-white/10 shadow-2xl"
+              className="mt-16 bg-[#3B99AA]/40 backdrop-blur-md p-10 rounded-3xl space-y-6 text-white leading-relaxed text-justify border border-white/10 shadow-2xl"
             >
               <motion.p
                 initial="hidden"
@@ -201,7 +201,7 @@ export default function PengelolaanKawasan() {
                   </motion.p>
                 </motion.div>
 
-                <div className="group bg-black/10 backdrop-blur-md rounded-2xl py-24 px-8 text-white overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row gap-16 items-start relative">
+                <div className="group bg-[#3B99AA]/40 backdrop-blur-md rounded-2xl py-24 px-8 text-white overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row gap-16 items-start relative">
                   {/* Foto Statis di Kiri */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}

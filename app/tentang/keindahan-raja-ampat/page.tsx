@@ -67,7 +67,7 @@ export default function Keindahan() {
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 8-1 oleh Abdi Hasan.JPG" alt="Manta Ray" className="rounded-xl shadow-2xl border-4 border-white/10 w-full object-cover relative z-20" />
+                <img src="/images/Foto 8-1 oleh Abdi Hasan.JPG" alt="Manta Ray" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
               </div>
             </div>
           </motion.section>
@@ -99,7 +99,7 @@ export default function Keindahan() {
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 5-1 oleh Rens Lewerissa.JPG" alt="Waterfall" className="rounded-xl shadow-2xl border-4 border-white/10 w-full object-cover relative z-20" />
+                <img src="/images/Foto 5-1 oleh Rens Lewerissa.JPG" alt="Waterfall" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
               </div>
             </div>
           </motion.section>
@@ -131,7 +131,7 @@ export default function Keindahan() {
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 6-3 oleh Rens Lewerissa.JPG" alt="Coastal View" className="rounded-xl shadow-2xl border-4 border-white/10 w-full object-cover relative z-20" />
+                <img src="/images/Foto 6-3 oleh Rens Lewerissa.JPG" alt="Coastal View" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
               </div>
             </div>
           </motion.section>
@@ -149,14 +149,15 @@ export default function Keindahan() {
               </button>
             </div>
           </div>
-        </section>
-
-        {/* WELCOME FOOTER */}
-        <section className="pb-32 text-center">
+          {/* WELCOME FOOTER */}
+        <section className="py-24 text-center">
           <h2 className="text-white text-5xl font-bold tracking-tight">
             Selamat datang di Raja Ampat.
           </h2>
         </section>
+        </section>
+
+        
       </section>
     </main>
   );
