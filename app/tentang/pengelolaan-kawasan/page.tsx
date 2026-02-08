@@ -230,7 +230,12 @@ export default function PengelolaanKawasan() {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="md:w-1/2 text-lg font-light leading-relaxed space-y-6 text-justify relative z-10"
                   >
-                    <p>Kesepakatan di Tomolol diikuti dengan inisiatif lainnya di perairan Raja Ampat, yang disahkan melalui peraturan di tingkat nasional. Kini Jejaring KKP Kepulauan Raja Ampat terdiri atas Area I Kepulauan Ayau-Asia seluas 100.008,99 hektare, Area II Teluk Mayalibit seluas 49.786,82 hektare, area III Selat Dampier dengan luas 353.440,54 hektare, Area IV Kepulauan Misool seluas 348.518,74 hektare, Area V Kepulauan Kofiau-Boo seluas 137.318,73 hektare, Area VI Kepulauan Fam mencakup 359.385,65 hektare, dan Area VII Misool Utara dengan luas 308.852 hektare.</p>
+                    <p>
+                      Kawasan konservasi perairan di Raja Ampat berawal dari Deklarasi Tomolol–yang kini menjadi bagian dari Area IV Kepulauan Misool–pada tahun 2003, ketika masyarakat adat bersama-sama pemerintah daerah dan mitra pembangunan mengemukakan niatan kolektif untuk melindungi dan mengelola sebagian area laut dengan kolaboratif dan mengedepankan peran serta masyarakat dan kearifan lokal.
+                    </p>
+                    <p>
+                      Kini Jejaring KKP Kepulauan Raja Ampat terdiri atas Area I Kepulauan Ayau-Asia seluas 100.008,99 hektar, Area II Teluk Mayalibit seluas 49.786,82 hektar, area III Selat Dampier  dengan luas 353.440,54 hektar, 348.518,74 hektar Area IV Kepulauan Misool, Area V Kepulauan Kofiau-Boo seluas 137.318,73 hektar, Area VI Kepulauan Fam mencakup 359.385,65 hektar, dan Area VII Misool Utara dengan luas 308.852 hektar.
+                    </p>
                   </motion.div>
                   <motion.div
                     variants={{
