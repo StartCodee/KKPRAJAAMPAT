@@ -57,14 +57,19 @@ export default function SosialBudaya() {
               </p>
             </motion.div>
 
-            <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
+            <div className="md:w-1/2 flex flex-col items-center justify-center"> {/* Gambar Diam */}
               <div className="w-1/2 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 1-2 oleh Nikka Gunadharma.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
+                <img src="/images/Foto 1-2 oleh Nikka Gunadharma.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 h-full object-cover relative z-20" />
+              </div>
+              <div className="w-3/4 px-8">
+                <p className="mt-4 text-sm opacity-60 italic text-center font-light">
+                  Salah satu tetua Suku Maya di Teluk Mayalibit di tengah prosesi adat untuk melindungi kawasan lautnya.
+                </p>
               </div>
             </div>
           </motion.section>
@@ -89,14 +94,19 @@ export default function SosialBudaya() {
               </p>
             </motion.div>
 
-            <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
+            <div className="md:w-1/2 flex flex-col items-center justify-center"> {/* Gambar Diam */}
               <div className="w-3/4 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
                 <CornerSVG className="-top-2 -right-2" />
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
-                <img src="/images/Foto 2-4 oleh Yakonias Thonak.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 h-full object-cover relative z-20" />
+                <img src="/images/Foto 2-4 oleh Yakonias Thonak.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
+              </div>
+              <div className="w-3/4 px-8">
+                <p className="mt-4 text-sm opacity-60 italic text-center font-light">
+                  Tari Lelayon yang dipertunjukkan kelompok penari dari Kepulauan Misool. Masyarakat dari Maluku Utara diperkirakan telah berlayar ke Raja Ampat sejak tahun 1400-an.
+                </p>
               </div>
             </div>
           </motion.section>
@@ -124,7 +134,7 @@ export default function SosialBudaya() {
               </p>
             </motion.div>
 
-            <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
+            <div className="md:w-1/2 flex flex-col items-center justify-center"> {/* Gambar Diam */}
               <div className="w-3/4 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
@@ -132,6 +142,11 @@ export default function SosialBudaya() {
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
                 <img src="/images/Foto 4-3 oleh Nikka Gunadharma.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
+              </div>
+              <div className="w-3/4 px-8">
+                <p className="mt-4 text-sm opacity-60 italic text-center font-light">
+                  Suling merupakan alat musik utama dalam Suling Tambur yang lazim dipertunjukkan oleh masyarakat adat Raja Ampat dalam kesempatan tertentu.
+                </p>
               </div>
             </div>
           </motion.section>
@@ -156,7 +171,7 @@ export default function SosialBudaya() {
               </p>
             </motion.div>
 
-            <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
+            <div className="md:w-1/2 flex flex-col items-center justify-center"> {/* Gambar Diam */}
               <div className="w-3/4 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
@@ -164,6 +179,11 @@ export default function SosialBudaya() {
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
                 <img src="/images/Foto 1-4 oleh Nikka Gunadharma.jpg" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
+              </div>
+              <div className="w-3/4 px-8">
+                <p className="mt-4 text-sm opacity-60 italic text-center font-light">
+                  Masyarakat adat di Pulau Salawati menyelenggarakan prosesi adat untuk melindungi tiga biota laut, yaitu teripang, kerang, dan lobster, sekaligus melarang penggunaan alat tangkap perikanan yang merusak.
+                </p>
               </div>
             </div>
           </motion.section>
@@ -188,7 +208,7 @@ export default function SosialBudaya() {
               </p>
             </motion.div>
 
-            <div className="md:w-1/2 flex justify-center"> {/* Gambar Diam */}
+            <div className="md:w-1/2 flex flex-col items-center justify-center"> {/* Gambar Diam */}
               <div className="w-3/4 relative">
                 {/* SVG di Sudut Gambar */}
                 <CornerSVG className="-scale-x-100 -top-2 -left-2 flip" />
@@ -196,6 +216,11 @@ export default function SosialBudaya() {
                 <CornerSVG className="-bottom-2 -left-2 rotate-180" />
                 <CornerSVG className="-scale-x-100 -bottom-2 -right-2 rotate-180" />
                 <img src="/images/Foto 6-1 oleh Rens Lewerissa.JPG" className="rounded-xl shadow-2xl border-4 border-[#3B99AA]/80 w-full object-cover relative z-20" />
+              </div>
+              <div className="w-3/4 px-8">
+                <p className="mt-4 text-sm opacity-60 italic text-center font-light">
+                  Kerja sama antara masyarakat, pemerintah serta pengelola kawasan adalah kunci dalam mengelola KKP Kepulauan Raja Ampat.
+                </p>
               </div>
             </div>
           </motion.section>
