@@ -215,7 +215,11 @@ export default function PengelolaanKawasan() {
                       className="rounded-xl shadow-2xl border-4 border-white/10 w-full object-cover"
                       alt="Deklarasi Adat"
                     />
-                    <p className="mt-4 text-sm opacity-60 italic text-center font-light">Deklarasi adat Area VI Kepulauan Fam</p>
+                    <div className="px-8">
+                      <p className="mt-4 text-sm opacity-60 italic text-center font-light">
+                        Deklarasi masyarakat adat sebagai tonggak awal pembentukan kawasan konservasi perairan.
+                      </p>
+                    </div>
                   </motion.div>
 
                   {/* Teks Meluncur dari Arah Foto */}
