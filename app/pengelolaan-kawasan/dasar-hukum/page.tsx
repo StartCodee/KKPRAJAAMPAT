@@ -33,7 +33,7 @@ export default function DasarHukum() {
     {
       uu: "UU No. 32 Tahun 2024",
       tentang: "KSDAE (Revisi UU 5/1990)",
-      deskripsi: "Menjabarkan kawasan konservasi perairan sebagai bagian dari perlindungan sistem penyangga kehidupan dan pengelolaan sumber daya alam hayati.",
+      deskripsi: "Menjabarkan “kawasan konservasi di perairan , wilayah pesisir dan pulau-pulau kecil” sebagai bagian dari “pengelolaan sumber daya alam hayati” dan “perlindungan sistem penyangga kehidupan.”",
       link: "https://ug.link/nusantara/filemgr/share-download/?id=b9e2e2f1445c463686e6acb4bae6e950"
     }
   ];
