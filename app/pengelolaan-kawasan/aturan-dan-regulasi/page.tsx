@@ -111,7 +111,7 @@ export default function AturanDanRegulasi() {
       },
       {
         no: "Kepmen-KP No. 13/2021",
-        title: "Penetapan KKP Raja Ampat (Area I-VI)",
+        title: "Penetapan KKP Kepulauan Raja Ampat",
         desc: "Peraturan ini menetapkan KKP Kepulauan Raja Ampat yang mencakup Area I Kepulauan Ayau-Asia hingga Area VI Kepulauan Fam, sementara Area VII Misool Utara ditetapkan melalui Kepmen-KP No. 191 Tahun 2023. Kedua aturan mengesahkan tujuh area kawasan konservasi perairan ke dalam Jejaring KKP Kepulauan Raja Ampat.",
         link: [
           {
