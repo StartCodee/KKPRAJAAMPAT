@@ -1,0 +1,44 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "@/pages/Home";
+import DasarHukum from "@/pages/pengelolaan-kawasan/DasarHukum";
+import Evika from "@/pages/pengelolaan-kawasan/Evika";
+import AturanRegulasi from "@/pages/pengelolaan-kawasan/AturanRegulasi";
+import TugasPokokFungsi from "@/pages/pengelolaan-kawasan/TugasPokokFungsi";
+import Ancaman from "@/pages/tentang/Ancaman";
+import KeindahanRajaAmpat from "@/pages/tentang/KeindahanRajaAmpat";
+import PengelolaanKawasan from "@/pages/tentang/PengelolaanKawasan";
+import Sejarah from "@/pages/tentang/Sejarah";
+import SosialBudaya from "@/pages/tentang/SosialBudaya";
+import Berita from "@/pages/informasi-terkini/Berita";
+import KalenderKegiatan from "@/pages/informasi-terkini/KalenderKegiatan";
+import KawasanKonservasi from "@/pages/KawasanKonservasi";
+import PetaKawasan from "@/pages/PetaKawasan";
+import PanduanKunjungan from "@/pages/layanan-kami/PanduanKunjungan";
+import Kolaborasi from "@/pages/layanan-kami/Kolaborasi";
+import NotFound from "@/pages/NotFound";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pengelolaan-kawasan/dasar-hukum" element={<DasarHukum />} />
+        <Route path="/pengelolaan-kawasan/aturan-dan-regulasi" element={<AturanRegulasi />} />
+        <Route path="/pengelolaan-kawasan/tugas-pokok-dan-fungsi" element={<TugasPokokFungsi />} />
+        <Route path="/pengelolaan-kawasan/evika" element={<Evika />} />
+        <Route path="/tentang/ancaman" element={<Ancaman />} />
+        <Route path="/tentang/keindahan-raja-ampat" element={<KeindahanRajaAmpat />} />
+        <Route path="/tentang/pengelolaan-kawasan" element={<PengelolaanKawasan />} />
+        <Route path="/tentang/sejarah" element={<Sejarah />} />
+        <Route path="/tentang/sosial-budaya" element={<SosialBudaya />} />
+        <Route path="/informasi-terkini/berita" element={<Berita />} />
+        <Route path="/informasi-terkini/kalender-kegiatan" element={<KalenderKegiatan />} />
+        <Route path="/layanan-kami/panduan-kunjungan" element={<PanduanKunjungan />} />
+        <Route path="/layanan-kami/kolaborasi" element={<Kolaborasi />} />
+        <Route path="/kawasan-konservasi" element={<KawasanKonservasi />} />
+        <Route path="/peta-kawasan" element={<PetaKawasan />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
