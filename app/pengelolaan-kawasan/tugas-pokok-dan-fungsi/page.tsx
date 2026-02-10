@@ -4,6 +4,12 @@ import Navbar from "@/app/Component/Navbar";
 import {
   ShieldCheck,
   Settings2,
+  FileText,
+  Search,
+  Map,
+  ClipboardCheck,
+  Archive,
+  MoreHorizontal,
   Activity,
   Users,
   FilePieChart,
@@ -14,32 +20,66 @@ import {
 
 export default function TugasPokokDanFungsi() {
   const functions = [
-    {
-      title: "Perencanaan & Teknis",
-      desc: "Menyusun program kerja, juknis, dan prosedur perlindungan serta pelestarian kawasan.",
-      icon: <Settings2 className="w-6 h-6" />,
-    },
-    {
-      title: "Jaga Laut & Pengawasan",
-      desc: "Pemantauan aktivitas pariwisata dan perikanan serta penegakan aturan zonasi di lapangan.",
-      icon: <ShieldCheck className="w-6 h-6" />,
-    },
-    {
-      title: "Pemantauan Ekologis",
-      desc: "Monitoring habitat, biota laut, dan inisiatif ilmuwan warga (citizen science).",
-      icon: <Activity className="w-6 h-6" />,
-    },
-    {
-      title: "Kemitraan & Kolaborasi",
-      desc: "Pengembangan kerja sama dengan pemangku kepentingan untuk perlindungan sumber daya hayati.",
-      icon: <Users className="w-6 h-6" />,
-    },
-    {
-      title: "Administrasi & Pelaporan",
-      desc: "Penyelenggaraan tugas keuangan, kepegawaian, humas, dan pelaporan berkala ke Dinas P2KP.",
-      icon: <FilePieChart className="w-6 h-6" />,
-    }
-  ];
+  {
+    title: "Penyusunan Rencana dan Program Kerja",
+    desc: "Sebelum menyelenggarakan aktivitasnya, SUOP KKP Kepulauan Raja Ampat mesti merumuskan rencana dan program kerjanya, baik itu deskripsi, penganggaran, sumber daya manusia, hingga linimasa.",
+    icon: <Settings2 className="w-6 h-6" />,
+  },
+  {
+    title: "Penyiapan Materi, Petunjuk Teknis, dan Prosedur",
+    desc: "Dalam menyelenggarakan setiap kegiatannya, SUOP KKP Kepulauan Raja Ampat berpedoman terhadap materi dan/atau petunjuk teknis dan/atau prosedur operasional standar.",
+    icon: <FileText className="w-6 h-6" />,
+  },
+  {
+    title: "Perlindungan Habitat, Jenis Ikan dan Biota Lain",
+    desc: "Fungsi utama ini diwujudkan ke dalam beberapa aktivitas, mulai dari survei populasi jenis ikan dan biota laut tertentu seperti pari manta, hiu berjalan, mamalia laut, dan penyu, serta inisiatif-inisiatif pengelolaan terhadap aktivitas pemanfaatan di dalam kawasan.",
+    icon: <ShieldCheck className="w-6 h-6" />,
+  },
+  {
+    title: "Pemantauan Sumber Daya Kelautan dan Perikanan",
+    desc: (
+      <>
+        SUOP KKP Kepulauan Raja Ampat mewujudkan fungsi pemantauan ke dalam beberapa aktivitas yang diselenggarakan secara rutin seperti pemantauan ekologis terumbu karang, survei populasi spesies laut penting <span className="italic">(focal)</span>, maupun beberapa inisiatif yang diselenggarakan berkesinambungan seperti Peneliti Warga.
+      </>
+    ),
+    icon: <Activity className="w-6 h-6" />,
+  },
+  {
+    title: "Pemantauan Pemanfaatan Sumber Daya Kelautan dan Perikanan",
+    desc: "Fungsi ini secara garis besar bertujuan untuk mengawasi aktivitas pemanfaatan baik dari sektor perikanan maupun pariwisata, dan diwujudkan ke dalam aktivitas yang diselenggarakan rutin seperti Jaga Laut dan pengumpulan data pemanfaatan, serta inisiatif berkesinambungan seperti Sispandalwas dan RAMS.",
+    icon: <Search className="w-6 h-6" />,
+  },
+  {
+    title: "Penegakan Aturan Zonasi",
+    desc: "KKP merupakan kawasan yang dikelola berdasarkan sistem zonasi, atau sederhananya: ada aktivitas yang boleh dan tidak boleh dilakukan di dalam KKP Kepulauan Raja Ampat. Fungsi ini utamanya diwujudkan melalui kegiatan Jaga Laut.",
+    icon: <Map className="w-6 h-6" />,
+  },
+  {
+    title: "Koordinasi Pengawasan dan Perlindungan",
+    desc: "Dalam menyelenggarakan fungsinya, BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat tidak dapat bekerja sendirian, dan memerlukan peran serta dari beragam pemangku kepentingan berikut kapasitasnya, mulai dari aparat penegak hukum, perwakilan pemerintah dari sektor terkait lainnya, pelaku industri, hingga kepada pengunjung.",
+    icon: <Users className="w-6 h-6" />,
+  },
+  {
+    title: "Pemantauan dan Evaluasi",
+    desc: "Sebagai institusi yang menyediakan beragam jenis layanan, BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat berkewajiban untuk meningkatkan mutu layanan dengan menyelenggarakan upaya pemantauan dan evaluasi terhadap kinerja baik secara internal maupun yang melibatkan pihak eksternal, untuk selanjutnya dituangkan ke dalam beragam laporan.",
+    icon: <ClipboardCheck className="w-6 h-6" />,
+  },
+  {
+    title: "Pelaporan",
+    desc: "Selain pelaporan hasil pemantauan dan evaluasi kinerja, SUOP KKP Kepulauan Raja Ampat berkewajiban untuk menyusun laporan kinerja rutin, laporan keuangan, penerimaan dan pemanfaatan hibah, serta laporan lain yang diwajibkan oleh peraturan perundang-undangan yang berlaku, yang disampaikan kepada gubernur melalui Kepala Dinas Kelautan dan Perikanan.",
+    icon: <FilePieChart className="w-6 h-6" />,
+  },
+  {
+    title: "Pelaksanaan Administrasi",
+    desc: "Fungsi ini mencakup penyelenggaraan pengelolaan, pengaruran dan penataan dokumen, tata laksana organisasi, keuangan, kepegawaian, hubungan masyarakat, serta penyediaan perlengkapan dan rumah tangga.",
+    icon: <Archive className="w-6 h-6" />,
+  },
+  {
+    title: "Fungsi Lainnya",
+    desc: "Fungsi lain BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat mencakup fungsi lainnya yang dipandang mendesak dan/atau relevan oleh Pemerintah Provinsi Papua Barat Daya melalui Kepala Dinas Kelautan dan Perikanan.",
+    icon: <MoreHorizontal className="w-6 h-6" />,
+  }
+];
 
   return (
     <main
@@ -86,12 +126,12 @@ export default function TugasPokokDanFungsi() {
             </div>
 
             <div className="relative z-10 max-w-3xl">
-              <h2 className="text-blue-400 font-bold uppercase tracking-[0.3em] text-xs mb-6">Tugas Utama SUOP</h2>
+              <h2 className="text-blue-400 font-bold uppercase tracking-[0.3em] text-xs mb-6">Tugas Pokok</h2>
               <h3 className="text-white text-3xl md:text-5xl font-bold leading-tight mb-8">
                 Melaksanakan tugas teknis perlindungan, pemanfaatan, dan pelestarian KKP Kepulauan Raja Ampat.
               </h3>
               <p className="text-gray-300 text-lg font-light leading-relaxed">
-                Berdasarkan Rencana Strategis 2024-2029, BLUD UPTD membantu Kepala Dinas P2KP Papua Barat Daya dalam menjaga integritas ekosistem laut kelas dunia.
+                Berdasarkan dokumen Rencana Strategis Tahun 2024-2029 , tugas utama dari SUOP adalah membantu Kepala Dinas P2KP Papua Barat Daya untuk melaksanakan tugas teknis perlindungan, pemanfaatan, dan pelestarian KKP Kepulauan Raja Ampat. Tugas pokok dari BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat sebagai SUOP tersebut diperinci melalui beragam fungsi yang tidak dapat dipisahkan satu dengan lainnya.
               </p>
 
               <motion.a
@@ -107,7 +147,9 @@ export default function TugasPokokDanFungsi() {
           </motion.div>
 
           {/* 2. Functions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-8">
+            <p className="text-center text-white text-5xl font-bold">Fungsi</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {functions.map((f, idx) => (
               <motion.div
                 key={idx}
@@ -147,6 +189,7 @@ export default function TugasPokokDanFungsi() {
                 Buka Dashboard <ArrowRight size={16} />
               </button>
             </motion.div>
+          </div>
           </div>
         </div>
       </section>
