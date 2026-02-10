@@ -208,6 +208,11 @@ export default function AturanDanRegulasi() {
                 </button>
               ))}
             </div>
+            { activeTab === "Regional" && (
+              <p>
+                Di tingkat regional, KKP Kepulauan Raja Ampat dan unit pengelolanya diatur melalui beragam Peraturan Gubernur (Pergub) Papua Barat Daya. Sebagai Daerah Otonomi Baru (DOB) yang resmi terbentuk pada akhir tahun 2022, Papua Barat Daya kini sedang mempersiapkan RZWP-3-K serta revisi atas Rencana Pengelolaan dan Rencana Zonasi KKP Kepulauan Raja Ampat.
+              </p>
+            )}
           </div>
 
           {/* Content Grid */}
