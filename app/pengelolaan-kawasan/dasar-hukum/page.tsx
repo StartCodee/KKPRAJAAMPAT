@@ -80,14 +80,14 @@ export default function DasarHukum() {
     {
       uu: "UU No. 27 Tahun 2007",
       tentang: "Pengelolaan Wilayah Pesisir dan Pulau-Pulau Kecil",
-     deskripsi: "UU ini menggunakan terminologi ‘kawasan konservasi di wilayah pesisir dan pulau-pulau kecil’ yang, dalam peraturan turunan di tingkat menteri sekarang, berkembang menggunakan istilah ‘kawasan konservasi di perairan’ untuk merujuk kepada penetapan kawasan tertentu, termasuk bagi KKP Kepulauan Raja Ampat. UU ini telah direvisi melalui UU No. 6 Tahun 2023 tentang Cipta Kerja.",
+      deskripsi: "UU ini menggunakan terminologi ‘kawasan konservasi di wilayah pesisir dan pulau-pulau kecil’ yang, dalam peraturan turunan di tingkat menteri sekarang, berkembang menggunakan istilah ‘kawasan konservasi di perairan’ untuk merujuk kepada penetapan kawasan tertentu, termasuk bagi KKP Kepulauan Raja Ampat. UU ini telah direvisi melalui UU No. 6 Tahun 2023 tentang Cipta Kerja.",
       link: "/pengelolaan-kawasan/dasar-hukum/UU No. 27 Tahun 2007 tentang Pengelolaan WP-3-K (1).PDF"
     },
     {
       uu: "UU No. 45 Tahun 2009",
       tentang: "Perikanan",
       deskripsi: "UU ini merevisi UU No. 31 Tahun 2004, dan memperinci fungsi KKP sebagai salah satu pendekatan pengelolaan untuk melestarikan sumber daya perikanan. Dalam revisi UU ini terminologi ‘kawasan konservasi perairan’ sudah digunakan.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"              
+      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
     },
     {
       uu: "UU No. 1 Tahun 2014",
@@ -106,7 +106,7 @@ export default function DasarHukum() {
       tentang: "Konservasi Sumber Daya Alam Hayati dan Ekosistemnya",
       deskripsi: "UU ini menjabarkan “kawasan konservasi di perairan , wilayah pesisir dan pulau-pulau kecil” sebagai bagian dari “pengelolaan sumber daya alam hayati” dan “perlindungan sistem penyangga kehidupan.” UU ini merevisi UU No. 5 Tahun 1990 yang juga menandakan perubahan pendekatan tugas pokok dan fungsi mengenai konservasi sumber daya alam hayati dan ekosistemnya menjadi lintas sektoral.",
       link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
-    },    
+    },
   ];
   return (
     <main
@@ -114,7 +114,7 @@ export default function DasarHukum() {
       style={{ backgroundImage: "url('/images/pengelolaan-kawasan/Foto 03 oleh Nikka Gunadharma.JPG')" }}
     >
 
-      <Navbar />
+      <Navbar color="#194484" />
 
       {/* Hero Section (Transparan, hanya konten) */}
       <section className="relative h-[60vh] flex flex-col items-center justify-center text-gray-200">
@@ -143,41 +143,41 @@ export default function DasarHukum() {
         <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           <div className="space-y-8">
             <p>Berikut ini adalah beberapa peraturan perundang-undangan tertinggi berdasarkan kronologi, yang merupakan dasar hukum mengenai keberadaan dari kawasan konservasi perairan serta tugas pokok dan fungsi dari pengelolaannya. </p>
-          {/* Grid List Hukum */}
-          <div className="grid grid-cols-1 gap-6">
-            {hukumData.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative bg-white/10 hover:bg-white/10 border border-white/10 rounded-[2rem] p-8 transition-all duration-500 backdrop-blur-sm flex flex-col md:flex-row gap-8 items-start md:items-center"
-              >
-                {/* Logo Transparan Background (Watermark gaya sebelumnya) */}
-                <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
-                  <img src="/images/[Logo] BLUD UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat Latest - Transparent.png" className="w-40 h-auto" alt="" />
-                </div>
+            {/* Grid List Hukum */}
+            <div className="grid grid-cols-1 gap-6">
+              {hukumData.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative bg-white/10 hover:bg-white/10 border border-white/10 rounded-[2rem] p-8 transition-all duration-500 backdrop-blur-sm flex flex-col md:flex-row gap-8 items-start md:items-center"
+                >
+                  {/* Logo Transparan Background (Watermark gaya sebelumnya) */}
+                  <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
+                    <img src="/images/[Logo] BLUD UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat Latest - Transparent.png" className="w-40 h-auto" alt="" />
+                  </div>
 
-                {/* Ikon File */}
-                <div className="flex-shrink-0 w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:scale-110 transition-transform duration-500">
-                  <FileText className="text-white w-8 h-8" />
-                </div>
+                  {/* Ikon File */}
+                  <div className="flex-shrink-0 w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:scale-110 transition-transform duration-500">
+                    <FileText className="text-white w-8 h-8" />
+                  </div>
 
-                {/* Konten Teks */}
-                <div className="flex-grow space-y-2">
-                  <h3 className="text-blue-400 font-bold text-xl tracking-wide">{item.uu}</h3>
-                  <h4 className="text-white text-lg font-medium">Tentang {item.tentang}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed max-w-3xl font-light">
-                    {item.deskripsi}
-                  </p>
-                </div>
+                  {/* Konten Teks */}
+                  <div className="flex-grow space-y-2">
+                    <h3 className="text-blue-400 font-bold text-xl tracking-wide">{item.uu}</h3>
+                    <h4 className="text-white text-lg font-medium">Tentang {item.tentang}</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-3xl font-light">
+                      {item.deskripsi}
+                    </p>
+                  </div>
 
-                {/* Tombol Download */}
-                <DownloadButton links={item.link} label={item.uu} />
-              </motion.div>
-            ))}
-          </div>
+                  {/* Tombol Download */}
+                  <DownloadButton links={item.link} label={item.uu} />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

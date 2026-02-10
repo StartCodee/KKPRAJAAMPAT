@@ -87,7 +87,7 @@ export default function TugasPokokDanFungsi() {
       style={{ backgroundImage: "url('/images/pengelolaan-kawasan/Foto 02 oleh Nikka Gunadharma.jpg')" }}
     >
 
-      <Navbar />
+      <Navbar color="#194484" />
 
       {/* Hero Section (Transparan, hanya konten) */}
       <section className="relative h-[60vh] flex flex-col items-center justify-center text-gray-200">

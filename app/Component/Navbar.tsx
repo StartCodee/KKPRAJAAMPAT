@@ -3,7 +3,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 
-export default function Navbar() {
+export default function Navbar({color = '#004267' }) {
     const [openTentang, setOpenTentang] = useState(false);
     const [openPK, setOpenPK] = useState(false);
     const [openKawasan, setOpenKawasan] = useState(false);
@@ -11,7 +11,7 @@ export default function Navbar() {
     const [openInformasiTerkini, setOpenInformasiTerkini] = useState(false);
 
     return (
-        <nav className="fixed top-0 w-full z-50 transition-all duration-500 bg-[#004267]/90 backdrop-blur-md py-4 shadow-2xl">
+        <nav style={{ backgroundColor: `${color}E6` }} className={`fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md py-4 shadow-2xl`}>
             <div className="max-w-7xl mx-auto px-8 flex justify-between items-center text-white">
 
                 {/* LOGO */}
@@ -36,7 +36,7 @@ export default function Navbar() {
                             {openTentang && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    className="absolute top-full left-0 bg-[#004267] min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link href="/tentang/pengelolaan-kawasan" className="block px-6 py-2 normal-case tracking-normal">Pengelolaan Kawasan</Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
                             {openPK && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    className="absolute top-full left-0 bg-[#004267] min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link href="/pengelolaan-kawasan/dasar-hukum" className="block px-6 py-2 normal-case tracking-normal">Dasar Hukum</Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
                             {openKawasan && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    className="absolute top-full left-0 bg-[#004267] min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Izin Masuk (TARIF)</li>
                                     <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Penelitian</li>
@@ -129,7 +129,7 @@ export default function Navbar() {
                             {openLayanan && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    className="absolute top-full left-0 bg-[#004267] min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link href="/layanan/panduan-kunjungan" className="block px-6 py-2 normal-case tracking-normal">Panduan Kunjungan</Link>
@@ -165,7 +165,7 @@ export default function Navbar() {
                             {openInformasiTerkini && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    className="absolute top-full left-0 bg-[#004267] min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link href="/informasi-terkini/berita" className="block px-6 py-2 normal-case tracking-normal">Berita dari Lapangan</Link>
