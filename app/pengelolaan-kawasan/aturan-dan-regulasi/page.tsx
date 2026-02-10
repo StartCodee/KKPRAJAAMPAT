@@ -4,89 +4,158 @@ import Navbar from "@/app/Component/Navbar";
 import { FileText, Download, ChevronDown, Scale, Map, Landmark } from "lucide-react";
 import { useState } from "react";
 
+const DownloadButton = ({ links }: { links: any }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Jika links hanya berupa string tunggal (1 file)
+  if (typeof links === "string") {
+    return (
+      <a
+        href={links}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative z-10 w-full flex items-center justify-center gap-3 bg-white text-[#194484] py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-blue-400 hover:text-white transition-all shadow-xl"
+      >
+        <Download className="w-4 h-4" />
+        Dapatkan Dokumen PDF
+      </a>
+    );
+  }
+
+  // Jika links berupa array (banyak file)
+  return (
+    <div className="relative w-full">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="relative z-10 w-full flex items-center justify-center gap-3 bg-white text-[#194484] py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-gray-100 transition-all shadow-xl"
+      >
+        <Download className="w-4 h-4" />
+        Unduh Dokumen ({links.length})
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Overlay transparan untuk menutup dropdown saat klik di luar area */}
+            <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.95 }}
+              className="absolute bottom-full left-0 right-0 mb-2 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden border border-gray-100"
+            >
+              {links.map((file: any, index: number) => (
+                <a
+                  key={index}
+                  href={file.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 px-5 py-4 hover:bg-blue-50 transition-colors border-b border-gray-50 last:border-0"
+                >
+                  <FileText className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-[10px] font-bold text-[#194484] uppercase tracking-wider text-left leading-tight">
+                    {file.namafile}
+                  </span>
+                </a>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 export default function AturanDanRegulasi() {
   const [activeTab, setActiveTab] = useState("Nasional");
 
-  const categories = ["Nasional", "Kementerian", "Regional"];
+  const categories = ["Nasional", "Regional"];
 
   const legalData = {
     Nasional: [
       {
         no: "PP No. 60 Tahun 2007",
         title: "Konservasi Sumber Daya Ikan",
-        desc: "Mengatur KKP sebagai pendekatan untuk melestarikan sumber daya perikanan, memperinci UU No. 31/2004 dan UU No. 45/2009.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=0926418a0cd24a1b89144b4f7603b804"
-      }
-    ],
-    Kementerian: [
+        desc: "Regulasi ini memperinci UU No. 31 Tahun 2004 dan UU No. 45 Tahun 2009, dan mengatur KKP sebagai pendekatan untuk melestarikan sumber daya perikanan. Peraturan perundang-undangan tersebut lalu diperinci melalui peraturan dan keputusan di tingkat Kementerian Kelautan dan Perikanan",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/PP No. 60 Tahun 2007 tentang Konservasi Sumber Daya Ikan.pdf"
+      },
       {
         no: "Permen-KP No. 17/2008",
         title: "Kawasan Konservasi di WP-3-K",
-        desc: "Mendefinisikan KKP sebagai upaya perlindungan, pelestarian, dan pemanfaatan wilayah pesisir dan pulau-pulau kecil.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=860f950cb4b64b5d9096ddd38340c7f4"
+        desc: "Peraturan ini mendefinisikan KKP sebagai “upaya perlindungan, pelestarian, dan pemanfaatan wilayah pesisir dan pulau-pulau kecil serta ekosistemnya untuk menjamin keberadaan, ketersediaan, dan kesinambungan sumber daya pesisir dan pulau-pulau kecil dengan tetap memelihara dan meningkatkan kualitas nilai dan keanekaragamannya.”",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/PERMEN KP No. 17 Tahun 2008 tentang Kawasan Konservasi di WP-3-K.pdf"
       },
       {
-        no: "Permen-KP No. 2/2009",
-        title: "Tata Cara Penetapan KKP",
-        desc: "Prosedur dan regulasi mengenai tata cara penetapan sebuah wilayah menjadi Kawasan Konservasi Perairan.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=0204ad26926c445bac03f4ff5be9f0f9"
-      },
-      {
-        no: "Permen-KP No. 3/2010",
-        title: "Status Perlindungan Jenis Ikan",
-        desc: "Mengatur tata cara penetapan status perlindungan bagi jenis-jenis ikan tertentu di perairan Indonesia.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=3320f4d237594f439db7d3b341f9e627"
-      },
-      {
-        no: "Permen-KP No. 4/2010",
-        title: "Pemanfaatan Jenis & Genetik Ikan",
-        desc: "Regulasi mengenai tata cara pemanfaatan jenis ikan dan genetik ikan dalam kawasan konservasi.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=6cf12f1683cd45ec95e6c57566bdf223"
-      },
-      {
-        no: "Permen-KP No. 30/2010",
-        title: "Rencana Pengelolaan & Zonasi KKP",
-        desc: "Aturan teknis mengenai penyusunan rencana pengelolaan dan pembagian zona di dalam KKP.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=1e98f9a96573444080a6e22fb966cbeb"
+        title: "Regulasi Terkait Tugas Pokok dan Fungsi  ",
+        desc: "Regulasi di tingkat Kementerian Kelautan dan Perikanan yang terkait KKP pada umumnya mencakup beragam prosedur seperti penetapan KKP, penetapan status perlindungan jenis ikan, pemanfaatan jenis ikan dan genetik ikan, serta aturan mengenai rencana pengelolaan dan zonasi KKP.",
+        link: [
+          {
+            namafile: "Permen-KP No. 2 Tahun 2009 tentang Tata Cara Penetapan KKP",
+            link: "/pengelolaan-kawasan/aturan-dan-regulasi/PERMEN KP No. 2 Tahun 2009 tentang Tata Cara Penetapan KKP.pdf"
+          },
+          {
+            namafile: "Permen-KP No. 3 Tahun 2010 tentang Tata Cara Status Perlindungan Jenis Ikan",
+            link: "/pengelolaan-kawasan/aturan-dan-regulasi/PERMEN KP No. 3 Tahun 2010 tentang Tata Cara Status Perlindungan Jenis Ikan.pdf"
+          },
+          {
+            namafile: "Permen-KP No. 4 Tahun 2010 tentang Tata Cara Pemanfaatan Jenis Ikan dan Genetik Ikan",
+            link: "/pengelolaan-kawasan/aturan-dan-regulasi/PERMEN KP Nomor 4 Tahun 2010 tentang Tata Cara Pemanfaatan Jenis Ikan dan Genetik Ikan.pdf"
+          },
+          {
+            namafile: "Permen-KP No. 30 Tahun 2010 tentang Rencana Pengelolaan dan Zonasi KKP",
+            link: "/pengelolaan-kawasan/aturan-dan-regulasi/PERMEN KP No. 30 Tahun 2010 Tentang Rencana Pengelolaan dan Zonasi KKP.pdf"
+          }
+        ]
       },
       {
         no: "Kepmen-KP No. 13/2021",
         title: "Penetapan KKP Raja Ampat (Area I-VI)",
-        desc: "Mengesahkan Kawasan Konservasi di Perairan Kepulauan Raja Ampat di bawah naungan Provinsi Papua Barat.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=63f56cfbc8d24b53955a8eb552ffa977"
+        desc: "Peraturan ini menetapkan KKP Kepulauan Raja Ampat yang mencakup Area I Kepulauan Ayau-Asia hingga Area VI Kepulauan Fam, sementara Area VII Misool Utara ditetapkan melalui Kepmen-KP No. 191 Tahun 2023. Kedua aturan mengesahkan tujuh area kawasan konservasi perairan ke dalam Jejaring KKP Kepulauan Raja Ampat.",
+        link: [
+          {
+            namafile: "Kepmen-KP No. 13 Tahun 2021 tentang Penetapan KKP Raja Ampat (Area I-VI)",
+            link: "/pengelolaan-kawasan/aturan-dan-regulasi/Kepmen KP No. 13 Tahun 2021 tentang Penetapan KKP Raja Ampat (Area I-VI).pdf"
+          },
+          {
+            namafile: "Peta KKP Raja Ampat (Area I-VI)",
+            link: "/pengelolaan-kawasan/aturan-dan-regulasi/KEPMEN KP tentang KKP di Misool Utara.pdf"
+          }
+        ]
       },
-      {
-        no: "Kepmen-KP No. 191/2023",
-        title: "KKP di Misool Utara (Area VII)",
-        desc: "Penetapan Area VII Misool Utara sebagai bagian dari Kawasan Konservasi Perairan Kepulauan Raja Ampat.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=0a251524d4b6466981f0a27a05ee0c2b"
-      }
     ],
     Regional: [
       {
-        no: "Pergub PBD No. 34",
-        title: "Penerimaan Hibah SUOP KKP",
-        desc: "Mengatur prosedur dan legalitas penerimaan hibah untuk mendukung operasional SUOP KKP Raja Ampat.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=3496e7167a0344e986bc6c8233d6993e"
+        no: "Pergub PBD No. 26/2023",
+        title: "UPTD Pengelolaan KKP Kepulauan Raja Ampat",
+        desc: "Pergub ini mengatur keberadaan dari BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat sebagai SUOP yang berada di bawah Organisasi Perangkat Daerah (OPD) Papua Barat Daya, sekaligus turunan dari keputusan menteri terkait penetapan kawasan.",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/Peraturan Gubernur Papua Barat Daya No 26 Tahun 2023 tentang UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat pada Dinas P2KP.pdf"
+      },
+      {
+        no: "Pergub PBD No. 31/2024",
+        title: "Pola Tata Kelola, SPM, dan Rencana Strategis",
+        desc: "Aturan ini mengatur tiga aspek pengelolaan utama dari BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat. Mulai dari pola pengelolaan keuangannya sebagai Badan Layanan Umum Daerah, jenis dan mutu layanan dasar dalam Standar Pelayanan Minimum (SPM), serta dokumen perencanaan lima tahunan bagi SUOP dan kawasan kelolanya.",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/Pergub PBD No. 31 Tahun 2024 tentang Pola Tata Kelola, SPM dan Renstra SUOP KKP Kepulauan Raja Ampat.pdf"
+      },
+      {
+        no: "Pergub PBD No. 32/2024",
+        title: "Tarif Layanan",
+        desc: "Peraturan regional mengenai tarif bagi layanan dasar yang disediakan oleh SUOP KKP Kepulauan Raja Ampat, yang mencakup tarif bagi pengunjung maupun peneliti domestik dan mancanegara, layanan labuh tambat, serta aktivitas wisata minat khusus.",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/Pergub PBD No. 32 Tahun 2024 tentang Tarif Layanan KKP Kepulauan Raja Ampat.pdf"
       },
       {
         no: "Pergub PBD No. 33/2024",
         title: "Remunerasi SUOP KKP Raja Ampat",
-        desc: "Mengatur mengenai sistem remunerasi bagi personil pada Satuan Unit Organisasi Pengelola KKP.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=3a2fada854de47aabf6d89f0a3f3283d"
+        desc: "Mengatur mengenai imbalan kerja bagi pegawai BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat berupa upah, honorarium, tunjangan, insentif, bonus, pesangon dan/atau dana pensiun.",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/Pergub PBD No. 33 Tahun 2024 tentang Remunerasi pada SUOP KKP Kepulauan Raja Ampat.pdf"
       },
       {
-        no: "Perda PBD No. 3/2025",
-        title: "Pajak & Retribusi Daerah (PDRD)",
-        desc: "Landasan hukum mengenai tarif retribusi layanan dan pajak daerah di Provinsi Papua Barat Daya.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=6b910ac119ec4008bca55f766fda123e"
+        no: "Pergub PBD No. 34",
+        title: "Penerimaan Hibah SUOP KKP",
+        desc: "Mengatur prosedur dan legalitas penerimaan hibah untuk mendukung operasional SUOP KKP Raja Ampat.",
+        link: "/pengelolaan-kawasan/aturan-dan-regulasi/Pergub PBD No. 34 tentang Penerimaan Hibah untuk SUOP KKP Kepulauan Raja Ampat.pdf"
       },
-      {
-        no: "Pergub PBD No. 31/2024",
-        title: "Tata Kelola, SPM & Renstra",
-        desc: "Landasan operasional mencakup Pola Tata Kelola, Standar Pelayanan Minimal, dan Rencana Strategis SUOP.",
-        link: "https://ug.link/nusantara/filemgr/share-download/?id=e7e878262320438c8c6c2a498d233a5d"
-      }
     ]
   };
 
@@ -124,13 +193,15 @@ export default function AturanDanRegulasi() {
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
         <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           <div className="space-y-8">
-            <p>Legalitas keberadaan dan pengelolaan tentang KKP pada umumnya, maupun yang terperinci mengatur tentang KKP Kepulauan Raja Ampat, diatur melalui aturan di beragam tingkatan pemerintah, mulai dari tingkat nasional hingga provinsi, mulai dari peraturan pemerintah, peraturan dan keputusan Menteri Kelautan dan Perikanan, hingga kepada Peraturan Gubernur (Pergub) Provinsi Papua Barat Daya.</p>
+            <p>
+              Legalitas keberadaan dan pengelolaan tentang KKP pada umumnya, maupun yang terperinci mengatur tentang KKP Kepulauan Raja Ampat, diatur melalui aturan di beragam tingkatan pemerintah, mulai dari tingkat nasional hingga provinsi, mulai dari peraturan pemerintah, peraturan dan keputusan Menteri Kelautan dan Perikanan, hingga kepada Peraturan Gubernur (Pergub) Provinsi Papua Barat Daya.
+            </p>
             <div className="flex bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveTab(cat)}
-                  className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${activeTab === cat ? "bg-white text-[#194484] shadow-lg" : "text-white hover:bg-white/10"
+                  className={`px-6 py-2.5 rounded-xl text-xs font-bold tracking-widest transition-all ${activeTab === cat ? "bg-white text-[#194484] shadow-lg" : "text-white hover:bg-white/10"
                     }`}
                 >
                   {cat}
@@ -165,9 +236,11 @@ export default function AturanDanRegulasi() {
                         {activeTab === "Kementerian" && <FileText className="text-blue-400 w-6 h-6" />}
                         {activeTab === "Regional" && <Map className="text-blue-400 w-6 h-6" />}
                       </div>
-                      <span className="text-[10px] text-blue-300 font-bold tracking-widest uppercase py-1 px-3 border border-blue-300/30 rounded-full">
-                        {item.no}
-                      </span>
+                      {item.no && (
+                        <span className="text-[10px] text-blue-300 font-bold tracking-widest uppercase py-1 px-3 border border-blue-300/30 rounded-full">
+                          {item.no}
+                        </span>
+                      )}
                     </div>
 
                     <h3 className="text-white text-xl font-bold mb-3 group-hover:text-blue-300 transition-colors">
@@ -178,14 +251,7 @@ export default function AturanDanRegulasi() {
                     </p>
                   </div>
 
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    className="relative z-10 w-full flex items-center justify-center gap-3 bg-white text-[#194484] py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-blue-400 hover:text-white transition-all shadow-xl"
-                  >
-                    <Download className="w-4 h-4" />
-                    Dapatkan Dokumen PDF
-                  </a>
+                  <DownloadButton links={item.link} />
                 </motion.div>
               ))}
             </AnimatePresence>
