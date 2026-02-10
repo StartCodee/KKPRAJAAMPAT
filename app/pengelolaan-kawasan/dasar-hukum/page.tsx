@@ -99,7 +99,7 @@ export default function DasarHukum() {
           link: "/pengelolaan-kawasan/dasar-hukum/UU No. 31 Tahun 2004 tentang Perikanan.pdf"
         },
         2: {
-          namafile: "UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan",
+          namafile: "UU No. 45 Tahun 2009 tentang Perubahan Atas UU 31 Tahun 2004 tentang Perikanan",
           link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
         }
       }
@@ -109,6 +109,21 @@ export default function DasarHukum() {
       tentang: "KSDAE (Revisi UU 5/1990)",
       deskripsi: "Menjabarkan “kawasan konservasi di perairan , wilayah pesisir dan pulau-pulau kecil” sebagai bagian dari “pengelolaan sumber daya alam hayati” dan “perlindungan sistem penyangga kehidupan.”",
       link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
+    }, 
+    {
+      uu: "UU No. 27 Tahun 2007  dan perubahannya, UU No. 1 Tahun 2014 .",
+      tentang: "Pengelolaan Wilayah Pesisir dan Pulau-Pulau Kecil",
+      deskripsi: "Keberadaan dan pengelolaan KKP juga termasuk ke dalam Rencana Zonasi Wilayah Pesisir dan Pulau-pulau Kecil (RZWP-3-K). Selain kawasan konservasi, RZWP-3-K juga mencakup pengelolaan kawasan pemanfaatan umum, kawasan strategis nasional tertentu, dan kawasan alur laut.", 
+      link: {
+        1: {
+          namafile: "UU No. 27 Tahun 2007 tentang Pengelolaan Wilayah Pesisir dan Pulau-Pulau Kecil",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 27 Tahun 2007 tentang Pengelolaan WP-3-K.pdf"
+        },
+        2: {
+          namafile: "UU No. 1 Tahun 2014 tentang Perubahan Atas UU No. 27 Tahun 2007 tentang Pengelolaan Wilayah Pesisir dan Pulau-Pulau Kecil",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 1 Tahun 2014 tentang Perubahan Atas UU No. 27 Tahun 2007 Tentang Pengelolaan WP-3-K.pdf"
+        }
+      }
     }
   ];
   return (
