@@ -96,11 +96,11 @@ export default function DasarHukum() {
       link: {
         1: {
           namafile: "UU No. 31 Tahun 2004 tentang Perikanan",
-          link: "public/pengelolaan-kawasan/dasar-hukum/UU No. 31 Tahun 2004 tentang Perikanan.pdf"
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 31 Tahun 2004 tentang Perikanan.pdf"
         },
         2: {
           namafile: "UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan",
-          link: "public/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
         }
       }
     },
@@ -108,7 +108,7 @@ export default function DasarHukum() {
       uu: "UU No. 32 Tahun 2024",
       tentang: "KSDAE (Revisi UU 5/1990)",
       deskripsi: "Menjabarkan “kawasan konservasi di perairan , wilayah pesisir dan pulau-pulau kecil” sebagai bagian dari “pengelolaan sumber daya alam hayati” dan “perlindungan sistem penyangga kehidupan.”",
-      link: "pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
+      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
     }
   ];
   return (
