@@ -73,13 +73,13 @@ export default function TugasPokokDanFungsi() {
 
 
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
-        <div className="bg-[#004267]/80 rounded-xl p-10 text-gray-200 space-y-24">
+        <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           {/* 1. Main Mission Statement */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#3B99AA]/20 border border-white/10 rounded-[3rem] p-10 md:p-16 backdrop-blur-sm relative overflow-hidden"
+            className="bg-white/10 border border-white/10 rounded-[3rem] p-10 md:p-16 backdrop-blur-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-10 opacity-10">
               <ShieldCheck size={200} className="text-blue-400" />
@@ -114,7 +114,7 @@ export default function TugasPokokDanFungsi() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="group bg-[#3B99AA]/20 border border-white/5 p-8 rounded-[2.5rem] hover:bg-[#3B99AA]/40 transition-all duration-500"
+                className="group bg-white/10 border border-white/5 p-8 rounded-[2.5rem] hover:bg-white/20 transition-all duration-500"
               >
                 <div className="bg-blue-500/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                   <div className="text-blue-400">{f.icon}</div>

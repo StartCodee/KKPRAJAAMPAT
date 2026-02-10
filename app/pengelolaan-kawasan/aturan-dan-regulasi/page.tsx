@@ -122,7 +122,7 @@ export default function AturanDanRegulasi() {
 
 
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
-        <div className="bg-[#004267]/80 rounded-xl p-10 text-gray-200 space-y-24">
+        <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           <div className="space-y-8">
             <p>Legalitas keberadaan dan pengelolaan tentang KKP pada umumnya, maupun yang terperinci mengatur tentang KKP Kepulauan Raja Ampat, diatur melalui aturan di beragam tingkatan pemerintah, mulai dari tingkat nasional hingga provinsi, mulai dari peraturan pemerintah, peraturan dan keputusan Menteri Kelautan dan Perikanan, hingga kepada Peraturan Gubernur (Pergub) Provinsi Papua Barat Daya.</p>
             <div className="flex bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
@@ -130,7 +130,7 @@ export default function AturanDanRegulasi() {
                 <button
                   key={cat}
                   onClick={() => setActiveTab(cat)}
-                  className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${activeTab === cat ? "bg-white text-[#004267] shadow-lg" : "text-white hover:bg-white/10"
+                  className={`px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${activeTab === cat ? "bg-white text-[#194484] shadow-lg" : "text-white hover:bg-white/10"
                     }`}
                 >
                   {cat}
@@ -149,7 +149,7 @@ export default function AturanDanRegulasi() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group relative bg-[#004267]/40 hover:bg-[#004267]/60 border border-white/10 p-8 rounded-[2.5rem] transition-all duration-500 backdrop-blur-md flex flex-col justify-between overflow-hidden"
+                  className="group relative bg-white/10 hover:bg-white/20 border border-white/10 p-8 rounded-[2.5rem] transition-all duration-500 backdrop-blur-md flex flex-col justify-between overflow-hidden"
                 >
                   {/* Background Watermark Logo */}
                   <img
@@ -181,7 +181,7 @@ export default function AturanDanRegulasi() {
                   <a
                     href={item.link}
                     target="_blank"
-                    className="relative z-10 w-full flex items-center justify-center gap-3 bg-white text-[#004267] py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-blue-400 hover:text-white transition-all shadow-xl"
+                    className="relative z-10 w-full flex items-center justify-center gap-3 bg-white text-[#194484] py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-blue-400 hover:text-white transition-all shadow-xl"
                   >
                     <Download className="w-4 h-4" />
                     Dapatkan Dokumen PDF

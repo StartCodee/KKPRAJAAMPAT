@@ -15,7 +15,7 @@ const DownloadButton = ({ links, label }: { links: any, label: string }) => {
         href={links}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#004267] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
+        className="flex-shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
       >
         <Download className="w-4 h-4" />
         Unduh PDF
@@ -30,7 +30,7 @@ const DownloadButton = ({ links, label }: { links: any, label: string }) => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex-shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#004267] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
+        className="flex-shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
       >
         <Download className="w-4 h-4" />
         Unduh PDF ({fileEntries.length})
@@ -47,7 +47,7 @@ const DownloadButton = ({ links, label }: { links: any, label: string }) => {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              className="absolute right-0 mt-2 w-64 bg-[#004267] border border-white/20 rounded-2xl shadow-2xl z-50 overflow-hidden backdrop-blur-xl"
+              className="absolute right-0 mt-2 w-64 bg-[#194484] border border-white/20 rounded-2xl shadow-2xl z-50 overflow-hidden backdrop-blur-xl"
             >
               {fileEntries.map(([key, url]: any, index) => (
                 <a
@@ -158,7 +158,7 @@ export default function DasarHukum() {
 
 
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
-        <div className="bg-[#004267]/80 rounded-xl p-10 text-gray-200 space-y-24">
+        <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           {/* Grid List Hukum */}
           <div className="grid grid-cols-1 gap-6">
             {hukumData.map((item, idx) => (
@@ -168,7 +168,7 @@ export default function DasarHukum() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-[#3B99AA]/40 hover:bg-[#3B99AA]/50 border border-white/10 rounded-[2rem] p-8 transition-all duration-500 backdrop-blur-sm flex flex-col md:flex-row gap-8 items-start md:items-center"
+                className="group relative bg-white/10 hover:bg-white/10 border border-white/10 rounded-[2rem] p-8 transition-all duration-500 backdrop-blur-sm flex flex-col md:flex-row gap-8 items-start md:items-center"
               >
                 {/* Logo Transparan Background (Watermark gaya sebelumnya) */}
                 <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">

@@ -42,7 +42,7 @@ export default function Evika() {
 
 
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
-        <div className="bg-[#004267]/80 rounded-xl p-10 text-gray-200 space-y-24">
+        <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           {/* Statistik & Siapa Kami */}
           <section className="max-w-7xl mx-auto py-24 px-8">
             <motion.div
@@ -131,7 +131,7 @@ export default function Evika() {
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0 }
                     }}
-                    className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md hover:bg-white/10 transition-all group"
+                    className="bg-white/10 border border-white/10 p-8 rounded-3xl backdrop-blur-md hover:bg-white/20 transition-all group"
                   >
                     <div className="mb-6">{aspek.icon}</div>
                     <h3 className="text-white text-2xl font-bold mb-6">{aspek.title}</h3>
@@ -160,10 +160,10 @@ export default function Evika() {
               {/* Grid Capaian */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
-                  { label: "Input", val: 75, icon: <LogIn className="w-6 h-6 text-[#004267]" /> },
-                  { label: "Proses", val: 82, icon: <RefreshCcw className="w-6 h-6 text-[#004267]" /> },
-                  { label: "Output", val: 68, icon: <LogOut className="w-6 h-6 text-[#004267]" /> },
-                  { label: "Outcome", val: 90, icon: <BarChart3 className="w-6 h-6 text-[#004267]" /> },
+                  { label: "Input", val: 75, icon: <LogIn className="w-6 h-6 text-[#194484]" /> },
+                  { label: "Proses", val: 82, icon: <RefreshCcw className="w-6 h-6 text-[#194484]" /> },
+                  { label: "Output", val: 68, icon: <LogOut className="w-6 h-6 text-[#194484]" /> },
+                  { label: "Outcome", val: 90, icon: <BarChart3 className="w-6 h-6 text-[#194484]" /> },
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -175,7 +175,7 @@ export default function Evika() {
                       <div className="p-2 bg-blue-50 rounded-lg">
                         {item.icon}
                       </div>
-                      <span className="text-[#004267] font-bold text-lg uppercase tracking-widest">
+                      <span className="text-[#194484] font-bold text-lg uppercase tracking-widest">
                         {item.label}
                       </span>
                     </div>
