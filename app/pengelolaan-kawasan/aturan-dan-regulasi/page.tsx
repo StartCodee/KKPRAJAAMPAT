@@ -63,7 +63,7 @@ export default function AturanDanRegulasi() {
   return (
     <main
       className="min-h-screen bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/pengelolaan-kawasan/Foto 03 oleh Nikka Gunadharma.JPG')" }}
+      style={{ backgroundImage: "url('/images/pengelolaan-kawasan/Foto 04 oleh Nikka Gunadharma.JPG')" }}
     >
 
       <Navbar />
