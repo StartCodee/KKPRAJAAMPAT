@@ -131,9 +131,21 @@ export default function Navbar() {
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
                                     className="absolute top-full left-0 bg-[#004267] min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
-                                    <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Izin Masuk (TARIF)</li>
-                                    <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Penelitian</li>
-                                    <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Pengaduan</li>
+                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/layanan/panduan-kunjungan" className="block px-6 py-2 normal-case tracking-normal">Panduan Kunjungan</Link>
+                                    </li>
+                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/layanan/marine-park-fee" className="block px-6 py-2 normal-case tracking-normal">Marine Park Fee</Link>
+                                    </li>
+                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/layanan/rams" className="block px-6 py-2 normal-case tracking-normal">Raja Ampat Mooring System</Link>
+                                    </li>
+                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/layanan/sispandalwas" className="block px-6 py-2 normal-case tracking-normal">SISPANDALWAS</Link>
+                                    </li>
+                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link href="/layanan/kolaborasi" className="block px-6 py-2 normal-case tracking-normal">Kolaborasi</Link>
+                                    </li>                    
                                 </motion.ul>
                             )}
                         </AnimatePresence>
