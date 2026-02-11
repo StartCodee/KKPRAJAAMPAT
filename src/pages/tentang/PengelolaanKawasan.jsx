@@ -145,7 +145,7 @@ export default function PengelolaanKawasan() {
               >
                 Sebagai SUOP bagi KKP Kepulauan Raja Ampat, kami berwenang untuk mengelola pemanfaatan yang secara umum mencakup aktivitas perikanan, budi daya, pariwisata, penelitian dan pendidikan, pembangunan infrastruktur, pemanfaatan air laut (untuk tujuan selain energi), transportasi, serta pelaksanaan adat istiadat dan ritual keagamaan.
                 <br /><br />
-                SUOP KKP Kepulauan Raja Ampat berada di dalam lingkup Dinas Pertanian, Pangan, Kelautan dan Perikanan (P2KP) Pemerintah Provinsi (Pemprov) Papua Barat Daya. Legalitas dan aspek pengelolaan, seperti penerimaan hibah, remunerasi, rencana strategis, standar pelayanan minimal, tarif jasa lingkungan, hingga tata kelola, kesemuanya diatur melalui regulasi di tingkat provinsi.
+                SUOP KKP Kepulauan Raja Ampat berada di dalam lingkup Dinas Kelautan dan Perikanan Pemerintah Provinsi (Pemprov) Papua Barat Daya. Legalitas dan aspek pengelolaan, seperti penerimaan hibah, remunerasi, rencana strategis, standar pelayanan minimal, tarif jasa lingkungan, hingga tata kelola, kesemuanya diatur melalui regulasi di tingkat provinsi.
                 <br /><br />
                 Status “BLUD” memungkinkan kami selaku pengelola kawasan untuk mengelola pendapatan dan pengeluaran dengan lebih fleksibel. Sederhananya, status ini memungkinkan kami untuk memperoleh pendapatan selain dari anggaran pemerintah daerah, seperti Tarif Jasa Lingkungan (TJL), hibah, maupun sumber pendapatan lain berdasarkan layanan yang kami sediakan.
               </motion.p>
