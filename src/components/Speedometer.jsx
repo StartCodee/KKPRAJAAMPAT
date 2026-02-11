@@ -2,7 +2,6 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
 export default function Speedometer({ value = 75 }) {
-  // Animasi Angka
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest) + "%");
 
@@ -10,73 +9,49 @@ export default function Speedometer({ value = 75 }) {
     const controls = animate(count, value, { duration: 2, ease: "easeOut" });
     return controls.stop;
   }, [value]);
-
-  // Perhitungan Lingkaran (Setengah Lingkaran)
-  const radius = 80;
-  const circumference = radius * Math.PI; // Setengah keliling
-  const dashOffset = circumference - (value / 100) * circumference;
-
   return (
     <div className="relative flex flex-col items-center justify-center w-full max-w-[240px] mx-auto group">
       <svg
-        viewBox="0 0 200 120"
-        className="w-full h-auto drop-shadow-2xl"
+        viewBox="0 0 240 140"
+        className="w-full h-auto drop-shadow-xl"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Background Lingkaran Abu-abu */}
+        {/* Jalur Dasar (Garis-garis Biru Tua sesuai screenshot Anda) */}
         <path
-          d="M20 100 A80 80 0 0 1 180 100"
-          stroke="#E5E7EB"
-          strokeWidth="12"
-          strokeLinecap="round"
+          d="M20 120 A100 100 0 0 1 220 120"
+          stroke="#002057" 
+          strokeWidth="16"
+          strokeDasharray="2,12"
+          fill="none"
         />
-
-        {/* Ticks / Garis Putus-putus Penanda */}
-        <path
-          d="M20 100 A80 80 0 0 1 180 100"
-          stroke="white"
-          strokeWidth="14"
-          strokeDasharray="1, 10" // Membuat garis kecil-kecil
-          className="opacity-50"
-        />
-
-        {/* Jalur Progress (Warna Utama) */}
+        
+        {/* Jalur Animasi (Garis Putih yang Mengisi Sesuai Nilai) */}
         <motion.path
-          d="M20 100 A80 80 0 0 1 180 100"
-          stroke="url(#gradientGauge)" // Menggunakan Gradasi
-          strokeWidth="12"
-          strokeLinecap="round"
-          initial={{ strokeDashoffset: circumference }}
-          whileInView={{ strokeDashoffset: dashOffset }}
+          d="M20 120 A100 100 0 0 1 220 120"
+          stroke="#ffffff" 
+          strokeWidth="16"
+          strokeDasharray="2, 12"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: value / 100 }}
           viewport={{ once: true }}
           transition={{ duration: 2, ease: "circOut" }}
-          style={{
-            strokeDasharray: circumference,
-          }}
         />
-
-        {/* Definisi Gradasi Warna */}
-        <defs>
-          <linearGradient id="gradientGauge" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#3B82F6" />
-            <stop offset="100%" stopColor="#1E40AF" />
-          </linearGradient>
-        </defs>
       </svg>
 
-      {/* Angka di Tengah */}
-      <div className="absolute inset-0 flex flex-col items-center justify-end pb-2">
-        <motion.span className="text-5xl font-semibold text-[#004267] tracking-tighter">
+      {/* Kontainer Angka - PERBAIKAN: Posisi Flex ditingkatkan agar tidak menumpuk */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center pt-8">
+        <motion.span className="text-5xl font-black text-white tracking-tighter">
           {rounded}
         </motion.span>
-        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">
+        <span className="text-[10px] font-bold text-cyan-400/60 uppercase tracking-[0.2em] mt-1">
           Efektivitas
         </span>
       </div>
       
-      {/* Efek Glow di bawah angka saat hover */}
-      <div className="absolute bottom-4 w-20 h-4 bg-blue-500/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Glow Effect */}
+      <div className="absolute bottom-6 w-24 h-4 bg-cyan-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   );
 }

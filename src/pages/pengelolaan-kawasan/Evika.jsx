@@ -15,7 +15,7 @@ export default function Evika() {
       style={{ backgroundImage: "url('/images/Foto 7-2 oleh Nikka Gunadharma.jpg')" }}
     >
 
-      <Navbar />
+      <Navbar color="#194484" />
 
       {/* Hero Section (Transparan, hanya konten) */}
       <section className="relative h-[60vh] flex flex-col items-center justify-center text-gray-200">
@@ -41,9 +41,9 @@ export default function Evika() {
 
 
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
-        <div className="bg-[#004267]/80 rounded-xl p-10 text-gray-200 space-y-24">
+        <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           {/* Statistik & Siapa Kami */}
-          <section className="max-w-7xl mx-auto py-24 px-8">
+          <section className="max-w-7xl mx-auto py-24 px-8 space-y-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -76,7 +76,7 @@ export default function Evika() {
                     transition: { duration: 0.8, ease: "easeOut" }
                   }
                 }} className="text-gray-200 text-lg leading-relaxed text-justify">
-                  Evika (Evaluasi Efektivitas Pengelolaan Kawasan Konservasi) adalah perangkat ukur yang bertujuan untuk menilai “efektivitas pengelolaan kawasan” yang “mempunyai standar yang sama dan layak untuk dijadikan acuan” untuk meningkatkan “kualitas pengelolaan, kualitas kinerja, kualitas perencanaan, dan menjadi sistem pemantauan pengelolaan kawasan konservasi bagi pengambil kebijakan, SUOP dan pemangku kepentingan terkait” (Pedoman Teknis EVIKA).
+                  Evika adalah singkatan dari Evaluasi Efektivitas Pengelolaan Kawasan Konservasi, yang merupakan perangkat ukur yang bertujuan untuk menilai “efektivitas pengelolaan kawasan” yang “mempunyai standar yang sama dan layak untuk dijadikan acuan” untuk meningkatkan “kualitas pengelolaan, kualitas kinerja, kualitas perencanaan, dan menjadi sistem pemantauan pengelolaan kawasan konservasi bagi pengambil kebijakan, SUOP dan pemangku kepentingan terkait” (disadur dari Pedoman Teknis EVIKA).
                 </motion.p>
               </div>
             </motion.div>
@@ -102,7 +102,7 @@ export default function Evika() {
                     transition: { duration: 0.8, ease: "easeOut" }
                   }
                 }} className="text-white text-4xl font-bold">
-                  Aspek Penilaian
+                  Aspek Penilaian EVIKA
                 </motion.h2>
                 <motion.p variants={{
                   hidden: { opacity: 0, y: 30 },
@@ -112,7 +112,7 @@ export default function Evika() {
                     transition: { duration: 0.8, ease: "easeOut" }
                   }
                 }} className="text-gray-300 mt-4 max-w-5xl mx-auto font-light leading-relaxed">
-                  Penilaian EVIKA meliputi beberapa aspek, mulai dari tata kelola, sumber daya kawasan, target konservasi, sosial, ekonomi, dan budaya yang dirinci menjadi indikator oleh tim ahli dari Kementerian Kelautan dan Perikanan.
+                  Penilaian EVIKA meliputi beberapa aspek, mulai dari tata kelola, sumber daya kawasan, target konservasi, sosial, ekonomi, dan budaya, yang lalu diperinci menjadi beragam kriteria dan indikator yang dinilai oleh sebuah tim yang dibentuk oleh Direktur Jenderal Pengelolaan Ruang Laut dan terdiri atas perwakilan dari Kementerian Kelautan dan Perikanan serta pemangku kepentingan lainnya.
                 </motion.p>
               </div>
 
@@ -130,7 +130,7 @@ export default function Evika() {
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0 }
                     }}
-                    className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md hover:bg-white/10 transition-all group"
+                    className="bg-white/10 border border-white/10 p-8 rounded-3xl backdrop-blur-md hover:bg-white/20 transition-all group"
                   >
                     <div className="mb-6">{aspek.icon}</div>
                     <h3 className="text-white text-2xl font-bold mb-6">{aspek.title}</h3>
@@ -148,9 +148,9 @@ export default function Evika() {
             </motion.div>
 
             {/* Capaian Kami Section */}
-            <div className="mt-40 border-t border-white/10 pt-24">
-              <div className="flex justify-between items-end mb-16">
-                <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight">Capaian Kami</h2>
+            <div className="mt-40 border-t border-white/10 pt-24 space-y-16">
+              <div className="flex justify-between items-end">
+                <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight">Nilai Pengelolaan Kami – Tahun 2026</h2>
                 <button className="text-blue-400 hover:text-white transition-colors text-sm font-medium tracking-widest flex items-center gap-2">
                   SELENGKAPNYA <span>→</span>
                 </button>
@@ -159,22 +159,22 @@ export default function Evika() {
               {/* Grid Capaian */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
-                  { label: "Input", val: 75, icon: <LogIn className="w-6 h-6 text-[#004267]" /> },
-                  { label: "Proses", val: 82, icon: <RefreshCcw className="w-6 h-6 text-[#004267]" /> },
-                  { label: "Output", val: 68, icon: <LogOut className="w-6 h-6 text-[#004267]" /> },
-                  { label: "Outcome", val: 90, icon: <BarChart3 className="w-6 h-6 text-[#004267]" /> },
+                  { label: "Dasbor Input", val: 75, icon: <LogIn className="w-6 h-6 text-blue-400" /> },
+                  { label: "Dasbor Proses", val: 82, icon: <RefreshCcw className="w-6 h-6 text-green-400" /> },
+                  { label: "Dasbor Output", val: 68, icon: <LogOut className="w-6 h-6 text-yellow-400" /> },
+                  { label: "Dasbor Outcome", val: 90, icon: <BarChart3 className="w-6 h-6 text-purple-400" /> },
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
                     whileHover={{ y: -10 }}
-                    className="bg-white p-8 rounded-[2.5rem] flex flex-col items-center text-center shadow-2xl relative overflow-hidden"
+                    className="bg-white/10 p-8 rounded-3xl flex flex-col items-center text-center shadow-2xl relative overflow-hidden"
                   >
                     {/* Logo/Icon di bagian atas label */}
-                    <div className="flex items-center gap-3 mb-8">
-                      <div className="p-2 bg-blue-50 rounded-lg">
+                    <div className="w-full flex flex-col items-start gap-8 mb-8">
+                      <div className="p-2 bg-white/20 rounded-lg">
                         {item.icon}
                       </div>
-                      <span className="text-[#004267] font-bold text-lg uppercase tracking-widest">
+                      <span className="text 2xl text-white font-bold uppercase tracking-widest">
                         {item.label}
                       </span>
                     </div>
@@ -193,6 +193,7 @@ export default function Evika() {
                   </motion.div>
                 ))}
               </div>
+              <p className="italic">Klik <a href="/Pedoman Teknis Evika.pdf" target="_blank" className="underline">di sini</a>  untuk mengunduh Pedoman Teknis Evika.</p>
             </div>
           </section>
         </div>
