@@ -6,9 +6,9 @@ export default function Sejarah() {
   const timelineData = [
     {
       year: "55.000",
-      subYear: "tahun lalu",
+      subYear: "Tahun Lalu",
       title: "Jejak Awal Manusia ‘Modern’",
-      description: "Berdasarkan jurnal ilmiah yang terbit pada tahun 2024 lalu, manusia modern (Homo sapiens) sudah ‘mengunjungi Raja Ampat sekitar 55.000 tahun lalu.’ Tim arkeologis yang terdiri atas peneliti dari Australia, Selandia Baru dan Indonesia tersebut didasari atas penemuan di Gua Mololo di Pulau Waigeo yang lalu dikembangkan menjadi dua teori rute migrasi, yaitu rute utara dan rute selatan (Disadur dari National Geographic, 4 September 2024)."
+      description: "Berdasarkan jurnal ilmiah yang terbit pada tahun 2024 lalu, manusia modern (Homo sapiens) sudah ‘mengunjungi Raja Ampat sekitar 55.000 tahun lalu.’ Temuan dari tim arkeologis yang terdiri atas peneliti dari Australia, Selandia Baru dan Indonesia tersebut didasari atas penemuan di Gua Mololo di Pulau Waigeo yang lalu dikembangkan menjadi dua teori rute migrasi, yaitu rute utara dan rute selatan (Disadur dari National Geographic, 4 September 2024)."
     },
     {
       year: "Abad 15",
@@ -154,7 +154,7 @@ export default function Sejarah() {
                   Jantung' Segi Tiga Terumbu Karang
                 </h3>
                 <p className="text-gray-200 text-sm md:text-base leading-relaxed">
-                  Pada tahun 2002, sebuah tim yang terdiri atas ilmuwan dari Indonesia dan mancanegara memublikasikan <a target="_blank" className="underline font-bold" href={'/A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia.pdf'}>“A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia”</a>. Penelitian tersebut merupakan tonggak awal masyarakat dan pemangku kepentingan di Raja Ampat dalam mengembangkan pengelolaan kawasan konservasi perairan beserta pemanfaatannya yang berkelanjutan.
+                  Pada tahun 2002, sebuah tim yang terdiri atas ilmuwan dari Indonesia dan mancanegara memublikasikan <a target="_blank" className="underline font-bold" href={'/A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia.pdf'}>“A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia”</a>. Penelitian tersebut menjadi referensi ilmiah bagi masyarakat dan pemangku kepentingan di Raja Ampat dalam mengembangkan pengelolaan kawasan konservasi perairan beserta pemanfaatannya yang berkelanjutan.
                 </p>
               </div>
             </motion.div>
