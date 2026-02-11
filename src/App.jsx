@@ -13,8 +13,9 @@ import Berita from "@/pages/informasi-terkini/Berita";
 import KalenderKegiatan from "@/pages/informasi-terkini/KalenderKegiatan";
 import KawasanKonservasi from "@/pages/KawasanKonservasi";
 import PetaKawasan from "@/pages/PetaKawasan";
-import PanduanKunjungan from "@/pages/layanan-kami/PanduanKunjungan";
-import Kolaborasi from "@/pages/layanan-kami/Kolaborasi";
+import PanduanKunjungan from "@/pages/layanan/PanduanKunjungan";
+import Kolaborasi from "@/pages/layanan/Kolaborasi";
+import Rams from "@/pages/layanan/Rams";
 import NotFound from "@/pages/NotFound";
 
 export default function App() {
@@ -33,8 +34,9 @@ export default function App() {
         <Route path="/tentang/sosial-budaya" element={<SosialBudaya />} />
         <Route path="/informasi-terkini/berita" element={<Berita />} />
         <Route path="/informasi-terkini/kalender-kegiatan" element={<KalenderKegiatan />} />
-        <Route path="/layanan-kami/panduan-kunjungan" element={<PanduanKunjungan />} />
-        <Route path="/layanan-kami/kolaborasi" element={<Kolaborasi />} />
+        <Route path="/layanan/panduan-kunjungan" element={<PanduanKunjungan />} />
+        <Route path="/layanan/kolaborasi" element={<Kolaborasi />} />
+        <Route path="/layanan/rams" element={<Rams />} />
         <Route path="/kawasan-konservasi" element={<KawasanKonservasi />} />
         <Route path="/peta-kawasan" element={<PetaKawasan />} />
         <Route path="*" element={<NotFound />} />

@@ -1,11 +1,10 @@
-"use client";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "@/app/Component/Navbar";
 import { FileText, Download, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
 
 
-const DownloadButton = ({ links, label }: { links: any, label: string }) => {
+const DownloadButton = ({ links }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Jika links hanya berupa string tunggal (1 file)
@@ -15,7 +14,7 @@ const DownloadButton = ({ links, label }: { links: any, label: string }) => {
         href={links}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
+        className="shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
       >
         <Download className="w-4 h-4" />
         Unduh PDF
@@ -30,7 +29,7 @@ const DownloadButton = ({ links, label }: { links: any, label: string }) => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex-shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
+        className="shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
       >
         <Download className="w-4 h-4" />
         Unduh PDF ({fileEntries.length})
@@ -49,7 +48,7 @@ const DownloadButton = ({ links, label }: { links: any, label: string }) => {
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
               className="absolute right-0 mt-2 w-64 bg-[#194484] border border-white/20 rounded-2xl shadow-2xl z-50 overflow-hidden backdrop-blur-xl"
             >
-              {fileEntries.map(([key, url]: any, index) => (
+              {fileEntries.map(([key, url]) => (
                 <a
                   key={key}
                   href={url.link}
@@ -152,7 +151,7 @@ export default function DasarHukum() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative bg-white/10 hover:bg-white/10 border border-white/10 rounded-[2rem] p-8 transition-all duration-500 backdrop-blur-sm flex flex-col md:flex-row gap-8 items-start md:items-center"
+                  className="group relative bg-white/10 hover:bg-white/10 border border-white/10 rounded-4xl p-8 transition-all duration-500 backdrop-blur-sm flex flex-col md:flex-row gap-8 items-start md:items-center"
                 >
                   {/* Logo Transparan Background (Watermark gaya sebelumnya) */}
                   <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
@@ -160,12 +159,12 @@ export default function DasarHukum() {
                   </div>
 
                   {/* Ikon File */}
-                  <div className="flex-shrink-0 w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:scale-110 transition-transform duration-500">
+                  <div className="shrink-0 w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:scale-110 transition-transform duration-500">
                     <FileText className="text-white w-8 h-8" />
                   </div>
 
                   {/* Konten Teks */}
-                  <div className="flex-grow space-y-2">
+                  <div className="grow space-y-2">
                     <h3 className="text-blue-400 font-bold text-xl tracking-wide">{item.uu}</h3>
                     <h4 className="text-white text-lg font-medium">Tentang {item.tentang}</h4>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-3xl font-light">
@@ -174,7 +173,7 @@ export default function DasarHukum() {
                   </div>
 
                   {/* Tombol Download */}
-                  <DownloadButton links={item.link} label={item.uu} />
+                  <DownloadButton links={item.link} />
                 </motion.div>
               ))}
             </div>

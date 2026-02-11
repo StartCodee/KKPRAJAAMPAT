@@ -15,7 +15,7 @@ export default function Navbar({color = '#004267' }) {
 
                 {/* LOGO */}
                 <div className="text-xl font-bold tracking-[0.2em] cursor-pointer">
-                    <img src="/images/[Logo] BLUD UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat Latest - Putih.png" className="h-[60px] w-auto" alt="Logo" />
+                    <img src="/images/[Logo] BLUD UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat Latest - Putih.png" className="h-15 w-auto" alt="Logo" />
                 </div>
 
                 {/* MENU UTAMA */}
@@ -35,7 +35,7 @@ export default function Navbar({color = '#004267' }) {
                             {openTentang && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link to="/tentang/pengelolaan-kawasan" className="block px-6 py-2 normal-case tracking-normal">Pengelolaan Kawasan</Link>
@@ -71,7 +71,7 @@ export default function Navbar({color = '#004267' }) {
                             {openPK && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link to="/pengelolaan-kawasan/dasar-hukum" className="block px-6 py-2 normal-case tracking-normal">Dasar Hukum</Link>
@@ -104,7 +104,7 @@ export default function Navbar({color = '#004267' }) {
                             {openKawasan && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Penelitian</li>
                                     <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Pengaduan</li>
@@ -120,29 +120,29 @@ export default function Navbar({color = '#004267' }) {
                         onMouseLeave={() => setOpenLayanan(false)}
                     >
                         <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openLayanan ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
-                            Layanan Kami
+                            Layanan
                             <svg className={`w-3 h-3 transition-transform ${openLayanan ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
                         </div>
                         <AnimatePresence>
                             {openLayanan && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link href="/layanan/panduan-kunjungan" className="block px-6 py-2 normal-case tracking-normal">Panduan Kunjungan</Link>
+                                        <Link to="/layanan/panduan-kunjungan" className="block px-6 py-2 normal-case tracking-normal">Panduan Kunjungan</Link>
                                     </li>
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link href="/layanan/marine-park-fee" className="block px-6 py-2 normal-case tracking-normal">Marine Park Fee</Link>
+                                        <Link to="/layanan/marine-park-fee" className="block px-6 py-2 normal-case tracking-normal">Marine Park Fee</Link>
                                     </li>
                                      <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link href="/layanan/rams" className="block px-6 py-2 normal-case tracking-normal">Raja Ampat Mooring System</Link>
+                                        <Link to="/layanan/rams" className="block px-6 py-2 normal-case tracking-normal">Raja Ampat Mooring System</Link>
                                     </li>
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link href="/layanan/sispandalwas" className="block px-6 py-2 normal-case tracking-normal">SISPANDALWAS</Link>
+                                        <Link to="/layanan/sispandalwas" className="block px-6 py-2 normal-case tracking-normal">SISPANDALWAS</Link>
                                     </li>
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link href="/layanan/kolaborasi" className="block px-6 py-2 normal-case tracking-normal">Kolaborasi</Link>
+                                        <Link to="/layanan/kolaborasi" className="block px-6 py-2 normal-case tracking-normal">Kolaborasi</Link>
                                     </li>                    
                                 </motion.ul>
                             )}
@@ -163,7 +163,7 @@ export default function Navbar({color = '#004267' }) {
                             {openInformasiTerkini && (
                                 <motion.ul
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-[220px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link to="/informasi-terkini/berita" className="block px-6 py-2 normal-case tracking-normal">Berita dari Lapangan</Link>

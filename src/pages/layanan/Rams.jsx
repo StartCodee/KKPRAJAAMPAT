@@ -1,7 +1,6 @@
-"use client";
 import { motion } from "framer-motion";
-import Navbar from "@/app/Component/Navbar";
 import { ShieldCheck, Anchor, Zap, Quote } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 export default function Rams() {
   return (
@@ -9,7 +8,6 @@ export default function Rams() {
       className="min-h-screen bg-fixed bg-center bg-cover"
       style={{ backgroundImage: "url('/images/RAMS.png')" }}
     >
-
       <Navbar />
 
       {/* Hero Section (Transparan, hanya konten) */}
@@ -21,7 +19,7 @@ export default function Rams() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-bold tracking-tight"
           >
-            Layanan Kami
+            Layanan
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -34,41 +32,38 @@ export default function Rams() {
         </div>
       </section>
 
-
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
         <div className="bg-[#004267]/80 rounded-xl p-10 text-gray-200 space-y-24">
-
-
           {/* Deskripsi RAMS */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={
-              {
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.2 }
-                }
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.2 }
               }
-            }
+            }}
             className="mb-24"
           >
-            <motion.h2 variants={
-              {
+            <motion.h2
+              variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-              }
-            } className="text-white text-4xl md:text-5xl font-bold mb-8">
+              }}
+              className="text-white text-4xl md:text-5xl font-bold mb-8"
+            >
               Apa itu Raja Ampat Mooring System?
             </motion.h2>
-            <motion.p variants={
-              {
+            <motion.p
+              variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-              }
-            } className="text-gray-200 text-lg leading-relaxed text-justify font-light">
+              }}
+              className="text-gray-200 text-lg leading-relaxed text-justify font-light"
+            >
               Raja Ampat Mooring System (RAMS) adalah sistem tambat labuh ramah lingkungan berupa pelampung tambat (mooring buoy) yang dipasang di kawasan konservasi perairan Raja Ampat. Sistem ini bertujuan melindungi terumbu karang dari kerusakan akibat jangkar kapal wisata, meningkatkan keamanan tambat, serta mendukung pariwisata berkelanjutan.
             </motion.p>
           </motion.div>
@@ -125,8 +120,8 @@ export default function Rams() {
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-blue-400/20">
               <Quote size={80} fill="currentColor" />
             </div>
-            <div className="bg-gradient-to-br from-blue-900/40 to-black/40 border border-white/10 p-12 rounded-[3rem] text-center">
-              <p className="text-gray-200 text-xl md:text-2xl font-light leading-relaxed italic italic max-w-4xl mx-auto">
+            <div className="bg-linear-to-br from-blue-900/40 to-black/40 border border-white/10 p-12 rounded-[3rem] text-center">
+              <p className="text-gray-200 text-xl md:text-2xl font-light leading-relaxed italic max-w-4xl mx-auto">
                 "Merusak karang adalah kejahatan di Raja Ampat dan akan mengakibatkan tindakan terhadap pelaku, yang, tergantung pada parahnya kerusakan dapat mengakibatkan denda hingga <span className="text-blue-400 font-bold">200 juta Rupiah Indonesia</span> per unit kerusakan, dan / atau hukuman penjara hingga <span className="text-blue-400 font-bold">sepuluh tahun</span>."
               </p>
             </div>
@@ -138,7 +133,7 @@ export default function Rams() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-white p-4 rounded-[3rem] shadow-2xl overflow-hidden aspect-video md:aspect-[21/9]"
+              className="bg-white p-4 rounded-[3rem] shadow-2xl overflow-hidden aspect-video md:aspect-21/9"
             >
               {/* Tempatkan Iframe Peta atau Image Peta di sini */}
               <div className="w-full h-full bg-gray-200 rounded-[2.5rem] flex items-center justify-center relative group cursor-crosshair">
@@ -156,6 +151,6 @@ export default function Rams() {
           </div>
         </div>
       </section>
-    </main >
+    </main>
   );
 }
