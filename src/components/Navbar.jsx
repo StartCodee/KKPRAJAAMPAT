@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
 
-export default function Navbar({color = '#004267' }) {
+export default function Navbar({ color = '#004267' }) {
     const [openTentang, setOpenTentang] = useState(false);
     const [openPK, setOpenPK] = useState(false);
     const [openKawasan, setOpenKawasan] = useState(false);
@@ -106,8 +106,9 @@ export default function Navbar({color = '#004267' }) {
                                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
                                     style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
                                 >
-                                    <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Penelitian</li>
-                                    <li className="px-6 py-2 hover:bg-black/40 transition-all cursor-pointer normal-case tracking-normal">Pengaduan</li>
+                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                        <Link to="/kawasan-kelola-kami/kepulauan-asia-dan-ayau" className="block px-6 py-2 normal-case tracking-normal">KKP Kepulauan Asia dan Ayau</Link>
+                                    </li>
                                 </motion.ul>
                             )}
                         </AnimatePresence>
@@ -135,7 +136,7 @@ export default function Navbar({color = '#004267' }) {
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link to="/layanan/marine-park-fee" className="block px-6 py-2 normal-case tracking-normal">Marine Park Fee</Link>
                                     </li>
-                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
+                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link to="/layanan/rams" className="block px-6 py-2 normal-case tracking-normal">Raja Ampat Mooring System</Link>
                                     </li>
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
@@ -143,7 +144,7 @@ export default function Navbar({color = '#004267' }) {
                                     </li>
                                     <li className="hover:bg-black/40 transition-all cursor-pointer">
                                         <Link to="/layanan/kolaborasi" className="block px-6 py-2 normal-case tracking-normal">Kolaborasi</Link>
-                                    </li>                    
+                                    </li>
                                 </motion.ul>
                             )}
                         </AnimatePresence>

@@ -17,12 +17,14 @@ import PanduanKunjungan from "@/pages/layanan/PanduanKunjungan";
 import Kolaborasi from "@/pages/layanan/Kolaborasi";
 import Rams from "@/pages/layanan/Rams";
 import NotFound from "@/pages/NotFound";
+import KepulauanAsiaDanAyau from "@/pages/kawasan-kelola-kami/KepulauanAsiaDanAyau";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/kawasan-kelola-kami/kepulauan-asia-dan-ayau" element={<KepulauanAsiaDanAyau />} />
         <Route path="/pengelolaan-kawasan/dasar-hukum" element={<DasarHukum />} />
         <Route path="/pengelolaan-kawasan/aturan-dan-regulasi" element={<AturanRegulasi />} />
         <Route path="/pengelolaan-kawasan/tugas-pokok-dan-fungsi" element={<TugasPokokFungsi />} />
