@@ -16,7 +16,7 @@ export default function Navbar({color = '#004267' }) {
 
                 {/* LOGO */}
                 <div className="text-xl font-bold tracking-[0.2em] cursor-pointer">
-                    <img src="/images/[Logo] BLUD UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat Latest - Transparent.png" className="h-[60px] w-auto" alt="Logo" />
+                    <img src="/images/[Logo] BLUD UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat Latest - Putih.png" className="h-[60px] w-auto" alt="Logo" />
                 </div>
 
                 {/* MENU UTAMA */}
