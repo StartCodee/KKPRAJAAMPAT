@@ -111,8 +111,8 @@ export default function TugasPokokDanFungsi() {
     },
     EN: {
       heroTitle: "MPAs Management",
-      heroSub: "Main Tasks and Functions",
-      mainTitle: "Main Tasks",
+      heroSub: "Tasks and Functions",
+      mainTitle: "Tasks",
       mainDesc: "According to Raja Ampat MPAs Management Authority’s Strategic Plan Document for 2024 to 2029 , the tasks of the management authority are to assist the Southwest Papua’s Head of Marine and Fisheries to technically implement efforts of protection, utilisation, and preservation of Raja Ampat MPAs. Those tasks are then specified as various functions that are inseparable from one another.",
       functionTitle: "Functions",
       btnDoc: "Strategic Plan Document for 2024 to 2029 (PDF)",

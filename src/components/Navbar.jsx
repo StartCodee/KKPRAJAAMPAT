@@ -68,9 +68,9 @@ export default function Navbar({ color = '#004267' }) {
                 label: "About",
                 items: [
                     { name: "Area Management", path: "/tentang/pengelolaan-kawasan" },
-                    { name: "Beauty of Raja Ampat", path: "/tentang/keindahan-raja-ampat" },
+                    { name: "The Beauty of Raja Ampat", path: "/tentang/keindahan-raja-ampat" },
                     { name: "History", path: "/tentang/sejarah" },
-                    { name: "Socio-Culture", path: "/tentang/sosial-budaya" },
+                    { name: "Sociocultural", path: "/tentang/sosial-budaya" },
                     { name: "Threats", path: "/tentang/ancaman" }
                 ]
             },
@@ -78,8 +78,8 @@ export default function Navbar({ color = '#004267' }) {
                 label: "MPAs Management",
                 items: [
                     { name: "Legal Basis", path: "/pengelolaan-kawasan/dasar-hukum" },
-                    { name: "Rules and Regulations", path: "/pengelolaan-kawasan/aturan-dan-regulasi" },
-                    { name: "Main Tasks and Functions", path: "/pengelolaan-kawasan/tugas-pokok-dan-fungsi" },
+                    { name: "Regulations", path: "/pengelolaan-kawasan/aturan-dan-regulasi" },
+                    { name: "Tasks and Functions", path: "/pengelolaan-kawasan/tugas-pokok-dan-fungsi" },
                     { name: "EVIKA", path: "/pengelolaan-kawasan/evika" }
                 ]
             },
