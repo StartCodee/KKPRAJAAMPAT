@@ -3,11 +3,113 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
 
 export default function Navbar({ color = '#004267' }) {
-    const [openTentang, setOpenTentang] = useState(false);
-    const [openPK, setOpenPK] = useState(false);
-    const [openKawasan, setOpenKawasan] = useState(false);
-    const [openLayanan, setOpenLayanan] = useState(false);
-    const [openInformasiTerkini, setOpenInformasiTerkini] = useState(false);
+    // Ambil bahasa dari localStorage saat pertama kali load, jika tidak ada pakai 'ID'
+    const [lang, setLang] = useState(() => {
+        return localStorage.getItem('app_lang') || 'ID';
+    });
+
+    // Update localStorage setiap kali bahasa diubah
+    const handleLangChange = (newLang) => {
+        setLang(newLang);
+        localStorage.setItem('app_lang', newLang);
+    };
+
+    // State untuk kontrol buka/tutup dropdown
+    const [openDropdown, setOpenDropdown] = useState(null);
+
+    // Objek Data Menu (Terjemahan & Link)
+    const menuData = {
+        ID: {
+            tentang: {
+                label: "Tentang",
+                items: [
+                    { name: "Pengelolaan Kawasan", path: "/tentang/pengelolaan-kawasan" },
+                    { name: "Keindahan Raja Ampat", path: "/tentang/keindahan-raja-ampat" },
+                    { name: "Sejarah", path: "/tentang/sejarah" },
+                    { name: "Sosial Budaya", path: "/tentang/sosial-budaya" },
+                    { name: "Ancaman", path: "/tentang/ancaman" }
+                ]
+            },
+            pengelolaan: {
+                label: "Pengelolaan Kawasan",
+                items: [
+                    { name: "Dasar Hukum", path: "/pengelolaan-kawasan/dasar-hukum" },
+                    { name: "Aturan dan Regulasi", path: "/pengelolaan-kawasan/aturan-dan-regulasi" },
+                    { name: "Tugas Pokok dan Fungsi", path: "/pengelolaan-kawasan/tugas-pokok-dan-fungsi" },
+                    { name: "EVIKA", path: "/pengelolaan-kawasan/evika" }
+                ]
+            },
+            kawasan: {
+                label: "Kawasan Kelola Kami",
+                items: [
+                    { name: "KKP Kepulauan Asia dan Ayau", path: "/kawasan-kelola-kami/kepulauan-asia-dan-ayau" }
+                ]
+            },
+            layanan: {
+                label: "Layanan",
+                items: [
+                    { name: "Panduan Kunjungan", path: "/layanan/panduan-kunjungan" },
+                    { name: "Marine Park Fee", path: "/layanan/marine-park-fee" },
+                    { name: "Raja Ampat Mooring System", path: "/layanan/rams" },
+                    { name: "SISPANDALWAS", path: "/layanan/sispandalwas" },
+                    { name: "Kolaborasi", path: "/layanan/kolaborasi" }
+                ]
+            },
+            informasi: {
+                label: "Informasi Terkini",
+                items: [
+                    { name: "Berita dari Lapangan", path: "/informasi-terkini/berita" },
+                    { name: "Kalender Kegiatan", path: "/informasi-terkini/kalender-kegiatan" }
+                ]
+            }
+        },
+        EN: {
+            tentang: {
+                label: "About",
+                items: [
+                    { name: "Area Management", path: "/tentang/pengelolaan-kawasan" },
+                    { name: "Beauty of Raja Ampat", path: "/tentang/keindahan-raja-ampat" },
+                    { name: "History", path: "/tentang/sejarah" },
+                    { name: "Socio-Culture", path: "/tentang/sosial-budaya" },
+                    { name: "Threats", path: "/tentang/ancaman" }
+                ]
+            },
+            pengelolaan: {
+                label: "MPAs Management",
+                items: [
+                    { name: "Legal Basis", path: "/pengelolaan-kawasan/dasar-hukum" },
+                    { name: "Rules and Regulations", path: "/pengelolaan-kawasan/aturan-dan-regulasi" },
+                    { name: "Main Tasks and Functions", path: "/pengelolaan-kawasan/tugas-pokok-dan-fungsi" },
+                    { name: "EVIKA", path: "/pengelolaan-kawasan/evika" }
+                ]
+            },
+            kawasan: {
+                label: "Our MPA",
+                items: [
+                    { name: "Asia and Ayau Islands MPA", path: "/kawasan-kelola-kami/kepulauan-asia-dan-ayau" }
+                ]
+            },
+            layanan: {
+                label: "Our Services",
+                items: [
+                    { name: "Visit Guide", path: "/layanan/panduan-kunjungan" },
+                    { name: "Marine Park Fee", path: "/layanan/marine-park-fee" },
+                    { name: "Raja Ampat Mooring System", path: "/layanan/rams" },
+                    { name: "SISPANDALWAS", path: "/layanan/sispandalwas" },
+                    { name: "Collaboration", path: "/layanan/kolaborasi" }
+                ]
+            },
+            informasi: {
+                label: "Updates",
+                items: [
+                    { name: "News from the Field", path: "/informasi-terkini/berita" },
+                    { name: "Activity Calendar", path: "/informasi-terkini/kalender-kegiatan" }
+                ]
+            }
+        }
+    };
+
+    const t = menuData[lang];
 
     return (
         <nav style={{ backgroundColor: `${color}E6` }} className={`fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md py-4 shadow-2xl`}>
@@ -19,167 +121,59 @@ export default function Navbar({ color = '#004267' }) {
                 </div>
 
                 {/* MENU UTAMA */}
-                <ul className="hidden xl:flex gap-10 text-[11px] tracking-[0.2em] uppercase font-medium items-center">
+                <ul className="hidden xl:flex gap-8 text-[10px] tracking-[0.2em] uppercase font-bold items-center">
 
-                    {/* DROPDOWN TENTANG */}
-                    <li
-                        className="relative py-2"
-                        onMouseEnter={() => setOpenTentang(true)}
-                        onMouseLeave={() => setOpenTentang(false)}
-                    >
-                        <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openTentang ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
-                            Tentang
-                            <svg className={`w-3 h-3 transition-transform ${openTentang ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
-                        </div>
-                        <AnimatePresence>
-                            {openTentang && (
-                                <motion.ul
-                                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
-                                >
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/tentang/pengelolaan-kawasan" className="block px-6 py-2 normal-case tracking-normal">Pengelolaan Kawasan</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/tentang/keindahan-raja-ampat" className="block px-6 py-2 normal-case tracking-normal">Keindahan Raja Ampat</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/tentang/sejarah" className="block px-6 py-2 normal-case tracking-normal">Sejarah</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/tentang/sosial-budaya" className="block px-6 py-2 normal-case tracking-normal">Sosial Budaya</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/tentang/ancaman" className="block px-6 py-2 normal-case tracking-normal">Ancaman</Link>
-                                    </li>
-                                </motion.ul>
-                            )}
-                        </AnimatePresence>
-                    </li>
+                    {Object.keys(t).map((key) => (
+                        <li
+                            key={key}
+                            className="relative py-2"
+                            onMouseEnter={() => setOpenDropdown(key)}
+                            onMouseLeave={() => setOpenDropdown(null)}
+                        >
+                            <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openDropdown === key ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
+                                {t[key].label}
+                                <svg className={`w-3 h-3 transition-transform ${openDropdown === key ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
+                            </div>
 
-                    {/* DROPDOWN PENGELOLAAN KAWASAN */}
-                    <li
-                        className="relative py-2"
-                        onMouseEnter={() => setOpenPK(true)}
-                        onMouseLeave={() => setOpenPK(false)}
-                    >
-                        <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openPK ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
-                            Pengelolaan Kawasan
-                            <svg className={`w-3 h-3 transition-transform ${openPK ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
-                        </div>
-                        <AnimatePresence>
-                            {openPK && (
-                                <motion.ul
-                                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
-                                >
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/pengelolaan-kawasan/dasar-hukum" className="block px-6 py-2 normal-case tracking-normal">Dasar Hukum</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/pengelolaan-kawasan/aturan-dan-regulasi" className="block px-6 py-2 normal-case tracking-normal">Aturan dan Regulasi</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/pengelolaan-kawasan/tugas-pokok-dan-fungsi" className="block px-6 py-2 normal-case tracking-normal">Tugas Pokok dan Fungsi</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/pengelolaan-kawasan/evika" className="block px-6 py-2 normal-case tracking-normal">EVIKA</Link>
-                                    </li>
-                                </motion.ul>
-                            )}
-                        </AnimatePresence>
-                    </li>
-
-                    {/* DROPDOWN KAWASAN KELOLA KAMI */}
-                    <li
-                        className="relative py-2"
-                        onMouseEnter={() => setOpenKawasan(true)}
-                        onMouseLeave={() => setOpenKawasan(false)}
-                    >
-                        <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openKawasan ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
-                            Kawasan Kelola Kami
-                            <svg className={`w-3 h-3 transition-transform ${openKawasan ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
-                        </div>
-                        <AnimatePresence>
-                            {openKawasan && (
-                                <motion.ul
-                                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
-                                >
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/kawasan-kelola-kami/kepulauan-asia-dan-ayau" className="block px-6 py-2 normal-case tracking-normal">KKP Kepulauan Asia dan Ayau</Link>
-                                    </li>
-                                </motion.ul>
-                            )}
-                        </AnimatePresence>
-                    </li>
-
-                    {/* DROPDOWN LAYANAN */}
-                    <li
-                        className="relative py-2"
-                        onMouseEnter={() => setOpenLayanan(true)}
-                        onMouseLeave={() => setOpenLayanan(false)}
-                    >
-                        <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openLayanan ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
-                            Layanan
-                            <svg className={`w-3 h-3 transition-transform ${openLayanan ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
-                        </div>
-                        <AnimatePresence>
-                            {openLayanan && (
-                                <motion.ul
-                                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
-                                >
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/layanan/panduan-kunjungan" className="block px-6 py-2 normal-case tracking-normal">Panduan Kunjungan</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/layanan/marine-park-fee" className="block px-6 py-2 normal-case tracking-normal">Marine Park Fee</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/layanan/rams" className="block px-6 py-2 normal-case tracking-normal">Raja Ampat Mooring System</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/layanan/sispandalwas" className="block px-6 py-2 normal-case tracking-normal">SISPANDALWAS</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/layanan/kolaborasi" className="block px-6 py-2 normal-case tracking-normal">Kolaborasi</Link>
-                                    </li>
-                                </motion.ul>
-                            )}
-                        </AnimatePresence>
-                    </li>
-
-                    {/* DROPDOWN INFORMASI TERKINI */}
-                    <li
-                        className="relative py-2"
-                        onMouseEnter={() => setOpenInformasiTerkini(true)}
-                        onMouseLeave={() => setOpenInformasiTerkini(false)}
-                    >
-                        <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openInformasiTerkini ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
-                            Informasi Terkini
-                            <svg className={`w-3 h-3 transition-transform ${openInformasiTerkini ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
-                        </div>
-                        <AnimatePresence>
-                            {openInformasiTerkini && (
-                                <motion.ul
-                                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                                    style={{ backgroundColor: `${color}E6` }} className="absolute top-full left-0 min-w-55 rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
-                                >
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/informasi-terkini/berita" className="block px-6 py-2 normal-case tracking-normal">Berita dari Lapangan</Link>
-                                    </li>
-                                    <li className="hover:bg-black/40 transition-all cursor-pointer">
-                                        <Link to="/informasi-terkini/kalender-kegiatan" className="block px-6 py-2 normal-case tracking-normal">Kalender Kegiatan </Link>
-                                    </li>
-                                </motion.ul>
-                            )}
-                        </AnimatePresence>
-                    </li>
+                            <AnimatePresence>
+                                {openDropdown === key && (
+                                    <motion.ul
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        style={{ backgroundColor: `${color}F2` }}
+                                        className="absolute top-full left-0 min-w-[240px] rounded-xl mt-2 py-4 shadow-2xl border border-white/10"
+                                    >
+                                        {t[key].items.map((item, idx) => (
+                                            <li key={idx} className="hover:bg-black/20 transition-all">
+                                                <Link to={item.path} className="block px-6 py-2.5 normal-case tracking-normal font-medium text-[12px] hover:translate-x-1 transition-transform">
+                                                    {item.name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </motion.ul>
+                                )}
+                            </AnimatePresence>
+                        </li>
+                    ))}
                 </ul>
 
-                {/* LANGUAGE */}
-                <div className="font-bold text-xs tracking-widest cursor-pointer hover:bg-white hover:text-[#004267] px-3 py-1 border border-white/30 rounded transition-all">ID | EN</div>
+                {/* LANGUAGE TOGGLE */}
+                <div className="flex gap-2 font-bold text-xs tracking-widest uppercase">
+                    <span
+                        onClick={() => handleLangChange('ID')}
+                        className={`cursor-pointer px-2 py-1 rounded transition-all ${lang === 'ID' ? 'bg-white text-[#004267]' : 'hover:opacity-60'}`}
+                    >
+                        ID
+                    </span>
+                    <span className="opacity-40">|</span>
+                    <span
+                        onClick={() => handleLangChange('EN')}
+                        className={`cursor-pointer px-2 py-1 rounded transition-all ${lang === 'EN' ? 'bg-white text-[#004267]' : 'hover:opacity-60'}`}
+                    >
+                        EN
+                    </span>
+                </div>
             </div>
         </nav>
     )

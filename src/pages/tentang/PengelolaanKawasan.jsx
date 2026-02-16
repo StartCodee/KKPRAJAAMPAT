@@ -1,8 +1,92 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
 
 export default function PengelolaanKawasan() {
+  // 1. Logika Sinkronisasi Bahasa
+  const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem('app_lang') || 'ID');
+    };
+    window.addEventListener('storage', handleStorageChange);
+    // Interval check untuk perubahan di tab yang sama (opsional jika Navbar menggunakan Custom Event)
+    const interval = setInterval(handleStorageChange, 500);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
+
+  // 2. Data Terjemahan Konten
+  const content = {
+    ID: {
+      heroTitle: "Tentang",
+      heroSub: "Pengelolaan Kawasan",
+      whoTitle: "Siapa kami?",
+      whoDesc: (
+        <>
+          Badan Layanan Umum Daerah Unit Pelaksana Teknis Daerah (BLUD UPTD) Pengelolaan Kawasan Konservasi di Perairan (KKP) Kepulauan Raja Ampat adalah nama resmi kami sebagai Satuan Unit Organisasi Pengelola (SUOP) yang melaksanaan pengelolaan kawasan konservasi di <Link to="/kawasan-konservasi" className="underline font-bold">tujuh area</Link> seluas <Link to="/peta-kawasan" className="underline font-bold">1.982.396,39 hektare</Link>.
+        </>
+      ),
+      statArea: "Area",
+      statHectares: "Juta Hektare",
+      boxDesc: (
+        <>
+          Sebagai SUOP bagi KKP Kepulauan Raja Ampat, kami berwenang untuk mengelola pemanfaatan yang secara umum mencakup aktivitas perikanan, budi daya, pariwisata, penelitian dan pendidikan, pembangunan infrastruktur, pemanfaatan air laut (untuk tujuan selain energi), transportasi, serta pelaksanaan adat istiadat dan ritual keagamaan.
+          <br /><br />
+          SUOP KKP Kepulauan Raja Ampat berada di dalam lingkup Dinas Kelautan dan Perikanan Pemerintah Provinsi (Pemprov) Papua Barat Daya. Legalitas dan aspek pengelolaan diatur melalui regulasi di tingkat provinsi.
+          <br /><br />
+          Status “BLUD” memungkinkan kami untuk mengelola pendapatan dan pengeluaran dengan lebih fleksibel, seperti Tarif Jasa Lingkungan (TJL) dan hibah.
+        </>
+      ),
+      glanceTitle: "Sekilas Tentang Kawasan Kelola Kami",
+      glanceDesc: "Kawasan konservasi perairan adalah area laut dan pesisir yang dilindungi dan dikelola dengan sistem zonasi untuk menjaga keutuhan keanekaragaman dan sumber daya alam hayati.",
+      glanceLink: (
+        <>
+          Untuk keterangan lebih terperinci mengenai apa yang boleh dan tidak boleh dilakukan di KKP Kepulauan Raja Ampat, silakan <Link to="/layanan/panduan-kunjungan" className="underline font-bold">klik di sini</Link>.
+        </>
+      ),
+      historyDesc1: "Kawasan konservasi perairan di Raja Ampat berawal dari Deklarasi Tomolol pada tahun 2003, ketika masyarakat adat bersama pemerintah daerah mengemukakan niatan kolektif untuk melindungi area laut secara kolaboratif.",
+      historyDesc2: "Kini Jejaring KKP Kepulauan Raja Ampat terdiri atas 7 Area utama mencakup Ayau-Asia, Teluk Mayalibit, Selat Dampier, Kepulauan Misool, Kofiau-Boo, Kepulauan Fam, dan Misool Utara.",
+      caption: "Deklarasi masyarakat adat sebagai tonggak awal pembentukan kawasan konservasi perairan."
+    },
+    EN: {
+      heroTitle: "About",
+      heroSub: "Area Management",
+      whoTitle: "Who are we?",
+      whoDesc: (
+        <>
+          Raja Ampat MPAs Management Authority is the management unit responsible for <Link to="/kawasan-kelola-kami" className="underline font-bold"> seven MPAs totalling 1,982,396.39 hectares. </Link> We are authorised to manage utilisation activities that, in general, include fisheries, aquaculture, tourism, research and education, infrastructure development, seawater use (other than for energy purposes), transportation, and support for religious, cultural and customary activities.
+        </>
+      ),
+      statArea: "Areas",
+      statHectares: "Million Hectares",
+      boxDesc: (
+        <>
+          As the SUOP for Raja Ampat MPAs, we are authorized to manage utilization including fisheries, aquaculture, tourism, research, education, infrastructure, seawater utilization, transportation, and traditional rituals.
+          <br /><br />
+          The SUOP falls under the Marine and Fisheries Office of Southwest Papua Provincial Government. Legality and management aspects are governed by provincial regulations.
+          <br /><br />
+          “BLUD” status allows us more flexibility in managing income and expenses, such as Environmental Service Fees (TJL) and grants.
+        </>
+      ),
+      glanceTitle: "Our MPAs at a Glance",
+      glanceDesc: "MPA is part of the coastal and marine areas protected and managed through a zoning system to preserve the integrity of natural resources, biodiversity, and marine ecosystems that sustainably support local communities’ prosperity.",
+      glanceLink: (
+        <>
+          <Link to="/layanan/panduan-kunjungan" className="underline font-bold">Click here</Link> for the dos and don’ts in Raja Ampat MPAs.
+        </>
+      ),
+      historyDesc1: "MPAs in Raja Ampat began with Tomolol’s Declaration–now a part of Misool Islands MPA–in 2003, when Indigenous communities together with the local governments and NGOs conveyed their collective commitment to protect and manage a part of the sea collaboratively and emphasising the roles of the Indigenous people and their local wisdom.",
+      historyDesc2: "Now, the Raja Ampat MPAs Network consists of 100,008.99 hectares in Area I Ayau-Asia Islands MPA, Area II Mayalibit Bay MPA with 49,786.82 hectares, 353,440.54 hectares in Area III Dampier Strait MPA, Area IV Misool Islands MPA covers 348,518.74 hectares, 137,318.73 hectares in Area V Kofiau-Boo Islands MPA, 359,385.65 hectares of Area VI Fam Islands MPA, and Area VII North Misool MPA with 308,852 hectares.",
+      caption: "Indigenous community declaration as the initial milestone in MPA’s establishment."
+    }
+  };
+
+  const t = content[lang];
   return (
     <main
       className="min-h-screen bg-fixed bg-center bg-cover"
@@ -20,7 +104,7 @@ export default function PengelolaanKawasan() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-bold tracking-tight"
           >
-            Tentang
+            {t.heroTitle}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -28,7 +112,7 @@ export default function PengelolaanKawasan() {
             transition={{ delay: 0.5 }}
             className="text-2xl mt-2 font-light italic"
           >
-            Pengelolaan Kawasan
+            {t.heroSub}
           </motion.p>
         </div>
       </section>
@@ -60,7 +144,7 @@ export default function PengelolaanKawasan() {
                     transition: { duration: 0.8, ease: "easeOut" }
                   }
                 }} className="text-white text-5xl font-bold">
-                  Siapa kami?
+                  {t.whoTitle}
                 </motion.h2>
                 <motion.p variants={{
                   hidden: { opacity: 0, y: 30 },
@@ -70,7 +154,7 @@ export default function PengelolaanKawasan() {
                     transition: { duration: 0.8, ease: "easeOut" }
                   }
                 }} className="text-gray-200 text-lg leading-relaxed text-justify">
-                  Badan Layanan Umum Daerah Unit Pelaksana Teknis Daerah (BLUD UPTD) Pengelolaan Kawasan Konservasi di Perairan (KKP) Kepulauan Raja Ampat adalah nama resmi kami sebagai Satuan Unit Organisasi Pengelola (SUOP) yang melaksanaan pengelolaan kawasan konservasi di <Link to="/kawasan-konservasi" className="underline font-bold">tujuh area</Link> seluas <Link to="/peta-kawasan" className="underline font-bold">1.982.396,39 hektare</Link>.
+                  {t.whoDesc}
                 </motion.p>
               </div>
 
@@ -94,7 +178,7 @@ export default function PengelolaanKawasan() {
                   {/* Teks Content */}
                   <div className="relative z-10">
                     <span className="text-6xl font-bold block">7</span>
-                    <span className="text-xs tracking-widest opacity-70">Area</span>
+                    <span className="text-xs tracking-widest opacity-70">{t.statArea}</span>
                   </div>
                 </motion.div>
 
@@ -116,7 +200,7 @@ export default function PengelolaanKawasan() {
                   {/* Teks Content */}
                   <div className="relative z-10">
                     <span className="text-6xl font-bold block">1,9</span>
-                    <span className="text-xs tracking-widest opacity-70">Juta Hektare</span>
+                    <span className="text-xs tracking-widest opacity-70">{t.statHectares}</span>
                   </div>
                 </motion.div>
               </div>
@@ -143,11 +227,7 @@ export default function PengelolaanKawasan() {
                   }
                 }}
               >
-                Sebagai SUOP bagi KKP Kepulauan Raja Ampat, kami berwenang untuk mengelola pemanfaatan yang secara umum mencakup aktivitas perikanan, budi daya, pariwisata, penelitian dan pendidikan, pembangunan infrastruktur, pemanfaatan air laut (untuk tujuan selain energi), transportasi, serta pelaksanaan adat istiadat dan ritual keagamaan.
-                <br /><br />
-                SUOP KKP Kepulauan Raja Ampat berada di dalam lingkup Dinas Kelautan dan Perikanan Pemerintah Provinsi (Pemprov) Papua Barat Daya. Legalitas dan aspek pengelolaan, seperti penerimaan hibah, remunerasi, rencana strategis, standar pelayanan minimal, tarif jasa lingkungan, hingga tata kelola, kesemuanya diatur melalui regulasi di tingkat provinsi.
-                <br /><br />
-                Status “BLUD” memungkinkan kami selaku pengelola kawasan untuk mengelola pendapatan dan pengeluaran dengan lebih fleksibel. Sederhananya, status ini memungkinkan kami untuk memperoleh pendapatan selain dari anggaran pemerintah daerah, seperti Tarif Jasa Lingkungan (TJL), hibah, maupun sumber pendapatan lain berdasarkan layanan yang kami sediakan.
+                {t.boxDesc}
               </motion.p>
             </motion.div>
 
@@ -176,7 +256,7 @@ export default function PengelolaanKawasan() {
                       transition: { duration: 0.8, ease: "easeOut" }
                     }
                   }} className="text-4xl font-bold border-l-4 border-white pl-6 text-white">
-                    Sekilas Tentang Kawasan Kelola Kami
+                    {t.glanceTitle}
                   </motion.h2>
                   <motion.p variants={{
                     hidden: { opacity: 0, y: 30 },
@@ -186,7 +266,7 @@ export default function PengelolaanKawasan() {
                       transition: { duration: 0.8, ease: "easeOut" }
                     }
                   }} className="text-lg text-gray-100">
-                    Kawasan konservasi perairan adalah area laut dan pesisir yang dilindungi dan dikelola dengan sistem zonasi untuk menjaga keutuhan keanekaragaman dan sumber daya alam hayati, ekosistem laut, serta mampu mendukung kesejahteraan masyarakat lokal secara berkelanjutan.
+                    {t.glanceDesc}
                   </motion.p>
                   <motion.p variants={{
                     hidden: { opacity: 0, y: 30 },
@@ -196,7 +276,7 @@ export default function PengelolaanKawasan() {
                       transition: { duration: 0.8, ease: "easeOut" }
                     }
                   }} className="text-sm opacity-80 text-gray-200 italic">
-                    Untuk keterangan lebih terperinci mengenai apa yang boleh dan tidak boleh dilakukan di KKP Kepulauan Raja Ampat, silakan <a target="_blank" className="underline font-bold" href={"/07 Daftar Kegiatan Berdasarkan Zonasi KKP Kepulauan Raja Ampat.pdf"}>klik di sini</a>.
+                    {t.glanceLink}
                   </motion.p>
                 </motion.div>
 
@@ -216,7 +296,7 @@ export default function PengelolaanKawasan() {
                     />
                     <div className="px-8">
                       <p className="mt-4 text-sm opacity-60 italic text-center font-light">
-                        Deklarasi masyarakat adat sebagai tonggak awal pembentukan kawasan konservasi perairan.
+                        {t.caption}
                       </p>
                     </div>
                   </motion.div>
@@ -234,10 +314,10 @@ export default function PengelolaanKawasan() {
                     className="md:w-1/2 text-lg font-light leading-relaxed space-y-6 text-justify relative z-10"
                   >
                     <p>
-                      Kawasan konservasi perairan di Raja Ampat berawal dari Deklarasi Tomolol–yang kini menjadi bagian dari Area IV Kepulauan Misool–pada tahun 2003, ketika masyarakat adat bersama-sama pemerintah daerah dan mitra pembangunan mengemukakan niatan kolektif untuk melindungi dan mengelola sebagian area laut dengan kolaboratif dan mengedepankan peran serta masyarakat dan kearifan lokal.
+                      {t.historyDesc1}
                     </p>
                     <p>
-                      Kini Jejaring KKP Kepulauan Raja Ampat terdiri atas Area I Kepulauan Ayau-Asia seluas 100.008,99 hektar, Area II Teluk Mayalibit seluas 49.786,82 hektar, area III Selat Dampier  dengan luas 353.440,54 hektar, 348.518,74 hektar Area IV Kepulauan Misool, Area V Kepulauan Kofiau-Boo seluas 137.318,73 hektar, Area VI Kepulauan Fam mencakup 359.385,65 hektar, dan Area VII Misool Utara dengan luas 308.852 hektar.
+                      {t.historyDesc2}
                     </p>
                   </motion.div>
                   <motion.div

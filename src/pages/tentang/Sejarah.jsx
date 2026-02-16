@@ -1,26 +1,88 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
 export default function Sejarah() {
+  // 1. Logika Sinkronisasi Bahasa
+  const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
 
-  const timelineData = [
-    {
-      year: "55.000",
-      subYear: "Tahun Lalu",
-      title: "Jejak Awal Manusia ‘Modern’",
-      description: "Berdasarkan jurnal ilmiah yang terbit pada tahun 2024 lalu, manusia modern (Homo sapiens) sudah ‘mengunjungi Raja Ampat sekitar 55.000 tahun lalu.’ Temuan dari tim arkeologis yang terdiri atas peneliti dari Australia, Selandia Baru dan Indonesia tersebut didasari atas penemuan di Gua Mololo di Pulau Waigeo yang lalu dikembangkan menjadi dua teori rute migrasi, yaitu rute utara dan rute selatan (Disadur dari National Geographic, 4 September 2024)."
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem('app_lang') || 'ID');
+    };
+    window.addEventListener('storage', handleStorageChange);
+    const interval = setInterval(handleStorageChange, 500);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
+
+  // 2. Data Terjemahan Konten
+  const content = {
+    ID: {
+      heroTitle: "Tentang",
+      heroSub: "Sejarah",
+      timeline: [
+        {
+          year: "55.000",
+          subYear: "Tahun Lalu",
+          title: "Jejak Awal Manusia ‘Modern’",
+          description: "Berdasarkan jurnal ilmiah yang terbit pada tahun 2024 lalu, manusia modern (Homo sapiens) sudah ‘mengunjungi Raja Ampat sekitar 55.000 tahun lalu.’ Temuan dari tim arkeologis yang terdiri atas peneliti dari Australia, Selandia Baru dan Indonesia tersebut didasari atas penemuan di Gua Mololo di Pulau Waigeo yang lalu dikembangkan menjadi dua teori rute migrasi, yaitu rute utara dan rute selatan (Disadur dari National Geographic, 4 September 2024)."
+        },
+        {
+          year: "Abad 15",
+          title: "Pengaruh Kesultanan Tidore",
+          description: "Pada abad ke-15 Kesultanan Tidore mulai mengembangkan pengaruhnya di Raja Ampat dan daerah pesisir Papua lainnya baik di utara maupun selatan (dari berbagai sumber). Asimilasi adat istiadat dan tradisi Tidore dengan masyarakat Raja Ampat menjadi suatu keniscayaan, suatu keunikan yang hari ini dapat dilihat pada, contohnya, masyarakat di Kepulauan Misool."
+        },
+        {
+          year: "1860-1869",
+          title: "Ekspedisi Wallacea dan the Malay Archipelago",
+          description: "Kepulauan Raja Ampat merupakan salah satu daerah yang menjadi fokus dari ekspedisi Alfred Russel Wallace, atau yang dikenal dengan Ekspedisi Wallacea, pada tahun 1860 (dari berbagai sumber). Hasil ekspedisinya tersebut tertuang dalam “The Malay Archipelago” (terbit 1869), dan sekaligus mengonfirmasi keberlimpahan keanekaragaman hayati Raja Ampat dan beberapa tempat lain di Indonesia."
+        }
+      ],
+      todayTitle: "Raja Ampat Hari ini",
+      todaySub: "'Jantung' Segi Tiga Terumbu Karang",
+      todayDesc: (
+        <>
+          Pada tahun 2002, sebuah tim yang terdiri atas ilmuwan dari Indonesia dan mancanegara memublikasikan <a target="_blank" className="underline font-bold" href={'/A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia.pdf'}>“A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia”</a>. Penelitian tersebut menjadi referensi ilmiah bagi masyarakat dan pemangku kepentingan di Raja Ampat dalam mengembangkan pengelolaan kawasan konservasi perairan beserta pemanfaatannya yang berkelanjutan.
+        </>
+      )
     },
-    {
-      year: "Abad 15",
-      title: "Pengaruh Kesultanan Tidore",
-      description: "Pada abad ke-15 Kesultanan Tidore mulai mengembangkan pengaruhnya di Raja Ampat dan daerah pesisir Papua lainnya baik di utara maupun selatan (dari berbagai sumber). Asimilasi adat istiadat dan tradisi Tidore dengan masyarakat Raja Ampat menjadi suatu keniscayaan, suatu keunikan yang hari ini dapat dilihat pada, contohnya, masyarakat di Kepulauan Misool."
-    },
-    {
-      year: "1860-1869",
-      title: "Ekspedisi Wallacea dan the Malay Archipelago",
-      description: "Kepulauan Raja Ampat merupakan salah satu daerah yang menjadi fokus dari ekspedisi Alfred Russel Wallace, atau yang dikenal dengan Ekspedisi Wallacea, pada tahun 1860 (dari berbagai sumber). Hasil ekspedisinya tersebut tertuang dalam “The Malay Archipelago” (terbit 1869), dan sekaligus mengonfirmasi keberlimpahan keanekaragaman hayati Raja Ampat dan beberapa tempat lain di Indonesia."
+    EN: {
+      heroTitle: "About",
+      heroSub: "History",
+      timeline: [
+        {
+          year: "55,000",
+          subYear: "Years Ago",
+          title: "Early Traces of ‘Modern’ Man",
+          description: "According to a scientific journal published in 2024, the homo sapiens visited Raja Ampat 55,000 years ago.’ A team of archaeologists from Australia, New Zealand and Indonesia based their theory on a discovery in Mololo Cave in Waigeo Island, which then developed into two migration theories: the north and south routes (National Geographic, September 4th 2024)."
+        },
+        {
+          year: "15th Century",
+          title: "Tidore Sultanate’s Influence",
+          description: "The Tidore Sultanate, which originated in northern Maluku, expanded its influence into Raja Ampat and other areas along the northern and southern coasts of Papua (according to various sources). Tidore’s and Raja Ampat’s traditions and cultures were uniquely assimilated, as seen today in the communities of the Misool Islands."
+        },
+        {
+          year: "1860-1869",
+          title: "The Wallacea Expedition and The Malay Archipelago",
+          description: "The Raja Ampat islands were a focus of Alfred Russel Wallace’s expedition in 1860 (according to various sources), and were first published in “The Malay Archipelago” in 1869. It confirmed the abundance of Raja Ampat’s biodiversity, as well as that of other areas in Indonesia."
+        }
+      ],
+      todayTitle: "Raja Ampat Today",
+      todaySub: "The ‘Heart’ of the Coral Triangle",
+      todayDesc: (
+        <>
+          In 2002, a team of international scientists published <a target="_blank" className="underline font-bold" href={'/A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia.pdf'}>“A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia”</a>. which later became a scientific reference for the communities and stakeholders in Raja Ampat in developing MPAs and their sustainable utilisations.
+        </>
+      )
     }
-  ];
+  };
+
+  const t = content[lang];
+
+  const timelineData = t.timeline;
 
   const CustomMarker = () => (
     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +112,7 @@ export default function Sejarah() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-bold tracking-tight"
           >
-            Tentang
+            {t.heroTitle}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -58,7 +120,7 @@ export default function Sejarah() {
             transition={{ delay: 0.5 }}
             className="text-2xl mt-2 font-light italic"
           >
-            Sejarah
+            {t.heroSub}
           </motion.p>
         </div>
       </section>
@@ -133,7 +195,7 @@ export default function Sejarah() {
               {/* Kolom Kiri: Tahun */}
               <div className="w-[40%] md:w-[50%] pr-8 md:pr-16 text-right flex flex-col justify-center">
                 <h2 className="text-white text-4xl md:text-6xl font-bold leading-none">
-                  Raja Ampat Hari ini
+                  {t.todayTitle}
                 </h2>
               </div>
 
@@ -151,10 +213,10 @@ export default function Sejarah() {
               {/* Kolom Kanan: Konten */}
               <div className="w-[60%] md:w-[50%] pl-8 md:pl-16">
                 <h3 className="text-white text-xl md:text-2xl font-bold mb-4">
-                  Jantung' Segi Tiga Terumbu Karang
+                  {t.todaySub}
                 </h3>
                 <p className="text-gray-200 text-sm md:text-base leading-relaxed">
-                  Pada tahun 2002, sebuah tim yang terdiri atas ilmuwan dari Indonesia dan mancanegara memublikasikan <a target="_blank" className="underline font-bold" href={'/A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia.pdf'}>“A Marine Rapid Assessment of the Raja Ampat Islands, Papua Province, Indonesia”</a>. Penelitian tersebut menjadi referensi ilmiah bagi masyarakat dan pemangku kepentingan di Raja Ampat dalam mengembangkan pengelolaan kawasan konservasi perairan beserta pemanfaatannya yang berkelanjutan.
+                  {t.todayDesc}
                 </p>
               </div>
             </motion.div>
@@ -164,3 +226,7 @@ export default function Sejarah() {
     </main>
   );
 }
+
+
+
+
