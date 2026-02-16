@@ -5,7 +5,7 @@ import { Anchor, Fish, Users, Info, Map as MapIcon, Waves, ShieldAlert, Check, X
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function KepulauanAsiaDanAyau() {
+export default function SelarDampier() {
   const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
 
   useEffect(() => {
@@ -23,27 +23,24 @@ export default function KepulauanAsiaDanAyau() {
   const content = {
     ID: {
       heroTitle: "Kawasan Kelola Kami",
-      heroSub: "Area I Kepulauan Ayau-Asia",
+      heroSub: "Area III Selat Dampier",
       stats: [
-        { label: "Luas Kawasan", value: "100.008,99 Hektare", icon: <MapIcon className="w-6 h-6" /> },
+        { label: "Luas Kawasan", value: "353.440,54 Hektare", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "Distrik / Ibu Kota", value: "Kep. Ayau / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "Distrik / Ibu Kota", value: "Salawati Utara, Meos Mansar, dan Batanta Utara/Kampung Samate, Kabare, Yensawai", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Gugusan Kepulauan Ayau merupakan salah satu pulau terdepan di Indonesia. Jarak dari kepulauan ini lebih ‘dekat’ ke bagian selatan Republik Filipina dan Republik Federal Palau dibandingkan dengan dataran utama Pulau Papua. Berdasarkan pembicaraan dengan penduduk di sana, beberapa nelayan dari Ayau bahkan memutuskan menetap di Filipina untuk beragam alasan.",
-      desc2: (
-        <>Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan <Link className="underline font-bold">lokasi penting pemijahan ikan Kerapu Sunu (Plectropomus aereolatus ) dan Kerapu Macan (Epinephelus fuscoguttatus)</Link>, serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.</>
-      ),
-      desc3: "Area I juga merupakan habitat bagi Penyu Hijau (Chelonia mydas), Penyu Belimbing (Dermochelys coriacea), serta mamalia laut seperti lumba-lumba hidung botol dan paus sperma.",
+      desc1: "Di dalam kawasan Area III Selat Dampier, terdapat setidak-tidaknya 28 kampung pesisir yang tersebar di Pulau Salawati, Batanta, Waigeo, dan pulau-pulau kecil diantaranya. Lokasinya yang strategis, di tengah perairan Raja Ampat, dan akses yang relatif mudah menjadikan Selat Dampier sebagai salah satu kawasan ‘tersibuk’ dalam hal pemanfaatan pariwisata di Jejaring KKP Kepulauan Raja Ampat. Beberapa kampung wisata yang sekarang popular antara lain Arborek, Arefi, Sauwandarek, Sawinggrai, Saporkren, dan Yenbuba.",
+      desc2: "Di bawah permukaannya, Area III Selat Dampier dipenuhi dengan terumbu karang keras dan lunak beraneka warna, yang menjadi habitat bagi beragam ikan karang, ikan pelagis seperti kakap, kerapu, kue, dan tuna, predator seperti barakuda dan beragam jenis hiu karang. Selat Dampier juga merupakan lokasi agregasi, atau tempat berkumpulnya, bagi pari manta karang dan oseanik, serta koridor migrasi bagi beragam jenis paus dan lumba-lumba.",
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
-        { label: "Zona Inti", value: "1.003,83 Hektare" },
-        { label: "Zona Pemanfaatan Terbatas", value: "39.235,60 Hektare" },
-        { label: "Jalur Lalu Lintas Kapal", value: "3.295,11 Hektare" },
-        { label: "Zona Sasi*", value: "56.474,45 Hektare" },
+        { label: "Zona Inti", value: "4.112,47 Hektare" },
+        { label: "Zona Pemanfaatan Terbatas", value: "232.588,59 Hektare" },
+        { label: "Jalur Lalu Lintas Kapal", value: "13.305,56 Hektare" },
+        { label: "Zona Sasi*", value: "103.433,92 Hektare" },
       ],
       sasiNote: "* Zona Sasi adalah zona yang didedikasikan untuk aktivitas pemanfaatan perikanan bagi masyarakat lokal dan dapat dimanfaatkan untuk aktivitas non-ekstraktif seperti pariwisata berkelanjutan.",
       adatTitle: "Masyarakat Adat",
-      adatDesc: "Mayoritas masyarakat di Kepulauan Ayau-Asia berasal dari Suku Wardo dan Usba, yang masih berkerabat dekat dengan Suku Biak.",
+      adatDesc: "Masyarakat di Selat Dampier terdiri dari Suku Ambel, Batanta, Maya, Tepin, Usba, Wardo.",
       petaTitle: "Peta Kawasan",
       petaSub: "Klik peta di bawah ini untuk melihat detail pembagian zona di dalam KKP Kepulauan Asia dan Ayau.",
       tableTitle: "Panduan Zonasi & Aktivitas",
@@ -62,40 +59,37 @@ export default function KepulauanAsiaDanAyau() {
     },
     EN: {
       heroTitle: "Our MPA",
-      heroSub: "Area I Ayau-Asia Islands",
+      heroSub: "Area III Dampier Strait",
       stats: [
-        { label: "Total Area", value: "100,008.99 Hectares", icon: <MapIcon className="w-6 h-6" /> },
+        { label: "Total Area", value: "353,440.54 Hectares", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "District / Capital", value: "Ayau Is. / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "District / Capital", value: "North Salawati, Meos Mansar, and North Batanta / Samate, Kabare, and Yensawai Village", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "The Ayau Islands are among Indonesia's outermost islands. Geographically, they are closer to the southern Philippines and Palau than to mainland Papua. Some local fishers have even chosen to settle in the Philippines due to this proximity.",
-      desc2: (
-        <>The islands in Area I Ayau-Asia are surrounded by extensive coral reefs and atolls, making them a <Link className="underline font-bold">critical spawning ground for the Peacock Grouper (Plectropomus aereolatus) and the Tiger Grouper (Epinephelus fuscoguttatus)</Link>, as well as an important habitat and aggregation site for pelagic fish such as Napoleon Wrasse, tuna, skipjack, mackerel, wahoo, and scads.</>
-      ),
-      desc3: "The area also serves as a habitat for Green Turtles, Leatherback Turtles, and marine mammals including Bottlenose Dolphins and Sperm Whales.",
+      desc1: "Within the Area III Dampier Strait region, there are at least 28 coastal villages scattered across Salawati, Batanta, and Waigeo islands, as well as the small islands between them. Its strategic location in the heart of Raja Ampat waters, combined with relatively easy access, makes the Dampier Strait one of the 'busiest' areas for tourism utilization within the Raja Ampat MPA Network. Several popular tourism villages today include Arborek, Arefi, Sauwandarek, Sawinggrai, Saporkren, and Yenbuba.",
+      desc2: "Beneath the surface, Area III Dampier Strait is filled with colorful hard and soft corals, providing habitat for various reef fish, pelagic species like snapper, grouper, trevally (kue), and tuna, as well as predators like barracuda and various reef sharks. The Dampier Strait is also an aggregation site for both reef and oceanic manta rays, and serves as a migration corridor for various species of whales and dolphins.",
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
-        { label: "Core Zone", value: "1,003.83 Hectares" },
-        { label: "Limited Utilization Zone", value: "39,235.60 Hectares" },
-        { label: "Ship Traffic Lane", value: "3,295.11 Hectares" },
-        { label: "Sasi Zone*", value: "56,474.45 Hectares" },
+        { label: "Core Zone", value: "4,112.47 Hectares" },
+        { label: "Limited Utilization Zone", value: "232,588.59 Hectares" },
+        { label: "Ship Traffic Lane", value: "13,305.56 Hectares" },
+        { label: "Sasi Zone*", value: "103,433.92 Hectares" },
       ],
-      sasiNote: "* Sasi Zone is dedicated to local fisheries and sustainable non-extractive activities like tourism with local community consent.",
+      sasiNote: "* Sasi Zone is dedicated to local traditional fishing activities and can be used for sustainable non-extractive activities, such as tourism, with local community consent.",
       adatTitle: "Indigenous Community",
-      adatDesc: "The majority of the population belongs to the Wardo and Usba tribes, who share close ancestral ties with the Biak tribe.",
+      adatDesc: "The community in Dampier Strait consists of the Ambel, Batanta, Maya, Tepin, Usba, and Wardo tribes.",
       petaTitle: "Area Map",
-      petaSub: "Click the map below to view the detailed zoning within the MPA.",
+      petaSub: "Click the map below to view the detailed zoning divisions within Area III Dampier Strait.",
       tableTitle: "Zoning & Activity Guide",
-      tableSub: "The MPA is managed through a zoning system to balance ecosystem health and livelihoods.",
+      tableSub: "This MPA is managed through a zoning system to maintain ecosystem balance.",
       tableHeader: ["Zone Description", "Diving", "Snorkeling", "Fishing", "Anchoring"],
       rules: [
-        "Jet skis or motorized water sports are strictly prohibited.",
-        "Use mooring buoys. Anchoring is only allowed under strict Code of Conduct.",
-        "Fishing for tourists is only allowed with Traditional Head's permission."
+        "The use of Jet Skis or other motorized water vehicles is prohibited.",
+        "Use mooring buoys. Anchoring is allowed only when necessary and must follow the Code of Conduct.",
+        "Tourists may only fish with the explicit permission of the Traditional Head (Kepala Adat)."
       ],
       zonasiItems: [
         { nama: "Core Zone", desc: "Access limited to research/education with strict permits.", diving: false, snorkel: false, fishing: false, anchor: false },
-        { nama: "Limited Use Zone", desc: "Sustainable tourism activities allowed.", diving: true, snorkel: true, fishing: false, anchor: false },
+        { nama: "Limited Use Zone", desc: "Sustainable tourism activities are permitted.", diving: true, snorkel: true, fishing: false, anchor: false },
         { nama: "Sasi Zone", desc: "Local utilization & sustainable tourism.", diving: true, snorkel: true, fishing: "Local/Permit", anchor: false },
       ]
     }

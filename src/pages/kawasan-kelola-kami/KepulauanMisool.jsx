@@ -5,7 +5,7 @@ import { Anchor, Fish, Users, Info, Map as MapIcon, Waves, ShieldAlert, Check, X
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function KepulauanAsiaDanAyau() {
+export default function KepulauanMisool() {
   const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
 
   useEffect(() => {
@@ -23,27 +23,23 @@ export default function KepulauanAsiaDanAyau() {
   const content = {
     ID: {
       heroTitle: "Kawasan Kelola Kami",
-      heroSub: "Area I Kepulauan Ayau-Asia",
+      heroSub: "Area IV Kepulauan Misool",
       stats: [
-        { label: "Luas Kawasan", value: "100.008,99 Hektare", icon: <MapIcon className="w-6 h-6" /> },
+        { label: "Luas Kawasan", value: "348.518,74 Hektare", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "Distrik / Ibu Kota", value: "Kep. Ayau / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "Distrik / Ibu Kota", value: "Misool Timur, Misool Selatan, dan Misool Barat/Kampung Folley, Dabatan, Kapatcol", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Gugusan Kepulauan Ayau merupakan salah satu pulau terdepan di Indonesia. Jarak dari kepulauan ini lebih ‘dekat’ ke bagian selatan Republik Filipina dan Republik Federal Palau dibandingkan dengan dataran utama Pulau Papua. Berdasarkan pembicaraan dengan penduduk di sana, beberapa nelayan dari Ayau bahkan memutuskan menetap di Filipina untuk beragam alasan.",
-      desc2: (
-        <>Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan <Link className="underline font-bold">lokasi penting pemijahan ikan Kerapu Sunu (Plectropomus aereolatus ) dan Kerapu Macan (Epinephelus fuscoguttatus)</Link>, serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.</>
-      ),
-      desc3: "Area I juga merupakan habitat bagi Penyu Hijau (Chelonia mydas), Penyu Belimbing (Dermochelys coriacea), serta mamalia laut seperti lumba-lumba hidung botol dan paus sperma.",
+      desc1: "Misool merupakan kepulauan lain di Raja Ampat dengan latar belakang masyarakat beragam, selain suku-suku asli Tanah Papua yang mendiaminya, kepulauan ini juga adalah kampung halaman bagi beragam suku dari Maluku Utara yang memutuskan untuk menetap mulai dari masa Kesultanan Tidore. Di kepulauan yang terbentuk dari bebatuan kapur ini terdapat tiga danau air asin, sungai-sungai dengan muara yang relatif besar, hutan mangrove yang rapat, serta padang lamun tempat duyung (Dugong dugon) mencari makan.",
+      desc2: "Area IV merupakan salah satu kawasan terluas di Jejaring KKP Kepulauan Raja Ampat, dan seperti kawasan lainnya proses kompleks arus laut membawa nutrisi yang melimpah bagi terumbu karang keras maupun lunak, menjadikannya rumah bagi beragam ikan karang, pelagis, dua jenis pari manta, lokasi peneluran dan habitat penting bagi penyu hijau (Chelonia mydas) dan sisik (Eretmochelys imbricata), jalur migrasi bagi beberapa mamalia laut, serta buaya muara.",
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
-        { label: "Zona Inti", value: "1.003,83 Hektare" },
-        { label: "Zona Pemanfaatan Terbatas", value: "39.235,60 Hektare" },
-        { label: "Jalur Lalu Lintas Kapal", value: "3.295,11 Hektare" },
-        { label: "Zona Sasi*", value: "56.474,45 Hektare" },
+        { label: "Zona Inti", value: "756,34 Hektare" },
+        { label: "Zona Pemanfaatan Terbatas", value: "85.025,45 Hektare" },
+        { label: "Zona Sasi*", value: " 262.736,95 Hektare" },
       ],
       sasiNote: "* Zona Sasi adalah zona yang didedikasikan untuk aktivitas pemanfaatan perikanan bagi masyarakat lokal dan dapat dimanfaatkan untuk aktivitas non-ekstraktif seperti pariwisata berkelanjutan.",
       adatTitle: "Masyarakat Adat",
-      adatDesc: "Mayoritas masyarakat di Kepulauan Ayau-Asia berasal dari Suku Wardo dan Usba, yang masih berkerabat dekat dengan Suku Biak.",
+      adatDesc: "Suku Matbat, Matlow, Biga, dan suku-suku dari Maluku Utara yang sudah mendiami Kepulauan Misool sejak tahun 1400-an.",
       petaTitle: "Peta Kawasan",
       petaSub: "Klik peta di bawah ini untuk melihat detail pembagian zona di dalam KKP Kepulauan Asia dan Ayau.",
       tableTitle: "Panduan Zonasi & Aktivitas",
@@ -62,40 +58,36 @@ export default function KepulauanAsiaDanAyau() {
     },
     EN: {
       heroTitle: "Our MPA",
-      heroSub: "Area I Ayau-Asia Islands",
+      heroSub: "Area IV Misool Islands",
       stats: [
-        { label: "Total Area", value: "100,008.99 Hectares", icon: <MapIcon className="w-6 h-6" /> },
+        { label: "Total Area", value: "348,518.74 Hectares", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "District / Capital", value: "Ayau Is. / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "District / Capital", value: "East, South, and West Misool / Folley, Dabatan, and Kapatcol Village", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "The Ayau Islands are among Indonesia's outermost islands. Geographically, they are closer to the southern Philippines and Palau than to mainland Papua. Some local fishers have even chosen to settle in the Philippines due to this proximity.",
-      desc2: (
-        <>The islands in Area I Ayau-Asia are surrounded by extensive coral reefs and atolls, making them a <Link className="underline font-bold">critical spawning ground for the Peacock Grouper (Plectropomus aereolatus) and the Tiger Grouper (Epinephelus fuscoguttatus)</Link>, as well as an important habitat and aggregation site for pelagic fish such as Napoleon Wrasse, tuna, skipjack, mackerel, wahoo, and scads.</>
-      ),
-      desc3: "The area also serves as a habitat for Green Turtles, Leatherback Turtles, and marine mammals including Bottlenose Dolphins and Sperm Whales.",
+      desc1: "Misool is an archipelago in Raja Ampat with a diverse cultural background. In addition to the indigenous tribes of Papua, these islands are home to various tribes from North Maluku who settled here during the era of the Tidore Sultanate. Formed from limestone karst, the archipelago features three saltwater lakes, rivers with relatively large estuaries, dense mangrove forests, and seagrass meadows where dugongs (Dugong dugon) forage.",
+      desc2: "Area IV is one of the largest sectors within the Raja Ampat MPA Network. Like other areas, complex ocean currents bring abundant nutrients for both hard and soft corals, making it a home for diverse reef and pelagic fish, two species of manta rays, and a critical habitat and nesting site for Green turtles (Chelonia mydas) and Hawksbill turtles (Eretmochelys imbricata). It also serves as a migration path for several marine mammals and saltwater crocodiles.",
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
-        { label: "Core Zone", value: "1,003.83 Hectares" },
-        { label: "Limited Utilization Zone", value: "39,235.60 Hectares" },
-        { label: "Ship Traffic Lane", value: "3,295.11 Hectares" },
-        { label: "Sasi Zone*", value: "56,474.45 Hectares" },
+        { label: "Core Zone", value: "756.34 Hectares" },
+        { label: "Limited Utilization Zone", value: "85,025.45 Hectares" },
+        { label: "Sasi Zone*", value: "262,736.95 Hectares" },
       ],
-      sasiNote: "* Sasi Zone is dedicated to local fisheries and sustainable non-extractive activities like tourism with local community consent.",
+      sasiNote: "* Sasi Zone is dedicated to traditional fishing activities for local communities and can be utilized for sustainable non-extractive activities, such as tourism, with local community consent.",
       adatTitle: "Indigenous Community",
-      adatDesc: "The majority of the population belongs to the Wardo and Usba tribes, who share close ancestral ties with the Biak tribe.",
+      adatDesc: "The Matbat, Matlow, and Biga tribes, along with ethnic groups from North Maluku who have inhabited the Misool Islands since the 1400s.",
       petaTitle: "Area Map",
-      petaSub: "Click the map below to view the detailed zoning within the MPA.",
+      petaSub: "Click the map below to view the detailed zoning divisions within Area IV Misool Islands.",
       tableTitle: "Zoning & Activity Guide",
-      tableSub: "The MPA is managed through a zoning system to balance ecosystem health and livelihoods.",
+      tableSub: "This MPA is managed through a zoning system to maintain ecosystem balance.",
       tableHeader: ["Zone Description", "Diving", "Snorkeling", "Fishing", "Anchoring"],
       rules: [
-        "Jet skis or motorized water sports are strictly prohibited.",
-        "Use mooring buoys. Anchoring is only allowed under strict Code of Conduct.",
-        "Fishing for tourists is only allowed with Traditional Head's permission."
+        "The use of Jet Skis or other motorized water vehicles is prohibited.",
+        "Use mooring buoys. Anchoring is allowed only when necessary and must follow the Code of Conduct.",
+        "Tourists may only fish with the explicit permission of the Traditional Head (Kepala Adat)."
       ],
       zonasiItems: [
         { nama: "Core Zone", desc: "Access limited to research/education with strict permits.", diving: false, snorkel: false, fishing: false, anchor: false },
-        { nama: "Limited Use Zone", desc: "Sustainable tourism activities allowed.", diving: true, snorkel: true, fishing: false, anchor: false },
+        { nama: "Limited Use Zone", desc: "Sustainable tourism activities are permitted.", diving: true, snorkel: true, fishing: false, anchor: false },
         { nama: "Sasi Zone", desc: "Local utilization & sustainable tourism.", diving: true, snorkel: true, fishing: "Local/Permit", anchor: false },
       ]
     }

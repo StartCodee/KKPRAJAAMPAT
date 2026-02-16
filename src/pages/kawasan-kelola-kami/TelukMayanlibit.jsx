@@ -5,7 +5,7 @@ import { Anchor, Fish, Users, Info, Map as MapIcon, Waves, ShieldAlert, Check, X
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function KepulauanAsiaDanAyau() {
+export default function TelukMayalibit() {
   const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
 
   useEffect(() => {
@@ -23,29 +23,25 @@ export default function KepulauanAsiaDanAyau() {
   const content = {
     ID: {
       heroTitle: "Kawasan Kelola Kami",
-      heroSub: "Area I Kepulauan Ayau-Asia",
+      heroSub: "Area II Teluk Mayalibit",
       stats: [
         { label: "Luas Kawasan", value: "100.008,99 Hektare", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "Distrik / Ibu Kota", value: "Kep. Ayau / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "Distrik / Ibu Kota", value: "Teluk Mayalibit dan Tiplol Mayalibit/Kampung Warsambin dan Kampung Go", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Gugusan Kepulauan Ayau merupakan salah satu pulau terdepan di Indonesia. Jarak dari kepulauan ini lebih ‘dekat’ ke bagian selatan Republik Filipina dan Republik Federal Palau dibandingkan dengan dataran utama Pulau Papua. Berdasarkan pembicaraan dengan penduduk di sana, beberapa nelayan dari Ayau bahkan memutuskan menetap di Filipina untuk beragam alasan.",
-      desc2: (
-        <>Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan <Link className="underline font-bold">lokasi penting pemijahan ikan Kerapu Sunu (Plectropomus aereolatus ) dan Kerapu Macan (Epinephelus fuscoguttatus)</Link>, serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.</>
-      ),
-      desc3: "Area I juga merupakan habitat bagi Penyu Hijau (Chelonia mydas), Penyu Belimbing (Dermochelys coriacea), serta mamalia laut seperti lumba-lumba hidung botol dan paus sperma.",
+      desc1: "Teluk Mayalibit memiliki ‘pintu masuk’ yang sempit, yang memanjang jauh ke dalam seakan ‘membelah’ Pulau Waigeo menjadi dua. Teluk Mayalibit dipercaya sebagai tempat dari suku asli Raja Ampat, yaitu Suku Maya yang hidup tersebar di 11 kampung di dalam teluk yang diapit dengan hutan tropis lebat di kedua sisinya. Dalam bahasa daerahnya, “Mayalibit” terdiri atas dua kata, yaitu “Maya” dan “Libit” yang berarti “kamar.”",
+      desc2: "Di bawah permukaan airnya, Area II Teluk Mayalibit adalah habitat bagi beragam jenis terumbu karang lunak yang dihuni oleh ikan-ikan bernilai ekonomis tinggi seperti makarel (Scombridae) atau disebut “Lema” oleh masyarakat lokal, samandar (Siganidae), bubara (Carangidae), kakap (Lutjanidae), udang dan kepiting lumpur. Teluk Mayalibit juga merupakan habitat penting bagi buaya muara atau buaya air asin.",
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
-        { label: "Zona Inti", value: "1.003,83 Hektare" },
-        { label: "Zona Pemanfaatan Terbatas", value: "39.235,60 Hektare" },
-        { label: "Jalur Lalu Lintas Kapal", value: "3.295,11 Hektare" },
-        { label: "Zona Sasi*", value: "56.474,45 Hektare" },
+        { label: "Zona Inti", value: "556,23 Hektare" },
+        { label: "Zona Pemanfaatan Terbatas", value: "15.450,07 Hektare" },
+        { label: "Zona Sasi*", value: "33.780,52 Hektare" },
       ],
       sasiNote: "* Zona Sasi adalah zona yang didedikasikan untuk aktivitas pemanfaatan perikanan bagi masyarakat lokal dan dapat dimanfaatkan untuk aktivitas non-ekstraktif seperti pariwisata berkelanjutan.",
       adatTitle: "Masyarakat Adat",
-      adatDesc: "Mayoritas masyarakat di Kepulauan Ayau-Asia berasal dari Suku Wardo dan Usba, yang masih berkerabat dekat dengan Suku Biak.",
+      adatDesc: "Mayoritas masyarakat di Teluk Mayalibit berasal dari Suku Maya.",
       petaTitle: "Peta Kawasan",
-      petaSub: "Klik peta di bawah ini untuk melihat detail pembagian zona di dalam KKP Kepulauan Asia dan Ayau.",
+      petaSub: "Klik peta di bawah ini untuk melihat detail pembagian zona di dalam Area II Teluk Mayalibit.",
       tableTitle: "Panduan Zonasi & Aktivitas",
       tableSub: "KKP ini dikelola berdasarkan sistem zonasi untuk menjaga keseimbangan ekosistem.",
       tableHeader: ["Deskripsi Zona", "Diving", "Snorkeling", "Memancing", "Jangkar"],
@@ -62,40 +58,36 @@ export default function KepulauanAsiaDanAyau() {
     },
     EN: {
       heroTitle: "Our MPA",
-      heroSub: "Area I Ayau-Asia Islands",
+      heroSub: "Area II Mayalibit Bay",
       stats: [
         { label: "Total Area", value: "100,008.99 Hectares", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "District / Capital", value: "Ayau Is. / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "District / Capital", value: "Mayalibit Bay and Tiplol Mayalibit / Warsambin and Go Village", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "The Ayau Islands are among Indonesia's outermost islands. Geographically, they are closer to the southern Philippines and Palau than to mainland Papua. Some local fishers have even chosen to settle in the Philippines due to this proximity.",
-      desc2: (
-        <>The islands in Area I Ayau-Asia are surrounded by extensive coral reefs and atolls, making them a <Link className="underline font-bold">critical spawning ground for the Peacock Grouper (Plectropomus aereolatus) and the Tiger Grouper (Epinephelus fuscoguttatus)</Link>, as well as an important habitat and aggregation site for pelagic fish such as Napoleon Wrasse, tuna, skipjack, mackerel, wahoo, and scads.</>
-      ),
-      desc3: "The area also serves as a habitat for Green Turtles, Leatherback Turtles, and marine mammals including Bottlenose Dolphins and Sperm Whales.",
+      desc1: "Mayalibit Bay has a narrow entrance that extends deep inland, seemingly splitting Waigeo Island into two. It is believed to be the ancestral home of the indigenous people of Raja Ampat, the Maya Tribe, who live across 11 villages within the bay, flanked by dense tropical forests on both sides. In the local language, 'Mayalibit' is derived from two words: 'Maya' and 'Libit,' which means 'room.'",
+      desc2: "Beneath the surface, Area II Mayalibit Bay is a habitat for various types of soft corals inhabited by high-value economic fish such as mackerel (Scombridae)—locally known as 'Lema'—rabbitfish (Siganidae), trevally (Carangidae), snapper (Lutjanidae), shrimp, and mud crabs. Mayalibit Bay is also a critical habitat for saltwater crocodiles.",
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
-        { label: "Core Zone", value: "1,003.83 Hectares" },
-        { label: "Limited Utilization Zone", value: "39,235.60 Hectares" },
-        { label: "Ship Traffic Lane", value: "3,295.11 Hectares" },
-        { label: "Sasi Zone*", value: "56,474.45 Hectares" },
+        { label: "Core Zone", value: "556.23 Hectares" },
+        { label: "Limited Utilization Zone", value: "15,450.07 Hectares" },
+        { label: "Sasi Zone*", value: "33,780.52 Hectares" },
       ],
-      sasiNote: "* Sasi Zone is dedicated to local fisheries and sustainable non-extractive activities like tourism with local community consent.",
+      sasiNote: "* Sasi Zone is dedicated to local traditional fishing activities and can be used for sustainable non-extractive activities, such as tourism, with local community consent.",
       adatTitle: "Indigenous Community",
-      adatDesc: "The majority of the population belongs to the Wardo and Usba tribes, who share close ancestral ties with the Biak tribe.",
+      adatDesc: "The majority of the community in Mayalibit Bay belongs to the Maya Tribe.",
       petaTitle: "Area Map",
-      petaSub: "Click the map below to view the detailed zoning within the MPA.",
+      petaSub: "Click the map below to view the detailed zoning divisions within Area II Mayalibit Bay.",
       tableTitle: "Zoning & Activity Guide",
-      tableSub: "The MPA is managed through a zoning system to balance ecosystem health and livelihoods.",
+      tableSub: "This MPA is managed through a zoning system to maintain ecosystem balance.",
       tableHeader: ["Zone Description", "Diving", "Snorkeling", "Fishing", "Anchoring"],
       rules: [
-        "Jet skis or motorized water sports are strictly prohibited.",
-        "Use mooring buoys. Anchoring is only allowed under strict Code of Conduct.",
-        "Fishing for tourists is only allowed with Traditional Head's permission."
+        "The use of Jet Skis or other motorized water vehicles is prohibited.",
+        "Use mooring buoys. Anchoring is allowed only when necessary and must follow the Code of Conduct.",
+        "Tourists may only fish with the explicit permission of the Traditional Head (Kepala Adat)."
       ],
       zonasiItems: [
         { nama: "Core Zone", desc: "Access limited to research/education with strict permits.", diving: false, snorkel: false, fishing: false, anchor: false },
-        { nama: "Limited Use Zone", desc: "Sustainable tourism activities allowed.", diving: true, snorkel: true, fishing: false, anchor: false },
+        { nama: "Limited Use Zone", desc: "Sustainable tourism activities are permitted.", diving: true, snorkel: true, fishing: false, anchor: false },
         { nama: "Sasi Zone", desc: "Local utilization & sustainable tourism.", diving: true, snorkel: true, fishing: "Local/Permit", anchor: false },
       ]
     }

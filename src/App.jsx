@@ -18,13 +18,19 @@ import Kolaborasi from "@/pages/layanan/Kolaborasi";
 import Rams from "@/pages/layanan/Rams";
 import NotFound from "@/pages/NotFound";
 import KepulauanAsiaDanAyau from "@/pages/kawasan-kelola-kami/KepulauanAsiaDanAyau";
+import TelukMayalibit from "@/pages/kawasan-kelola-kami/TelukMayanlibit";
+import SelatDampier from "@/pages/kawasan-kelola-kami/SelatDampier";
+import KepulauanMisool from "@/pages/kawasan-kelola-kami/KepulauanMisool";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/kawasan-kelola-kami/kepulauan-asia-dan-ayau" element={<KepulauanAsiaDanAyau />} />
+        <Route path="/kawasan-kelola-kami/kepulauan-ayau-asia" element={<KepulauanAsiaDanAyau />} />
+        <Route path="/kawasan-kelola-kami/teluk-mayalibit" element={<TelukMayalibit />} />
+        <Route path="/kawasan-kelola-kami/selat-dampier" element={<SelatDampier />} />
+        <Route path="/kawasan-kelola-kami/kepulauan-misool" element={<KepulauanMisool />} />
         <Route path="/pengelolaan-kawasan/dasar-hukum" element={<DasarHukum />} />
         <Route path="/pengelolaan-kawasan/aturan-dan-regulasi" element={<AturanRegulasi />} />
         <Route path="/pengelolaan-kawasan/tugas-pokok-dan-fungsi" element={<TugasPokokFungsi />} />

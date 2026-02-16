@@ -42,7 +42,10 @@ export default function Navbar({ color = '#004267' }) {
             kawasan: {
                 label: "Kawasan Kelola Kami",
                 items: [
-                    { name: "KKP Kepulauan Asia dan Ayau", path: "/kawasan-kelola-kami/kepulauan-asia-dan-ayau" }
+                    { name: "Area I Kepulauan Ayau-Asia", path: "/kawasan-kelola-kami/kepulauan-ayau-asia" },
+                    { name: "Area II Teluk Mayalibit", path: "/kawasan-kelola-kami/teluk-mayalibit" },
+                    { name: "Area III Selat Dampier", path: "/kawasan-kelola-kami/selat-dampier" },
+                    { name: "Area IV Kepulauan Misool", path: "/kawasan-kelola-kami/kepulauan-misool" }
                 ]
             },
             layanan: {
@@ -86,7 +89,10 @@ export default function Navbar({ color = '#004267' }) {
             kawasan: {
                 label: "Our MPA",
                 items: [
-                    { name: "Asia and Ayau Islands MPA", path: "/kawasan-kelola-kami/kepulauan-asia-dan-ayau" }
+                    { name: "Area I Ayau-Asia Islands", path: "/kawasan-kelola-kami/kepulauan-ayau-asia" },
+                    { name: "Area II Mayalibit Bay", path: "/kawasan-kelola-kami/teluk-mayalibit" },
+                    { name: "Area III Dampier Strait", path: "/kawasan-kelola-kami/selat-dampier" },
+                    { name: "Area IV Misool Islands", path: "/kawasan-kelola-kami/kepulauan-misool" }
                 ]
             },
             layanan: {
