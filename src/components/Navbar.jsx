@@ -67,7 +67,7 @@ export default function Navbar({ color = '#004267' }) {
             tentang: {
                 label: "About",
                 items: [
-                    { name: "Area Management", path: "/tentang/pengelolaan-kawasan" },
+                    { name: "MPAs Management", path: "/tentang/pengelolaan-kawasan" },
                     { name: "The Beauty of Raja Ampat", path: "/tentang/keindahan-raja-ampat" },
                     { name: "History", path: "/tentang/sejarah" },
                     { name: "Sociocultural", path: "/tentang/sosial-budaya" },

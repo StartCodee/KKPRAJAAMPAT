@@ -48,7 +48,7 @@ export default function Evika() {
     },
     EN: {
       heroTitle: "MPAs Management",
-      heroSub: "Evaluation of Marine Protected Area Management Effectiveness",
+      heroSub: "EVIKA",
       whatTitle: "What is EVIKA?",
       whatDesc: "MPA’s Management Effectiveness Evaluation (Evaluasi Efektivitas Pengelolaan Kawasan Konservasi in Bahasa Indonesia, or the EVIKA) is a measuring tool for “MPA’s management effectiveness” that has “similar standard and is feasible as a reference” to increase “the quality of management, performance, planning, and as MPA’s monitoring system for policy makers, management units, and other stakeholders” (adapted from EVIKA Technical Guidelines).",
       aspectTitle: "EVIKA Assessment Aspects",

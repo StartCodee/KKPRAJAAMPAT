@@ -55,7 +55,7 @@ export default function PengelolaanKawasan() {
     },
     EN: {
       heroTitle: "About",
-      heroSub: "Area Management",
+      heroSub: "MPAs Management",
       whoTitle: "Who are we?",
       whoDesc: (
         <>
