@@ -193,7 +193,7 @@ export default function AturanDanRegulasi() {
           },
           {
             no: "MAFR Decree No. 13/2021",
-            title: "MMF Decrees Raja Ampat MPAs' Designation",
+            title: "MMF Decrees on Raja Ampat MPAs' Designation",
             desc: "This regulation designated Raja Ampat MPAs, covering Area I Ayau-Asia MPA to Area VI Fam Islands MPA, while Area VII North Misool was designated through MMF Decree 191 Year 2023. Both decrees officially included seven MPAs in the Raja Ampat MPAs Network.",
             link: [
               { namafile: "Establishment of Area I-VI", link: "/pengelolaan-kawasan/aturan-dan-regulasi/Kepmen KP No. 13 Tahun 2021 tentang Penetapan KKP Raja Ampat (Area I-VI).pdf" },
