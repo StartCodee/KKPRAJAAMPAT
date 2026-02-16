@@ -1,10 +1,10 @@
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Download, ChevronDown } from "lucide-react";
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 
 
-const DownloadButton = ({ links }) => {
+const DownloadButton = ({ links, lang }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Jika links hanya berupa string tunggal (1 file)
@@ -17,7 +17,7 @@ const DownloadButton = ({ links }) => {
         className="shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
       >
         <Download className="w-4 h-4" />
-        Unduh PDF
+        {lang === 'ID' ? 'Unduh PDF' : 'Download PDF'}
       </a>
     );
   }
@@ -32,7 +32,7 @@ const DownloadButton = ({ links }) => {
         className="shrink-0 flex items-center gap-3 bg-white/10 hover:bg-white text-white hover:text-[#194484] px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/10"
       >
         <Download className="w-4 h-4" />
-        Unduh PDF ({fileEntries.length})
+        {lang === 'ID' ? 'Unduh PDF' : 'Download PDF'} ({fileEntries.length})
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
@@ -69,44 +69,114 @@ const DownloadButton = ({ links }) => {
 };
 
 export default function DasarHukum() {
-  const hukumData = [
-    {
-      uu: "UU No. 23 Tahun 2014",
-      tentang: "Pemerintahan Daerah",
-      deskripsi: "UU ini merevisi UU No. 32 Tahun 2004 yang merupakan peraturan perundang-undangan kunci dalam proses desentralisasi kewenangan pemerintah pusat kepada pemerintah daerah. Revisi ini juga mencakup peralihan kewenangan pengelolaan laut kepada pemerintah provinsi–BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat sekarang berada dalam naungan Dinas Kelautan dan Perikanan (DKP) Provinsi Papua Barat Daya.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 23 Tahun 2014 tentang Pemerintah Daerah (1).pdf"
+  // Logika Sinkronisasi Bahasa
+  const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem('app_lang') || 'ID');
+    };
+    window.addEventListener('storage', handleStorageChange);
+    const interval = setInterval(handleStorageChange, 500);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
+
+  const content = {
+    ID: {
+      heroTitle: "Pengelolaan Kawasan",
+      heroSub: "Dasar Hukum",
+      intro: "Berikut ini adalah beberapa peraturan perundang-undangan tertinggi berdasarkan kronologi, yang merupakan dasar hukum mengenai keberadaan dari kawasan konservasi perairan serta tugas pokok dan fungsi dari pengelolaannya.",
+      data: [
+        {
+          uu: "UU No. 23 Tahun 2014",
+          tentang: "Tentang Pemerintahan Daerah",
+          deskripsi: "UU ini merevisi UU No. 32 Tahun 2004 yang merupakan peraturan perundang-undangan kunci dalam proses desentralisasi kewenangan pemerintah pusat kepada pemerintah daerah. Revisi ini juga mencakup peralihan kewenangan pengelolaan laut kepada pemerintah provinsi.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 23 Tahun 2014 tentang Pemerintah Daerah (1).pdf"
+        },
+        {
+          uu: "UU No. 27 Tahun 2007",
+          tentang: "Tentang Pengelolaan Wilayah Pesisir dan Pulau-Pulau Kecil",
+          deskripsi: "UU ini menggunakan terminologi ‘kawasan konservasi di wilayah pesisir dan pulau-pulau kecil’ yang merujuk kepada penetapan kawasan tertentu, termasuk bagi KKP Kepulauan Raja Ampat.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 27 Tahun 2007 tentang Pengelolaan WP-3-K (1).PDF"
+        },
+        {
+          uu: "UU No. 45 Tahun 2009",
+          tentang: "Tentang Perikanan",
+          deskripsi: "UU ini merevisi UU No. 31 Tahun 2004, dan memperinci fungsi KKP sebagai salah satu pendekatan pengelolaan untuk melestarikan sumber daya perikanan.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
+        },
+        {
+          uu: "UU No. 1 Tahun 2014",
+          tentang: "Tentang Pengelolaan Wilayah Pesisir dan Pulau-pulau Kecil",
+          deskripsi: "Mengatur Rencana Zonasi Wilayah Pesisir dan Pulau-pulau Kecil (RZWP-3-K) sebagai dokumen tata ruang laut. UU ini merevisi UU No. 27 Tahun 2007.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 1 Tahun 2014 tentang Perubahan Atas UU No. 27 Tahun 2007.pdf"
+        },
+        {
+          uu: "UU No. 32 Tahun 2014",
+          tentang: "Tentang Kelautan",
+          deskripsi: "Mengatur pemanfaatan sumber daya kelautan serta konservasi laut, aspek pertahanan, penegakan hukum, dan keselamatan di laut.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2014 tentang Kelautan.PDF"
+        },
+        {
+          uu: "UU No. 32 Tahun 2024",
+          tentang: "Tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya",
+          deskripsi: "Menjabarkan kawasan konservasi perairan sebagai bagian dari perlindungan sistem penyangga kehidupan. UU ini merevisi UU No. 5 Tahun 1990.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
+        }
+      ]
     },
-    {
-      uu: "UU No. 27 Tahun 2007",
-      tentang: "Pengelolaan Wilayah Pesisir dan Pulau-Pulau Kecil",
-      deskripsi: "UU ini menggunakan terminologi ‘kawasan konservasi di wilayah pesisir dan pulau-pulau kecil’ yang, dalam peraturan turunan di tingkat menteri sekarang, berkembang menggunakan istilah ‘kawasan konservasi di perairan’ untuk merujuk kepada penetapan kawasan tertentu, termasuk bagi KKP Kepulauan Raja Ampat. UU ini telah direvisi melalui UU No. 6 Tahun 2023 tentang Cipta Kerja.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 27 Tahun 2007 tentang Pengelolaan WP-3-K (1).PDF"
-    },
-    {
-      uu: "UU No. 45 Tahun 2009",
-      tentang: "Perikanan",
-      deskripsi: "UU ini merevisi UU No. 31 Tahun 2004, dan memperinci fungsi KKP sebagai salah satu pendekatan pengelolaan untuk melestarikan sumber daya perikanan. Dalam revisi UU ini terminologi ‘kawasan konservasi perairan’ sudah digunakan.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
-    },
-    {
-      uu: "UU No. 1 Tahun 2014",
-      tentang: "Pengelolaan Wilayah Pesisir dan Pulau-pulau Kecil",
-      deskripsi: "Keberadaan dan pengelolaan KKP termasuk ke dalam Rencana Zonasi Wilayah Pesisir dan Pulau-pulau Kecil (RZWP-3-K)–dokumen tata ruang laut–sebagaimana diatur dalam perubahannya. Selain kawasan konservasi, RZWP-3-K juga mencakup pengelolaan kawasan pemanfaatan umum, kawasan strategis nasional tertentu, dan kawasan alur laut. UU ini merevisi UU No. 27 Tahun 2007.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 1 Tahun 2014 tentang Perubahan Atas UU No. 27 Tahun 2007.pdf"
-    },
-    {
-      uu: "UU No. 32 Tahun 2014",
-      tentang: "Kelautan",
-      deskripsi: "UU ini mengatur lebih jauh pengelolaan tersebut sebagai “penyelenggaraan kegiatan, penyediaan, pengusahaan dan pemanfaatan sumber daya kelautan serta konservasi laut.” Lebih jauh, UU ini juga merupakan dasar hukum bagi pembangunan dan pengembangan kelautan, pengelolaan ruang laut, aspek pertahanan dan keamanan, penegakan hukum, keselamatan di laut, tata kelola dan kelembagaan, serta peran serta masyarakat.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2014 tentang Kelautan.PDF"
-    },
-    {
-      uu: "UU No. 32 Tahun 2024",
-      tentang: "Konservasi Sumber Daya Alam Hayati dan Ekosistemnya",
-      deskripsi: "UU ini menjabarkan “kawasan konservasi di perairan , wilayah pesisir dan pulau-pulau kecil” sebagai bagian dari “pengelolaan sumber daya alam hayati” dan “perlindungan sistem penyangga kehidupan.” UU ini merevisi UU No. 5 Tahun 1990 yang juga menandakan perubahan pendekatan tugas pokok dan fungsi mengenai konservasi sumber daya alam hayati dan ekosistemnya menjadi lintas sektoral.",
-      link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
-    },
-  ];
+    EN: {
+      heroTitle: "MPAs Management",
+      heroSub: "Legal Basis",
+      intro: "These are some of the legislations, in chronological order, related to the existence of MPA and it’s management unit’s tasks and functions. We apologise because there are no official translation to English.",
+      data: [
+        {
+          uu: "Act 23 Year 2014",
+          tentang: "Regional Government",
+          deskripsi: "This law revised Act 32 Year 2004, which was the key legislation in the decentralisation process from central to regional government: province, regency, and municipality governments. The revision included the transfer of authority for marine management from the regency/municipal government to the provincial government, with the Raja Ampat MPAs Management Authority currently embedded under the Southwest Papua’s Marine and Fisheries Agency.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 23 Tahun 2014 tentang Pemerintah Daerah (1).pdf"
+        },
+        {
+          uu: "Act 27 Year 2007",
+          tentang: "Islets and Coastal Management",
+          deskripsi: "This law used the term “conservation area in islets and coastal areas,’ which, in the ministry level’s regulations have now developed to ‘marine protected areas’ that refer to the designation of a particular area, including the Raja Ampat MPAs. This law has been revised to Act 6 Year 2023 on Job Creation.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 27 Tahun 2007 tentang Pengelolaan WP-3-K (1).PDF"
+        },
+        {
+          uu: "Act 45 Year 2009",
+          tentang: "Fisheries",
+          deskripsi: "This law revised Act 31 Year 2004, and specified the function of MPA as one of the management approaches to preserve fisheries resources. The revision began using the term ‘marine protected area.’",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 45 Tahun 2009 tentang Perubahan Atas UU Perikanan.pdf"
+        },
+        {
+          uu: "Act 1 Year 2014",
+          tentang: "Islets and Coastal Managemen",
+          deskripsi: "The existence and management of MPAs were included in the Islets and Coastal Zoning Plan–Indonesia’s marine spatial planning document. Besides MPA, marine spatial planning includes general utilisation areas, specific national strategic areas, and sea lane areas.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 1 Tahun 2014 tentang Perubahan Atas UU No. 27 Tahun 2007.pdf"
+        },
+        {
+          uu: "Act 32 Year 2014",
+          tentang: "Maritime Affairs ",
+          deskripsi: "This law further regulates ‘marine management’ as ‘implementation of activities, provisions, efforts, utilizations and conservation of marine resources. This law also regulates marine development, marine spatial management, aspects of security and defence, law enforcement, safety at sea, governance and institutionalisation, and communities’ roles.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2014 tentang Kelautan.PDF"
+        },
+        {
+          uu: "Act 32 Year 2024",
+          tentang: "Ecosystem and Natural Resources Conservation",
+          deskripsi: "This law stated “marine protected areas” as a part of “natural resources management” and “life buffer system protection.” This law revised Act 5 of Year 1990 and hinted at a shift in tasks and functions toward a more cross-sectoral approach.",
+          link: "/pengelolaan-kawasan/dasar-hukum/UU No. 32 Tahun 2024 tentang KSDAE.pdf"
+        }
+      ]
+    }
+  };
+
+  const t = content[lang];
+
+  const hukumData = t.data;
+
   return (
     <main
       className="min-h-screen bg-fixed bg-center bg-cover"
@@ -124,7 +194,7 @@ export default function DasarHukum() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-bold tracking-tight"
           >
-            Pengelolaan Kawasan
+            {t.heroTitle}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -132,7 +202,7 @@ export default function DasarHukum() {
             transition={{ delay: 0.5 }}
             className="text-2xl mt-2 font-light italic"
           >
-            Dasar Hukum
+            {t.heroSub}
           </motion.p>
         </div>
       </section>
@@ -141,7 +211,7 @@ export default function DasarHukum() {
       <section className="bg-black/40 py-20 px-6 space-y-32 md:px-20 backdrop-blur-sm">
         <div className="bg-[#194484]/80 rounded-xl p-10 text-gray-200 space-y-24">
           <div className="space-y-8">
-            <p>Berikut ini adalah beberapa peraturan perundang-undangan tertinggi berdasarkan kronologi, yang merupakan dasar hukum mengenai keberadaan dari kawasan konservasi perairan serta tugas pokok dan fungsi dari pengelolaannya. </p>
+            <p>{t.intro}</p>
             {/* Grid List Hukum */}
             <div className="grid grid-cols-1 gap-6">
               {hukumData.map((item, idx) => (
@@ -166,7 +236,7 @@ export default function DasarHukum() {
                   {/* Konten Teks */}
                   <div className="grow space-y-2">
                     <h3 className="text-blue-400 font-bold text-xl tracking-wide">{item.uu}</h3>
-                    <h4 className="text-white text-lg font-medium">Tentang {item.tentang}</h4>
+                    <h4 className="text-white text-lg font-medium">{item.tentang}</h4>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-3xl font-light">
                       {item.deskripsi}
                     </p>

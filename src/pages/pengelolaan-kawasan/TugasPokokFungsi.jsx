@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import {
   ShieldCheck,
   Settings2,
@@ -18,67 +19,123 @@ import {
 import Navbar from "@/components/Navbar";
 
 export default function TugasPokokDanFungsi() {
-  const functions = [
-    {
-      title: "Penyusunan Rencana dan Program Kerja",
-      desc: "Sebelum menyelenggarakan aktivitasnya, SUOP KKP Kepulauan Raja Ampat mesti merumuskan rencana dan program kerjanya, baik itu deskripsi, penganggaran, sumber daya manusia, hingga linimasa.",
-      icon: <Settings2 className="w-6 h-6" />,
+
+  // 1. Logika Sinkronisasi Bahasa
+  const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem('app_lang') || 'ID');
+    };
+    window.addEventListener('storage', handleStorageChange);
+    const interval = setInterval(handleStorageChange, 500);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
+
+  // 2. Data Terjemahan Konten
+  const content = {
+    ID: {
+      heroTitle: "Pengelolaan Kawasan",
+      heroSub: "Tugas Pokok dan Fungsi",
+      mainTitle: "Tugas Pokok",
+      mainDesc: "Berdasarkan dokumen Rencana Strategis Tahun 2024-2029, tugas utama dari SUOP adalah membantu Kepala Dinas P2KP Papua Barat Daya untuk melaksanakan tugas teknis perlindungan, pemanfaatan, dan pelestarian KKP Kepulauan Raja Ampat. Tugas pokok dari BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat sebagai SUOP tersebut diperinci melalui beragam fungsi yang tidak dapat dipisahkan satu dengan lainnya.",
+      functionTitle: "Fungsi",
+      btnDoc: "RENSTRA 2024-2029 (PDF)",
+      dashboardTitle: "Data & Informasi",
+      dashboardDesc: "Untuk data dan informasi lebih terperinci dari layanan kami, silakan buka dasbor yang disajikan secara real-time.",
+      btnDashboard: "Buka Dasbor",
+      functions: [
+        {
+          title: "Penyusunan Rencana dan Program Kerja",
+          desc: "Sebelum menyelenggarakan aktivitasnya, SUOP KKP Kepulauan Raja Ampat mesti merumuskan rencana dan program kerjanya, baik itu deskripsi, penganggaran, sumber daya manusia, hingga linimasa.",
+          icon: <Settings2 className="w-6 h-6" />,
+        },
+        {
+          title: "Penyiapan Materi, Petunjuk Teknis, dan Prosedur",
+          desc: "Dalam menyelenggarakan setiap kegiatannya, SUOP KKP Kepulauan Raja Ampat berpedoman terhadap materi dan/atau petunjuk teknis dan/atau prosedur operasional standar.",
+          icon: <FileText className="w-6 h-6" />,
+        },
+        {
+          title: "Perlindungan Habitat, Jenis Ikan dan Biota Lain",
+          desc: "Fungsi utama ini diwujudkan ke dalam beberapa aktivitas, mulai dari survei populasi jenis ikan dan biota laut tertentu seperti pari manta, hiu berjalan, mamalia laut, dan penyu, serta inisiatif-inisiatif pengelolaan terhadap aktivitas pemanfaatan di dalam kawasan.",
+          icon: <ShieldCheck className="w-6 h-6" />,
+        },
+        {
+          title: "Pemantauan Sumber Daya Kelautan dan Perikanan",
+          desc: (
+            <>
+              SUOP KKP Kepulauan Raja Ampat mewujudkan fungsi pemantauan ke dalam beberapa aktivitas yang diselenggarakan secara rutin seperti pemantauan ekologis terumbu karang, survei populasi spesies laut penting <span className="italic">(focal)</span>, maupun beberapa inisiatif yang diselenggarakan berkesinambungan seperti Peneliti Warga.
+            </>
+          ),
+          icon: <Activity className="w-6 h-6" />,
+        },
+        {
+          title: "Pemantauan Pemanfaatan Sumber Daya Kelautan dan Perikanan",
+          desc: "Fungsi ini secara garis besar bertujuan untuk mengawasi aktivitas pemanfaatan baik dari sektor perikanan maupun pariwisata, dan diwujudkan ke dalam aktivitas yang diselenggarakan rutin seperti Jaga Laut dan pengumpulan data pemanfaatan, serta inisiatif berkesinambungan seperti Sispandalwas dan RAMS.",
+          icon: <Search className="w-6 h-6" />,
+        },
+        {
+          title: "Penegakan Aturan Zonasi",
+          desc: "KKP merupakan kawasan yang dikelola berdasarkan sistem zonasi, atau sederhananya: ada aktivitas yang boleh dan tidak boleh dilakukan di dalam KKP Kepulauan Raja Ampat. Fungsi ini utamanya diwujudkan melalui kegiatan Jaga Laut.",
+          icon: <Map className="w-6 h-6" />,
+        },
+        {
+          title: "Koordinasi Pengawasan dan Perlindungan",
+          desc: "Dalam menyelenggarakan fungsinya, BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat tidak dapat bekerja sendirian, dan memerlukan peran serta dari beragam pemangku kepentingan berikut kapasitasnya, mulai dari aparat penegak hukum, perwakilan pemerintah dari sektor terkait lainnya, pelaku industri, hingga kepada pengunjung.",
+          icon: <Users className="w-6 h-6" />,
+        },
+        {
+          title: "Pemantauan dan Evaluasi",
+          desc: "Sebagai institusi yang menyediakan beragam jenis layanan, BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat berkewajiban untuk meningkatkan mutu layanan dengan menyelenggarakan upaya pemantauan dan evaluasi terhadap kinerja baik secara internal maupun yang melibatkan pihak eksternal, untuk selanjutnya dituangkan ke dalam beragam laporan.",
+          icon: <ClipboardCheck className="w-6 h-6" />,
+        },
+        {
+          title: "Pelaporan",
+          desc: "Selain pelaporan hasil pemantauan dan evaluasi kinerja, SUOP KKP Kepulauan Raja Ampat berkewajiban untuk menyusun laporan kinerja rutin, laporan keuangan, penerimaan dan pemanfaatan hibah, serta laporan lain yang diwajibkan oleh peraturan perundang-undangan yang berlaku, yang disampaikan kepada gubernur melalui Kepala Dinas Kelautan dan Perikanan.",
+          icon: <FilePieChart className="w-6 h-6" />,
+        },
+        {
+          title: "Pelaksanaan Administrasi",
+          desc: "Fungsi ini mencakup penyelenggaraan pengelolaan, pengaruran dan penataan dokumen, tata laksana organisasi, keuangan, kepegawaian, hubungan masyarakat, serta penyediaan perlengkapan dan rumah tangga.",
+          icon: <Archive className="w-6 h-6" />,
+        },
+        {
+          title: "Fungsi Lainnya",
+          desc: "Fungsi lain BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat mencakup fungsi lainnya yang dipandang mendesak dan/atau relevan oleh Pemerintah Provinsi Papua Barat Daya melalui Kepala Dinas Kelautan dan Perikanan.",
+          icon: <MoreHorizontal className="w-6 h-6" />,
+        }
+      ]
     },
-    {
-      title: "Penyiapan Materi, Petunjuk Teknis, dan Prosedur",
-      desc: "Dalam menyelenggarakan setiap kegiatannya, SUOP KKP Kepulauan Raja Ampat berpedoman terhadap materi dan/atau petunjuk teknis dan/atau prosedur operasional standar.",
-      icon: <FileText className="w-6 h-6" />,
-    },
-    {
-      title: "Perlindungan Habitat, Jenis Ikan dan Biota Lain",
-      desc: "Fungsi utama ini diwujudkan ke dalam beberapa aktivitas, mulai dari survei populasi jenis ikan dan biota laut tertentu seperti pari manta, hiu berjalan, mamalia laut, dan penyu, serta inisiatif-inisiatif pengelolaan terhadap aktivitas pemanfaatan di dalam kawasan.",
-      icon: <ShieldCheck className="w-6 h-6" />,
-    },
-    {
-      title: "Pemantauan Sumber Daya Kelautan dan Perikanan",
-      desc: (
-        <>
-          SUOP KKP Kepulauan Raja Ampat mewujudkan fungsi pemantauan ke dalam beberapa aktivitas yang diselenggarakan secara rutin seperti pemantauan ekologis terumbu karang, survei populasi spesies laut penting <span className="italic">(focal)</span>, maupun beberapa inisiatif yang diselenggarakan berkesinambungan seperti Peneliti Warga.
-        </>
-      ),
-      icon: <Activity className="w-6 h-6" />,
-    },
-    {
-      title: "Pemantauan Pemanfaatan Sumber Daya Kelautan dan Perikanan",
-      desc: "Fungsi ini secara garis besar bertujuan untuk mengawasi aktivitas pemanfaatan baik dari sektor perikanan maupun pariwisata, dan diwujudkan ke dalam aktivitas yang diselenggarakan rutin seperti Jaga Laut dan pengumpulan data pemanfaatan, serta inisiatif berkesinambungan seperti Sispandalwas dan RAMS.",
-      icon: <Search className="w-6 h-6" />,
-    },
-    {
-      title: "Penegakan Aturan Zonasi",
-      desc: "KKP merupakan kawasan yang dikelola berdasarkan sistem zonasi, atau sederhananya: ada aktivitas yang boleh dan tidak boleh dilakukan di dalam KKP Kepulauan Raja Ampat. Fungsi ini utamanya diwujudkan melalui kegiatan Jaga Laut.",
-      icon: <Map className="w-6 h-6" />,
-    },
-    {
-      title: "Koordinasi Pengawasan dan Perlindungan",
-      desc: "Dalam menyelenggarakan fungsinya, BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat tidak dapat bekerja sendirian, dan memerlukan peran serta dari beragam pemangku kepentingan berikut kapasitasnya, mulai dari aparat penegak hukum, perwakilan pemerintah dari sektor terkait lainnya, pelaku industri, hingga kepada pengunjung.",
-      icon: <Users className="w-6 h-6" />,
-    },
-    {
-      title: "Pemantauan dan Evaluasi",
-      desc: "Sebagai institusi yang menyediakan beragam jenis layanan, BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat berkewajiban untuk meningkatkan mutu layanan dengan menyelenggarakan upaya pemantauan dan evaluasi terhadap kinerja baik secara internal maupun yang melibatkan pihak eksternal, untuk selanjutnya dituangkan ke dalam beragam laporan.",
-      icon: <ClipboardCheck className="w-6 h-6" />,
-    },
-    {
-      title: "Pelaporan",
-      desc: "Selain pelaporan hasil pemantauan dan evaluasi kinerja, SUOP KKP Kepulauan Raja Ampat berkewajiban untuk menyusun laporan kinerja rutin, laporan keuangan, penerimaan dan pemanfaatan hibah, serta laporan lain yang diwajibkan oleh peraturan perundang-undangan yang berlaku, yang disampaikan kepada gubernur melalui Kepala Dinas Kelautan dan Perikanan.",
-      icon: <FilePieChart className="w-6 h-6" />,
-    },
-    {
-      title: "Pelaksanaan Administrasi",
-      desc: "Fungsi ini mencakup penyelenggaraan pengelolaan, pengaruran dan penataan dokumen, tata laksana organisasi, keuangan, kepegawaian, hubungan masyarakat, serta penyediaan perlengkapan dan rumah tangga.",
-      icon: <Archive className="w-6 h-6" />,
-    },
-    {
-      title: "Fungsi Lainnya",
-      desc: "Fungsi lain BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat mencakup fungsi lainnya yang dipandang mendesak dan/atau relevan oleh Pemerintah Provinsi Papua Barat Daya melalui Kepala Dinas Kelautan dan Perikanan.",
-      icon: <MoreHorizontal className="w-6 h-6" />,
+    EN: {
+      heroTitle: "MPAs Management",
+      heroSub: "Main Tasks and Functions",
+      mainTitle: "Main Tasks",
+      mainDesc: "According to Raja Ampat MPAs Management Authority’s Strategic Plan Document for 2024 to 2029 , the tasks of the management authority are to assist the Southwest Papua’s Head of Marine and Fisheries to technically implement efforts of protection, utilisation, and preservation of Raja Ampat MPAs. Those tasks are then specified as various functions that are inseparable from one another.",
+      functionTitle: "Functions",
+      btnDoc: "Strategic Plan Document for 2024 to 2029 (PDF)",
+      dashboardTitle: "Data & Information",
+      dashboardDesc: "Raja Ampat MPAs Management Authority is also obliged to perform other functions deemed urgent and/or relevant by the Head of Marine and Fisheries Agency and the provincial government.",
+      btnDashboard: "Explore Dashboard",
+      functions: [
+        { title: "Developing Work and Program Plans", desc: "Before implementing its activities, the Raja Ampat MPAs Management Authority is obliged to develop work and program plans, including their descriptions, budgets, human resources, and timelines.", icon: <Settings2 /> },
+        { title: "Preparing Materials, Technical Guidelines, and Procedures", desc: "For implementation, the Raja Ampat MPAs Management Authority must base all its activities on materials/or technical guidelines and standard operating procedures.", icon: <FileText /> },
+        { title: "Protecting Habitat, Fish Species, and Other Biota", desc: "This function is implemented across several activities, including surveys of particular marine biota and fish species, such as manta rays, walking sharks, marine mammals, and turtles, as well as management initiatives on utilisation activities within the MPAs.", icon: <ShieldCheck /> },
+        { title: "Marine and Fisheries Resources Monitoring", desc: "Raja Ampat MPAs Management Authority implements this function across various routine activities, such as reef health monitoring, focal species population surveys, and several initiatives implemented sustainably, including Citizen Science.", icon: <Activity /> },
+        { title: "Utilization Monitoring", desc: "In general, this function aims to monitor all utilisation activities, including tourism and fisheries, and to implement routine activities such as the Jaga Laut and resource use monitoring, as well as initiatives such as Sispandalwas and RAMS.", icon: <Search /> },
+        { title: "Enforcing Zoning Rule", desc: "MPAs are areas managed through a zoning system; all must obey some dos and don’ts.", icon: <Map /> },
+        { title: "Coordinating Protection and Monitoring", desc: "In implementing its functions, the Raja Ampat MPAs Management Authority must work with stakeholders; it needs the roles and capacities of various parties, including law enforcers, cross-sectoral government representatives, the private sector, community members, and visitors.", icon: <Users /> },
+        { title: "Monitoring and Evaluation", desc: "As an institution that provides various services, Raja Ampat MPAs Management Authority is obliged to improve the quality of its services by conducting monitoring and evaluation of its performance, both internally and with external parties, which will then be reported.", icon: <ClipboardCheck /> },
+        { title: "Reporting", desc: "Apart from the evaluation report, the Raja Ampat MPAs Management Authority is obliged to prepare routine activity, financial, grant, and other reports required by law, which will then be conveyed by the Head of the Marine and Fisheries Agency to the governor.", icon: <FilePieChart /> },
+        { title: "Administration", desc: "This function covers document management, organisational governance, financial records, personnel management, public relations, and equipment and household provision.", icon: <Archive /> },
+        { title: "Other Functions", desc: "Raja Ampat MPAs Management Authority is also obliged to perform other functions deemed urgent and/or relevant by the Head of Marine and Fisheries Agency and the provincial government.", icon: <MoreHorizontal /> }
+      ]
     }
-  ];
+  };
+
+  const t = content[lang];
 
   return (
     <main
@@ -96,7 +153,7 @@ export default function TugasPokokDanFungsi() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-bold tracking-tight"
           >
-            Pengelolaan Kawasan
+            {t.heroTitle}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -104,7 +161,7 @@ export default function TugasPokokDanFungsi() {
             transition={{ delay: 0.5 }}
             className="text-2xl mt-2 font-light italic"
           >
-            Tugas Pokok dan Fungsi
+            {t.heroSub}
           </motion.p>
         </div>
       </section>
@@ -124,10 +181,10 @@ export default function TugasPokokDanFungsi() {
 
             <div className="relative z-10 max-w-3xl">
               <h3 className="text-white text-3xl md:text-5xl font-bold leading-tight mb-8">
-                Tugas Pokok
+                {t.mainTitle}
               </h3>
               <p className="text-gray-300 text-lg font-light leading-relaxed">
-                Berdasarkan dokumen Rencana Strategis Tahun 2024-2029 , tugas utama dari SUOP adalah membantu Kepala Dinas P2KP Papua Barat Daya untuk melaksanakan tugas teknis perlindungan, pemanfaatan, dan pelestarian KKP Kepulauan Raja Ampat. Tugas pokok dari BLUD UPTD Pengelolaan KKP Kepulauan Raja Ampat sebagai SUOP tersebut diperinci melalui beragam fungsi yang tidak dapat dipisahkan satu dengan lainnya.
+                {t.mainDesc}
               </p>
 
               <motion.a
@@ -138,16 +195,16 @@ export default function TugasPokokDanFungsi() {
                 className="mt-10 inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold text-sm transition-all"
               >
                 <Download size={18} />
-                RENSTRA 2024-2029 (PDF)
+                {t.btnDoc}
               </motion.a>
             </div>
           </motion.div>
 
           {/* 2. Functions Grid */}
           <div className="space-y-8">
-            <p className="text-center text-white text-5xl font-bold">Fungsi</p>
+            <p className="text-center text-white text-5xl font-bold">{t.functionTitle}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {functions.map((f, idx) => (
+              {t.functions.map((f, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -176,14 +233,14 @@ export default function TugasPokokDanFungsi() {
                 </div>
 
                 <div className="relative z-10">
-                  <h4 className="text-2xl font-black mb-2">Data & Informasi</h4>
+                  <h4 className="text-2xl font-black mb-2">{t.dashboardTitle}</h4>
                   <p className="text-blue-100 text-sm font-light opacity-80">
-                    Untuk data dan informasi lebih terperinci dari layanan kami, silakan buka dasbor yang disajikan secara real-time.
+                    {t.dashboardDesc}
                   </p>
                 </div>
 
                 <button className="relative z-10 mt-8 w-fit flex items-center gap-3 bg-white text-blue-900 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:gap-5 transition-all">
-                  Buka Dasbor <ArrowRight size={16} />
+                  {t.btnDashboard} <ArrowRight size={16} />
                 </button>
               </motion.div>
             </div>
