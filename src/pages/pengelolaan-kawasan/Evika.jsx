@@ -53,11 +53,50 @@ export default function Evika() {
       whatDesc: "MPA’s Management Effectiveness Evaluation (Evaluasi Efektivitas Pengelolaan Kawasan Konservasi in Bahasa Indonesia, or the EVIKA) is a measuring tool for “MPA’s management effectiveness” that has “similar standard and is feasible as a reference” to increase “the quality of management, performance, planning, and as MPA’s monitoring system for policy makers, management units, and other stakeholders” (adapted from EVIKA Technical Guidelines).",
       aspectTitle: "EVIKA Assessment Aspects",
       aspectDesc: "EVIKA covers various aspects, including governance, MPA resources, conservation targets, and social, economic, and cultural factors, which are specified in terms of several criteria and indicators evaluated by a team composed of government officials and other stakeholders, established by the Ministry of Marine and Fisheries’ Directorate General of Marine Spatial Management.",
-      aspects: [  
-        { title: "Input", items: ["Area status", "Zoning plan", "Management plan", "Human resources", "Budget", "Infrastructure & equipment"] },
-        { title: "Process", items: ["Management SOPs", "Surveillance", "Outreach", "Partnerships", "Resource monitoring", "Facility management", "Permitting"] },
-        { title: "Output", items: ["Controlled utilization", "Threats", "Compliance levels", "Community knowledge", "Community empowerment", "Data & information"] },
-        { title: "Outcome", items: ["Conservation target condition", "Core zone condition", "Socio-economic condition", "Community participation"] },
+      aspects: [
+        {
+          title: "Input",
+          items: [
+            "MPA’s Status",
+            "Zoning Plan",
+            "Management Plan",
+            "Human Resources",
+            "Budget",
+            "Infrastructure and Equipment"
+          ]
+        },
+        {
+          title: "Process",
+          items: [
+            "Management SOPs",
+            "Surveillance",
+            "Community Outreach",
+            "Partnership",
+            "Resources Use Monitoring",
+            "Infrastructure and Equipment Management",
+            "Permits",
+            "Community Empowerment"
+          ]
+        },
+        {
+          title: "Output",
+          items: [
+            "Controlled Utilizations",
+            "Threats",
+            "Compliance Level",
+            "Community Knowledge",
+            "Data and Information"
+          ]
+        },
+        {
+          title: "Outcome",
+          items: [
+            "Condition of Conservation Target",
+            "Condition of Core Zone",
+            "Social and Economic Condition",
+            "Community Participation"
+          ]
+        },
       ],
       achievementTitle: "Our Management Score – Year 2026",
       achievementLink: "LEARN MORE",
@@ -240,7 +279,7 @@ export default function Evika() {
                     </div>
 
                     {/* Speedometer yang sudah kita buat sebelumnya */}
-                    <Speedometer value={item.val} lang={lang  } />
+                    <Speedometer value={item.val} lang={lang} />
 
                     {/* Dekorasi Logo Transparan di Background Kartu (Opsional) */}
                     <div className="absolute -bottom-6 -right-6 opacity-[0.03] pointer-events-none">

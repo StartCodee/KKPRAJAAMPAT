@@ -117,7 +117,7 @@ export default function TugasPokokDanFungsi() {
       functionTitle: "Functions",
       btnDoc: "Strategic Plan Document for 2024 to 2029 (PDF)",
       dashboardTitle: "Data & Information",
-      dashboardDesc: "Raja Ampat MPAs Management Authority is also obliged to perform other functions deemed urgent and/or relevant by the Head of Marine and Fisheries Agency and the provincial government.",
+      dashboardDesc: "For detailed data and information of our services, please visit our real-time dashboard.",
       btnDashboard: "Explore Dashboard",
       functions: [
         { title: "Developing Work and Program Plans", desc: "Before implementing its activities, the Raja Ampat MPAs Management Authority is obliged to develop work and program plans, including their descriptions, budgets, human resources, and timelines.", icon: <Settings2 /> },

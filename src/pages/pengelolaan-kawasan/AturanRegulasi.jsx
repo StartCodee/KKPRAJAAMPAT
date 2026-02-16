@@ -193,7 +193,7 @@ export default function AturanDanRegulasi() {
           },
           {
             no: "MAFR Decree No. 13/2021",
-            title: "MMF Decree",
+            title: "MMF Decrees Raja Ampat MPAs' Designation",
             desc: "This regulation designated Raja Ampat MPAs, covering Area I Ayau-Asia MPA to Area VI Fam Islands MPA, while Area VII North Misool was designated through MMF Decree 191 Year 2023. Both decrees officially included seven MPAs in the Raja Ampat MPAs Network.",
             link: [
               { namafile: "Establishment of Area I-VI", link: "/pengelolaan-kawasan/aturan-dan-regulasi/Kepmen KP No. 13 Tahun 2021 tentang Penetapan KKP Raja Ampat (Area I-VI).pdf" },
@@ -204,7 +204,7 @@ export default function AturanDanRegulasi() {
         Regional: [
           {
             no: "Gov Reg PBD No. 26/2023",
-            title: "MPA’s Management Authority",
+            title: "Raja Ampat MPAs' Management Authority",
             desc: "This regulation officially embed Raja Ampat MPAs Management Authority under the Southwest Papua’s Marine and Fisheries Agency, as well as specifies the MMF’s decree on Raja Ampat MPAs.",
             link: "/pengelolaan-kawasan/aturan-dan-regulasi/Peraturan Gubernur Papua Barat Daya No 26 Tahun 2023 tentang UPTD Pengelolaan KK di Perairan Kepulauan Raja Ampat pada Dinas P2KP.pdf"
           },
