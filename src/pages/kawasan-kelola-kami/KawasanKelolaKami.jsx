@@ -1,12 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import { Map as MapIcon, ArrowRight, Waves, Landmark, Compass } from "lucide-react";
+import { Map as MapIcon, ArrowRight, ChevronRight, Landmark, Compass } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function KawasanKelolaKami() {
     const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
+    // State untuk tab utama (0: Kawasan Kelola Kami, 1: KKP Lainnya)
+    const [mainTab, setMainTab] = useState(0);
+    // State untuk sub-tab di dalam KKP Lainnya (0: KKP, 1: Kehutanan)
+    const [subTab, setSubTab] = useState(0);
 
     useEffect(() => {
         const handleStorageChange = () => {
@@ -23,19 +27,31 @@ export default function KawasanKelolaKami() {
     const content = {
         ID: {
             heroTitle: "Kawasan Kelola Kami",
-            heroSub: "Jejaring Kawasan Konservasi Perairan Kepulauan Raja Ampat",
+            heroSub: "KKP di Raja Ampat",
             intro: "Kami mengelola tujuh area konservasi perairan dengan total luas hampir 2 juta hektar. Jejaring ini dirancang untuk melindungi keanekaragaman hayati laut sekaligus mendukung mata pencaharian masyarakat lokal secara berkelanjutan.",
             btnExplore: "Lihat Detail Area",
             footerNote: "Semua rincian koordinat dan aturan zonasi mengacu pada Keputusan Menteri Kelautan dan Perikanan Republik Indonesia.",
-            areas: [
-                { id: "I", name: "Kepulauan Ayau-Asia", size: "100.008,99 Ha", feat: "Pusat Pemijahan Kerapu Dunia", path: "/kawasan-kelola-kami/kepulauan-ayau-asia", tags: ["Atol", "Spawning Ground"] },
-                { id: "II", name: "Teluk Mayalibit", size: "49.786,82 Ha", feat: "Habitat Endemik Lumba-lumba", path: "/kawasan-kelola-kami/teluk-mayalibit", tags: ["Budaya", "Endemik"] },
-                { id: "III", name: "Selat Dampier", size: "353.440,54 Ha", feat: "Koridor Megabiodiversitas Laut", path: "/kawasan-kelola-kami/selat-dampier", tags: ["Wisata", "Arus Kaya"] },
-                { id: "IV", name: "Kepulauan Misool", size: "348.518,74 Ha", feat: "Labirin Karst & Padang Lamun Dugong", path: "/kawasan-kelola-kami/kepulauan-misool", tags: ["Karst", "Dugong"] },
-                { id: "V", name: "Kepulauan Kofiau-Boo", size: "137.318,73 Ha", feat: "Evolusi & Endemisme Spesies", path: "/kawasan-kelola-kami/kofiau-boo", tags: ["Evolusi", "Coral"] },
-                { id: "VI", name: "Kepulauan Fam", size: "359.385,65 Ha", feat: "Ikon Wisata Berbasis Konservasi Rakyat", path: "/kawasan-kelola-kami/kepulauan-fam", tags: ["Ikonik", "Rakyat"] },
-                { id: "VII", name: "Misool Utara", size: "308.852,00 Ha", feat: "Hutan Mangrove & Perlindungan Pesisir", path: "/kawasan-kelola-kami/misool-utara", tags: ["Mangrove", "Terbaru"] }
-            ]
+            tabs: ["Kawasan Kelola Kami", "Kawasan Konservasi Perairan Lainnya"],
+            subTabs: ["Kementrian Kelautan dan Perikanan", "Kementrian Lingkungan Hidup dan Kehutanan"],
+            dataKeys: ["kawasanKelolaKami", "kkpKKP", "kkpKehutanan"],
+            areas: {
+                kawasanKelolaKami: [
+                    { id: "I", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Kepulauan Ayau-Asia", size: "100.008,99 Ha", feat: "Pusat Pemijahan Kerapu Dunia", path: "/kawasan-kelola-kami/kepulauan-ayau-asia", tags: ["Atol", "Spawning Ground"] },
+                    { id: "II", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Teluk Mayalibit", size: "49.786,82 Ha", feat: "Habitat Endemik Lumba-lumba", path: "/kawasan-kelola-kami/teluk-mayalibit", tags: ["Budaya", "Endemik"] },
+                    { id: "III", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Selat Dampier", size: "353.440,54 Ha", feat: "Koridor Megabiodiversitas Laut", path: "/kawasan-kelola-kami/selat-dampier", tags: ["Wisata", "Arus Kaya"] },
+                    { id: "IV", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Kepulauan Misool", size: "348.518,74 Ha", feat: "Labirin Karst & Padang Lamun Dugong", path: "/kawasan-kelola-kami/kepulauan-misool", tags: ["Karst", "Dugong"] },
+                    { id: "V", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Kepulauan Kofiau-Boo", size: "137.318,73 Ha", feat: "Evolusi & Endemisme Spesies", path: "/kawasan-kelola-kami/kofiau-boo", tags: ["Evolusi", "Coral"] },
+                    { id: "VI", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Kepulauan Fam", size: "359.385,65 Ha", feat: "Ikon Wisata Berbasis Konservasi Rakyat", path: "/kawasan-kelola-kami/kepulauan-fam", tags: ["Ikonik", "Rakyat"] },
+                    { id: "VII", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Misool Utara", size: "308.852,00 Ha", feat: "Hutan Mangrove & Perlindungan Pesisir", path: "/kawasan-kelola-kami/misool-utara", tags: ["Mangrove", "Terbaru"] }
+                ],
+                kkpKKP: [
+                    { pengelola: "KEMENTERIAN KELAUTAN DAN PERIKANAN", name: "KKP Kepulauan Waigeo Sebelah Barat", size: "120.000 Ha", feat: "Kawasan Konservasi Perairan Nasional", path: "/kawasan-kelola-kami/waigeo-barat", tags: ["Nasional", "Suaka Alam"] },
+                    { pengelola: "KEMENTERIAN KELAUTAN DAN PERIKANAN", name: "KKP Kepulauan Raja Ampat", size: "200.000 Ha", feat: "Kawasan Konservasi Perairan Nasional", path: "/kawasan-kelola-kami/raja-ampat-nasional", tags: ["Nasional", "Taman Wisata"] }
+                ],
+                kkpKehutanan: [
+                    { pengelola: "KEMENTERIAN LINGKUNGAN HIDUP DAN KEHUTANAN", name: "Cagar Alam Laut Kofiau", size: "145.000 Ha", feat: "Kawasan Konservasi di bawah KLHK", path: "/kawasan-kelola-kami/cal-kofiau", tags: ["Cagar Alam", "KLHK"] }
+                ]
+            }
         },
         EN: {
             heroTitle: "Our MPA",
@@ -43,20 +59,42 @@ export default function KawasanKelolaKami() {
             intro: "We manage seven marine conservation areas totaling nearly 2 million hectares. This network is designed to protect marine biodiversity while supporting the sustainable livelihoods of local communities.",
             btnExplore: "View Area Details",
             footerNote: "All coordinate details and zoning rules refer to the Decrees of the Minister of Marine Affairs and Fisheries of the Republic of Indonesia.",
-            areas: [
-                { id: "I", name: "Ayau-Asia Islands", size: "100,008.99 Ha", feat: "Global Grouper Spawning Hub", path: "/kawasan-kelola-kami/kepulauan-ayau-asia", tags: ["Atoll", "Spawning Ground"] },
-                { id: "II", name: "Mayalibit Bay", size: "49,786.82 Ha", feat: "Endemic Dolphin Habitat", path: "/kawasan-kelola-kami/teluk-mayalibit", tags: ["Culture", "Endemic"] },
-                { id: "III", name: "Dampier Strait", size: "353,440.54 Ha", feat: "Marine Megabiodiversity Corridor", path: "/kawasan-kelola-kami/selat-dampier", tags: ["Tourism", "Nutrient-Rich"] },
-                { id: "IV", name: "Misool Islands", size: "348,518.74 Ha", feat: "Karst Labyrinth & Dugong Seagrass", path: "/kawasan-kelola-kami/kepulauan-misool", tags: ["Karst", "Dugong"] },
-                { id: "V", name: "Kofiau-Boo Islands", size: "137,318.73 Ha", feat: "Evolutionary & Species Endemism", path: "/kawasan-kelola-kami/kofiau-boo", tags: ["Evolution", "Coral"] },
-                { id: "VI", name: "Fam Islands", size: "359,385.65 Ha", feat: "Iconic Community-Based Conservation", path: "/kawasan-kelola-kami/kepulauan-fam", tags: ["Iconic", "Community"] },
-                { id: "VII", name: "North Misool", size: "308,852.00 Ha", feat: "Mangrove Forest & Coastal Protection", path: "/kawasan-kelola-kami/misool-utara", tags: ["Mangrove", "Latest"] }
-            ]
+            tabs: ["Our MPA", "Other MPA",],
+            subTabs: ["Ministry of Marine Affairs and Fisheries", "Ministry of Environment and Forestry"],
+            dataKeys: ["kawasanKelolaKami", "kkpKKP", "kkpKehutanan"],
+            areas: {
+                kawasanKelolaKami: [
+                    { id: "I", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "Ayau-Asia Islands", size: "100,008.99 Ha", feat: "Global Grouper Spawning Hub", path: "/kawasan-kelola-kami/kepulauan-ayau-asia", tags: ["Atoll", "Spawning Ground"] },
+                    { id: "II", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "Mayalibit Bay", size: "49,786.82 Ha", feat: "Endemic Dolphin Habitat", path: "/kawasan-kelola-kami/teluk-mayalibit", tags: ["Culture", "Endemic"] },
+                    { id: "III", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "Dampier Strait", size: "353,440.54 Ha", feat: "Marine Megabiodiversity Corridor", path: "/kawasan-kelola-kami/selat-dampier", tags: ["Tourism", "Nutrient-Rich"] },
+                    { id: "IV", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "Misool Islands", size: "348,518.74 Ha", feat: "Karst Labyrinth & Dugong Seagrass", path: "/kawasan-kelola-kami/kepulauan-misool", tags: ["Karst", "Dugong"] },
+                    { id: "V", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "Kofiau-Boo Islands", size: "137,318.73 Ha", feat: "Species Evolution & Endemism", path: "/kawasan-kelola-kami/kofiau-boo", tags: ["Evolution", "Coral"] },
+                    { id: "VI", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "Fam Islands", size: "359,385.65 Ha", feat: "Community-Based Conservation Icon", path: "/kawasan-kelola-kami/kepulauan-fam", tags: ["Iconic", "Community"] },
+                    { id: "VII", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "North Misool", size: "308,852.00 Ha", feat: "Mangrove Forest & Coastal Protection", path: "/kawasan-kelola-kami/misool-utara", tags: ["Mangrove", "Latest"] }
+                ],
+                kkpKKP: [
+                    { pengelola: "MINISTRY OF MARINE AFFAIRS AND FISHERIES", name: "West Waigeo Islands MPA", size: "120,000 Ha", feat: "National Marine Protected Area", path: "/kawasan-kelola-kami/waigeo-barat", tags: ["National", "Nature Sanctuary"] },
+                    { pengelola: "MINISTRY OF MARINE AFFAIRS AND FISHERIES", name: "Raja Ampat National MPA", size: "200,000 Ha", feat: "National Marine Protected Area", path: "/kawasan-kelola-kami/raja-ampat-nasional", tags: ["National", "Tourism Park"] }
+                ],
+                kkpKehutanan: [
+                    { pengelola: "MINISTRY OF ENVIRONMENT AND FORESTRY", name: "Kofiau Marine Nature Reserve", size: "145,000 Ha", feat: "Conservation Area under MOEF", path: "/kawasan-kelola-kami/cal-kofiau", tags: ["Nature Reserve", "MOEF"] }
+                ]
+            }
         }
     };
 
     const t = content[lang];
 
+    // const currentKey = t.dataKeys[activeTabIndex];
+    // const currentData = t.areas[currentKey] || [];
+
+    // Logika menentukan data mana yang tampil
+    const getCurrentData = () => {
+        if (mainTab === 0) return t.areas["kawasanKelolaKami"];
+        return subTab === 0 ? t.areas["kkpKKP"] : t.areas["kkpKehutanan"];
+    };
+
+    const currentData = getCurrentData();
     return (
         <main
             className="min-h-screen bg-fixed bg-center bg-cover"
@@ -126,83 +164,126 @@ export default function KawasanKelolaKami() {
                         </div>
                     </motion.div>
 
-                    {/* Grid Area */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {t.areas.map((area, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                            >
-                                <Link
-                                    to={area.path}
-                                    className="group relative block h-[450px] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 hover:border-white/20 hover:shadow-lg]"
+                    <div className="space-y-12">
+                        {/* DYNAMIC TABS SYSTEM */}
+                        <div className="flex flex-col lg:flex-row items-center gap-4">
+                            {/* Tab Utama */}
+                            <div className="flex bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
+                                {t.tabs.map((label, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setMainTab(index)}
+                                        className={`px-6 py-2.5 rounded-xl text-[10px] font-black tracking-widest transition-all ${mainTab === index ? "bg-white text-[#004267] shadow-lg" : "text-white hover:bg-white/10"}`}
+                                    >
+                                        {label}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* Dropdown Sub-Tab (Muncul saat Tab ke-2 aktif) */}
+                            <AnimatePresence>
+                                {mainTab === 1 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        className="flex items-center gap-4"
+                                    >
+                                        <ChevronRight className="text-white/40 hidden lg:block" />
+                                        <div className="flex bg-blue-500/20 p-1.5 rounded-2xl border border-blue-400/20 backdrop-blur-md">
+                                            {t.subTabs.map((label, index) => (
+                                                <button
+                                                    key={index}
+                                                    onClick={() => setSubTab(index)}
+                                                    className={`px-6 py-2.5 rounded-xl text-[10px] font-bold tracking-tight transition-all ${subTab === index ? "bg-blue-500 text-white shadow-lg" : "text-blue-200 hover:bg-white/5"}`}
+                                                >
+                                                    {label}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Grid Area */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {currentData.map((area, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: idx * 0.1 }}
                                 >
-                                    {/* GAMBAR LATAR BELAKANG - Menggunakan img tag agar lebih stabil daripada CSS bg-url */}
-                                    <div className="absolute inset-0 z-0">
-                                        <img
-                                            src={area.image || "/images/Foto 8-4 oleh Abdi Hasan.JPG"}
-                                            alt={area.name}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-70"
-                                        />
-                                        {/* Overlay Gradient agar teks terbaca jelas */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#001229] via-[#001229]/40 to-transparent" />
-                                    </div>
-
-                                    {/* WATERMARK DEKORATIF */}
-                                    {/* <Landmark className="absolute -right-12 -top-12 w-64 h-64 text-white opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none" /> */}
-
-                                    {/* KONTEN KARTU */}
-                                    <div className="relative z-20 p-10 h-full flex flex-col justify-between">
-
-                                        {/* Bagian Atas: Badge & Ikon Kompas */}
-                                        <div className="flex justify-between items-start">
-                                            <span className="bg-blue-600/30 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest border border-white/10">
-                                                Area {area.id}
-                                            </span>
-                                            <Compass
-                                                size={24}
-                                                className="text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:rotate-45"
+                                    <Link
+                                        to={area.path}
+                                        className="group relative block h-[450px] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 hover:border-white/20 hover:shadow-lg"
+                                    >
+                                        {/* GAMBAR LATAR BELAKANG - Menggunakan img tag agar lebih stabil daripada CSS bg-url */}
+                                        <div className="absolute inset-0 z-0">
+                                            <img
+                                                src={area.image || "/images/Foto 8-4 oleh Abdi Hasan.JPG"}
+                                                alt={area.name}
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-70"
                                             />
+                                            {/* Overlay Gradient agar teks terbaca jelas */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#001229] via-[#001229]/40 to-transparent" />
                                         </div>
 
-                                        {/* Bagian Bawah: Info Area */}
-                                        <div>
-                                            {/* Tags Kecil */}
-                                            <div className="flex flex-wrap gap-2 mb-4">
-                                                {area.tags.map((tag, i) => (
-                                                    <span key={i} className="text-[8px] font-bold text-blue-300 uppercase border border-blue-400/30 px-2 py-1 rounded-md bg-blue-500/10 backdrop-blur-sm">
-                                                        {tag}
-                                                    </span>
-                                                ))}
+                                        {/* WATERMARK DEKORATIF */}
+                                        {/* <Landmark className="absolute -right-12 -top-12 w-64 h-64 text-white opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none" /> */}
+
+                                        {/* KONTEN KARTU */}
+                                        <div className="relative z-20 p-10 h-full flex flex-col justify-between">
+
+                                            {/* Bagian Atas: Badge & Ikon Kompas */}
+                                            <div className="flex justify-between items-start">
+                                                <span className="bg-blue-600/30 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest border border-white/10">
+                                                    Area {area.id}
+                                                </span>
+                                                <Compass
+                                                    size={24}
+                                                    className="text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:rotate-45"
+                                                />
                                             </div>
 
-                                            <h2 className="text-3xl font-bold text-white leading-tight mb-2 group-hover:text-blue-300 transition-colors">
-                                                {area.name}
-                                            </h2>
-                                            <p className="text-gray-300 text-xs font-light leading-relaxed mb-6 line-clamp-2 italic">
-                                                {area.feat}
-                                            </p>
-
-                                            {/* Garis Pembatas & Footer Kartu */}
-                                            <div className="flex items-center justify-between border-t border-white/10 pt-6">
-                                                <div className="flex items-center gap-2 text-gray-300 text-[10px] font-bold uppercase tracking-[0.1em]">
-                                                    <MapIcon size={14} className="text-blue-400" />
-                                                    {area.size}
+                                            {/* Bagian Bawah: Info Area */}
+                                            <div>
+                                                {/* Tags Kecil */}
+                                                <div className="flex flex-wrap gap-2 mb-4">
+                                                    {area.tags.map((tag, i) => (
+                                                        <span key={i} className="text-[8px] font-bold text-blue-300 uppercase border border-blue-400/30 px-2 py-1 rounded-md bg-blue-500/10 backdrop-blur-sm">
+                                                            {tag}
+                                                        </span>
+                                                    ))}
                                                 </div>
 
-                                                {/* Tombol Panah yang muncul saat hover */}
-                                                <div className="bg-white text-[#001229] p-3 rounded-2xl transform translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 shadow-xl">
-                                                    <ArrowRight size={18} />
+                                                <h2 className="text-3xl font-bold text-white leading-tight mb-2 group-hover:text-blue-300 transition-colors">
+                                                    {area.name}
+                                                </h2>
+                                                <p className="text-gray-300 text-xs font-light leading-relaxed mb-6 line-clamp-2 italic">
+                                                    {area.feat}
+                                                </p>
+
+                                                {/* Garis Pembatas & Footer Kartu */}
+                                                <div className="flex items-center justify-between border-t border-white/10 pt-6">
+                                                    <div className="flex items-center gap-2 text-gray-300 text-[10px] font-bold uppercase tracking-[0.1em]">
+                                                        <MapIcon size={14} className="text-blue-400" />
+                                                        {area.size}
+                                                    </div>
+
+                                                    {/* Tombol Panah yang muncul saat hover */}
+                                                    <div className="bg-white text-[#001229] p-3 rounded-2xl transform translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 shadow-xl">
+                                                        <ArrowRight size={18} />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            </motion.div>
-                        ))}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Footer Info */}
