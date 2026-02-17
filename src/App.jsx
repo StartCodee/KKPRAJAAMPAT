@@ -11,7 +11,6 @@ import Sejarah from "@/pages/tentang/Sejarah";
 import SosialBudaya from "@/pages/tentang/SosialBudaya";
 import Berita from "@/pages/informasi-terkini/Berita";
 import KalenderKegiatan from "@/pages/informasi-terkini/KalenderKegiatan";
-import KawasanKonservasi from "@/pages/KawasanKonservasi";
 import PetaKawasan from "@/pages/PetaKawasan";
 import PanduanKunjungan from "@/pages/layanan/PanduanKunjungan";
 import Kolaborasi from "@/pages/layanan/Kolaborasi";
