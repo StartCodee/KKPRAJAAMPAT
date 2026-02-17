@@ -45,8 +45,8 @@ export default function KawasanKelolaKami() {
                     { id: "VII", pengelola: "BLUD UPTD PAPUA BARAT DAYA", name: "Misool Utara", size: "308.852,00 Ha", feat: "Hutan Mangrove & Perlindungan Pesisir", path: "/kawasan-kelola-kami/misool-utara", tags: ["Mangrove", "Terbaru"] }
                 ],
                 kkpKKP: [
-                    { pengelola: "KEMENTERIAN KELAUTAN DAN PERIKANAN", name: "KKP Kepulauan Waigeo Sebelah Barat", size: "120.000 Ha", feat: "Kawasan Konservasi Perairan Nasional", path: "/kawasan-kelola-kami/waigeo-barat", tags: ["Nasional", "Suaka Alam"] },
-                    { pengelola: "KEMENTERIAN KELAUTAN DAN PERIKANAN", name: "KKP Kepulauan Raja Ampat", size: "200.000 Ha", feat: "Kawasan Konservasi Perairan Nasional", path: "/kawasan-kelola-kami/raja-ampat-nasional", tags: ["Nasional", "Taman Wisata"] }
+                    { pengelola: "KEMENTERIAN KELAUTAN DAN PERIKANAN", name: "Kawasan Konservasi di Perairan Kepulauan Waigeo Sebelah Barat", size: "120.000 Ha", feat: "Kawasan Konservasi Perairan Nasional", path: "/kawasan-kelola-kami/waigeo-barat", tags: ["Nasional", "Suaka Alam"] },
+                    { pengelola: "KEMENTERIAN KELAUTAN DAN PERIKANAN", name: "Kawasan Konservasi di Perairan Raja Ampat", size: "200.000 Ha", feat: "Kawasan Konservasi Perairan Nasional", path: "/kawasan-kelola-kami/raja-ampat-nasional", tags: ["Nasional", "Taman Wisata"] }
                 ],
                 kkpKehutanan: [
                     { pengelola: "KEMENTERIAN LINGKUNGAN HIDUP DAN KEHUTANAN", name: "Cagar Alam Laut Kofiau", size: "145.000 Ha", feat: "Kawasan Konservasi di bawah KLHK", path: "/kawasan-kelola-kami/cal-kofiau", tags: ["Cagar Alam", "KLHK"] }
@@ -73,8 +73,8 @@ export default function KawasanKelolaKami() {
                     { id: "VII", pengelola: "SOUTHWEST PAPUA MANAGEMENT AUTHORITY", name: "North Misool", size: "308,852.00 Ha", feat: "Mangrove Forest & Coastal Protection", path: "/kawasan-kelola-kami/misool-utara", tags: ["Mangrove", "Latest"] }
                 ],
                 kkpKKP: [
-                    { pengelola: "MINISTRY OF MARINE AFFAIRS AND FISHERIES", name: "West Waigeo Islands MPA", size: "120,000 Ha", feat: "National Marine Protected Area", path: "/kawasan-kelola-kami/waigeo-barat", tags: ["National", "Nature Sanctuary"] },
-                    { pengelola: "MINISTRY OF MARINE AFFAIRS AND FISHERIES", name: "Raja Ampat National MPA", size: "200,000 Ha", feat: "National Marine Protected Area", path: "/kawasan-kelola-kami/raja-ampat-nasional", tags: ["National", "Tourism Park"] }
+                    { pengelola: "MINISTRY OF MARINE AFFAIRS AND FISHERIES", name: "West Waigeo Islands Marine Park Area", size: "120,000 Ha", feat: "National Marine Protected Area", path: "/kawasan-kelola-kami/waigeo-barat", tags: ["National", "Nature Sanctuary"] },
+                    { pengelola: "MINISTRY OF MARINE AFFAIRS AND FISHERIES", name: "Raja Ampat National Marine Park Area", size: "200,000 Ha", feat: "National Marine Protected Area", path: "/kawasan-kelola-kami/raja-ampat-nasional", tags: ["National", "Tourism Park"] }
                 ],
                 kkpKehutanan: [
                     { pengelola: "MINISTRY OF ENVIRONMENT AND FORESTRY", name: "Kofiau Marine Nature Reserve", size: "145,000 Ha", feat: "Conservation Area under MOEF", path: "/kawasan-kelola-kami/cal-kofiau", tags: ["Nature Reserve", "MOEF"] }
