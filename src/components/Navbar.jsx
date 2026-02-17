@@ -41,6 +41,7 @@ export default function Navbar({ color = '#004267' }) {
             },
             kawasan: {
                 label: "Kawasan Kelola Kami",
+                rootPath: "/kawasan-kelola-kami",
                 items: [
                     { name: "Area I Kepulauan Ayau-Asia", path: "/kawasan-kelola-kami/kepulauan-ayau-asia" },
                     { name: "Area II Teluk Mayalibit", path: "/kawasan-kelola-kami/teluk-mayalibit" },
@@ -88,6 +89,7 @@ export default function Navbar({ color = '#004267' }) {
             },
             kawasan: {
                 label: "Our MPA",
+                rootPath: "/kawasan-kelola-kami",
                 items: [
                     { name: "Area I Ayau-Asia Islands", path: "/kawasan-kelola-kami/kepulauan-ayau-asia" },
                     { name: "Area II Mayalibit Bay", path: "/kawasan-kelola-kami/teluk-mayalibit" },
@@ -136,10 +138,11 @@ export default function Navbar({ color = '#004267' }) {
                             onMouseEnter={() => setOpenDropdown(key)}
                             onMouseLeave={() => setOpenDropdown(null)}
                         >
-                            <div className={`hover:opacity-60 cursor-pointer transition-opacity ${openDropdown === key ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
+                            <Link
+                                to={t[key].rootPath || "#"} className={`hover:opacity-60 cursor-pointer transition-opacity ${openDropdown === key ? "border-b-2 border-white" : ""} pb-1 flex items-center gap-1`}>
                                 {t[key].label}
                                 <svg className={`w-3 h-3 transition-transform ${openDropdown === key ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
-                            </div>
+                            </Link>
 
                             <AnimatePresence>
                                 {openDropdown === key && (

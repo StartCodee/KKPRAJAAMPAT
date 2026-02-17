@@ -21,12 +21,14 @@ import KepulauanAsiaDanAyau from "@/pages/kawasan-kelola-kami/KepulauanAsiaDanAy
 import TelukMayalibit from "@/pages/kawasan-kelola-kami/TelukMayanlibit";
 import SelatDampier from "@/pages/kawasan-kelola-kami/SelatDampier";
 import KepulauanMisool from "@/pages/kawasan-kelola-kami/KepulauanMisool";
+import KawasanKelolaKami from "@/pages/kawasan-kelola-kami/KawasanKelolaKami";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/kawasan-kelola-kami" element={<KawasanKelolaKami />} />
         <Route path="/kawasan-kelola-kami/kepulauan-ayau-asia" element={<KepulauanAsiaDanAyau />} />
         <Route path="/kawasan-kelola-kami/teluk-mayalibit" element={<TelukMayalibit />} />
         <Route path="/kawasan-kelola-kami/selat-dampier" element={<SelatDampier />} />
@@ -45,7 +47,6 @@ export default function App() {
         <Route path="/layanan/panduan-kunjungan" element={<PanduanKunjungan />} />
         <Route path="/layanan/kolaborasi" element={<Kolaborasi />} />
         <Route path="/layanan/rams" element={<Rams />} />
-        <Route path="/kawasan-konservasi" element={<KawasanKonservasi />} />
         <Route path="/peta-kawasan" element={<PetaKawasan />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

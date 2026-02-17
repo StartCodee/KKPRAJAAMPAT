@@ -28,7 +28,7 @@ export default function PengelolaanKawasan() {
       whoTitle: "Siapa kami?",
       whoDesc: (
         <>
-          Badan Layanan Umum Daerah Unit Pelaksana Teknis Daerah (BLUD UPTD) Pengelolaan Kawasan Konservasi di Perairan (KKP) Kepulauan Raja Ampat adalah nama resmi kami sebagai Satuan Unit Organisasi Pengelola (SUOP) yang melaksanaan pengelolaan kawasan konservasi di <Link to="/kawasan-konservasi" className="underline font-bold">tujuh area</Link> seluas <Link to="/peta-kawasan" className="underline font-bold">1.982.396,39 hektare</Link>.
+          Badan Layanan Umum Daerah Unit Pelaksana Teknis Daerah (BLUD UPTD) Pengelolaan Kawasan Konservasi di Perairan (KKP) Kepulauan Raja Ampat adalah nama resmi kami sebagai Satuan Unit Organisasi Pengelola (SUOP) yang melaksanaan pengelolaan kawasan konservasi di <Link to="/kawasan-kelola-kami" className="underline font-bold">tujuh area</Link> seluas <Link to="/peta-kawasan" className="underline font-bold">1.982.396,39 hektare</Link>.
         </>
       ),
       statArea: "Area",
