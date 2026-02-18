@@ -26,12 +26,12 @@ export default function KepulauanAsiaDanAyau() {
       heroSub: "Area I Kepulauan Ayau-Asia",
       stats: [
         { label: "Luas Kawasan", value: "100.008,99 Hektare", icon: <MapIcon className="w-6 h-6" /> },
-        { label: "Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "Distrik / Ibu Kota", value: "Kep. Ayau / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "Pertama Kali Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
+        { label: "Distrik/Ibu Kota", value: "Kepulauan Ayau/Dorehkar", icon: <Anchor className="w-6 h-6" /> },
       ],
       desc1: "Gugusan Kepulauan Ayau merupakan salah satu pulau terdepan di Indonesia. Jarak dari kepulauan ini lebih ‘dekat’ ke bagian selatan Republik Filipina dan Republik Federal Palau dibandingkan dengan dataran utama Pulau Papua. Berdasarkan pembicaraan dengan penduduk di sana, beberapa nelayan dari Ayau bahkan memutuskan menetap di Filipina untuk beragam alasan.",
       desc2: (
-        <>Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan <Link className="underline font-bold">lokasi penting pemijahan ikan Kerapu Sunu (Plectropomus aereolatus ) dan Kerapu Macan (Epinephelus fuscoguttatus)</Link>, serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.</>
+        <>Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan <Link className="underline font-bold">lokasi penting pemijahan ikan Kerapu Sunu (Plectropomus aereolatus) dan Kerapu Macan (Epinephelus fuscoguttatus)</Link>, serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.</>
       ),
       desc3: "Area I juga merupakan habitat bagi Penyu Hijau (Chelonia mydas), Penyu Belimbing (Dermochelys coriacea), serta mamalia laut seperti lumba-lumba hidung botol dan paus sperma.",
       zonasiTitle: "Luasan Zonasi",
@@ -66,7 +66,7 @@ export default function KepulauanAsiaDanAyau() {
       stats: [
         { label: "Total Area", value: "100,008.99 Hectares", icon: <MapIcon className="w-6 h-6" /> },
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
-        { label: "District / Capital", value: "Ayau Is. / Dorehkar", icon: <Anchor className="w-6 h-6" /> },
+        { label: "District/Capital", value: "Ayau Islands/Dorehkar", icon: <Anchor className="w-6 h-6" /> },
       ],
       desc1: "The Ayau Islands are among Indonesia's outermost islands. Geographically, they are closer to the southern Philippines and Palau than to mainland Papua. Some local fishers have even chosen to settle in the Philippines due to this proximity.",
       desc2: (
