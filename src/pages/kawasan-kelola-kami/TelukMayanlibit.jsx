@@ -22,7 +22,7 @@ export default function TelukMayalibit() {
 
   const content = {
     ID: {
-      heroTitle: "Kawasan Kelola Kami",
+      heroTitle: "KKP di Raja Ampat",
       heroSub: "Area II Teluk Mayalibit",
       stats: [
         { label: "Luas Kawasan", value: "100.008,99 Hektare", icon: <MapIcon className="w-6 h-6" /> },

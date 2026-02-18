@@ -31,7 +31,7 @@ export default function Ancaman() {
       sec2Cap: "Sepetak terumbu karang dan ikan-ikan kecil di antara puing-puing terumbu karang yang telah rusak.",
       sec3Desc: "Keberadaan pengelolaan kawasan-kawasan konservasi perairan di Raja Ampat dengan signifikan mengurangi aktivitas perikanan merusak dan penangkapan fauna laut yang penting, dan membatasi aktivitas perikanan berlebih yang kini sebagian besar masih dilakukan oleh kapal-kapal bagan.",
       sec3Link: "Klik di sini untuk memantau aktivitas pengawasan kami.",
-      sec3Cap: "Aktivitas Jaga Laut adalah salah satu layanan yang rutin kami selenggarakan, setidak-tidaknya delapan kali di masing-masing kawasan kelola kami.",
+      sec3Cap: "Aktivitas Jaga Laut adalah salah satu layanan yang rutin kami selenggarakan, setidak-tidaknya delapan kali di masing-masing KKP di Raja Ampat.",
       bottomDesc1: "Selain dari beragam aktivitas perikanan, laut Raja Ampat kini juga menghadapi ancaman dari aktivitas pariwisata yang tidak bertanggung jawab, mulai dari konsentrasi aktivitas wisata yang melebihi kapasitas, perilaku pengunjung yang merusak, hingga masalah sampah.",
       bookAlert: "Baca buku ini sebelum kamu mengunjungi Raja Ampat!",
       btnDownload: "Unduh Buku Etika Berwisata di Raja Ampat",

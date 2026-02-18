@@ -22,7 +22,7 @@ export default function KepulauanMisool() {
 
   const content = {
     ID: {
-      heroTitle: "Kawasan Kelola Kami",
+      heroTitle: "KKP di Raja Ampat",
       heroSub: "Area IV Kepulauan Misool",
       stats: [
         { label: "Luas Kawasan", value: "348.518,74 Hektare", icon: <MapIcon className="w-6 h-6" /> },

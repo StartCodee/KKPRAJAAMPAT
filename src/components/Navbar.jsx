@@ -40,7 +40,7 @@ export default function Navbar({ color = '#004267' }) {
                 ]
             },
             kawasan: {
-                label: "Kawasan Kelola Kami",
+                label: "KKP di Raja Ampat",
                 rootPath: "/kawasan-kelola-kami",
                 items: [
                     { name: "Area I Kepulauan Ayau-Asia", path: "/kawasan-kelola-kami/kepulauan-ayau-asia" },

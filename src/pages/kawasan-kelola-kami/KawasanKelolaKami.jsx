@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function KawasanKelolaKami() {
     const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ID');
-    // State untuk tab utama (0: Kawasan Kelola Kami, 1: KKP Lainnya)
+    // State untuk tab utama (0: KKP di Raja Ampat, 1: KKP Lainnya)
     const [mainTab, setMainTab] = useState(0);
     // State untuk sub-tab di dalam KKP Lainnya (0: KKP, 1: Kehutanan)
     const [subTab, setSubTab] = useState(0);
@@ -26,7 +26,7 @@ export default function KawasanKelolaKami() {
 
     const content = {
         ID: {
-            heroTitle: "Kawasan Kelola Kami",
+            heroTitle: "KKP di Raja Ampat",
             heroSub: "KKP di Raja Ampat",
             intro: (<>
                 Hingga saat ini, terdapat setidaknya 10 kawasan konservasi di perairan Raja Ampat dengan luasan keseluruhan lebih dari dua juta hektar. Tujuh dari sepuluh kawasan tersebut kami kelola, dua kawasan dikelola Kementerian Kelautan dan Perikanan, dan satu kawasan oleh Kementerian Kehutanan.
@@ -171,7 +171,7 @@ export default function KawasanKelolaKami() {
                                 className="flex flex-col items-center"
                             >
 
-                                <p className="text-center text-gray-200 text-2xl md:text-3xl font-light leading-relaxed tracking-tight">
+                                <p className="text-center text-gray-200 text-xl md:text-2xl font-light leading-relaxed tracking-tight">
                                     {t.intro}
                                 </p>
                             </motion.div>

@@ -22,7 +22,7 @@ export default function KepulauanAsiaDanAyau() {
 
   const content = {
     ID: {
-      heroTitle: "Kawasan Kelola Kami",
+      heroTitle: "KKP di Raja Ampat",
       heroSub: "Area I Kepulauan Ayau-Asia",
       stats: [
         { label: "Luas Kawasan", value: "100.008,99 Hektare", icon: <MapIcon className="w-6 h-6" /> },

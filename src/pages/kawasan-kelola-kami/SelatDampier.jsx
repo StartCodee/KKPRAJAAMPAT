@@ -22,7 +22,7 @@ export default function SelarDampier() {
 
   const content = {
     ID: {
-      heroTitle: "Kawasan Kelola Kami",
+      heroTitle: "KKP di Raja Ampat",
       heroSub: "Area III Selat Dampier",
       stats: [
         { label: "Luas Kawasan", value: "353.440,54 Hektare", icon: <MapIcon className="w-6 h-6" /> },

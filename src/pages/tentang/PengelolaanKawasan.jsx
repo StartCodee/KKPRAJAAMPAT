@@ -42,7 +42,7 @@ export default function PengelolaanKawasan() {
           Status “BLUD” memungkinkan kami untuk mengelola pendapatan dan pengeluaran dengan lebih fleksibel, seperti Tarif Jasa Lingkungan (TJL) dan hibah.
         </>
       ),
-      glanceTitle: "Sekilas Tentang Kawasan Kelola Kami",
+      glanceTitle: "Sekilas Tentang KKP di Raja Ampat",
       glanceDesc: "Kawasan konservasi perairan adalah area laut dan pesisir yang dilindungi dan dikelola dengan sistem zonasi untuk menjaga keutuhan keanekaragaman dan sumber daya alam hayati.",
       glanceLink: (
         <>
