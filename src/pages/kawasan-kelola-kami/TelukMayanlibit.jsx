@@ -170,7 +170,7 @@ export default function TelukMayalibit() {
                       <span className="flex gap-3 items-center">
                         <Waves className="w-4 h-4 text-blue-400" /> {item.label}
                       </span>
-                      <span className="font-mono text-white">{item.value}</span>
+                      <span className="text-white">{item.value}</span>
                     </li>
                   ))}
                 </ul>
