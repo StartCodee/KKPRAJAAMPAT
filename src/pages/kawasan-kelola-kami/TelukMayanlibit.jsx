@@ -29,8 +29,16 @@ export default function TelukMayalibit() {
         { label: "Pertama Kali Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
         { label: "Distrik/Ibu Kota", value: "Teluk Mayalibit dan Tiplol Mayalibit/Kampung Warsambin dan Kampung Go", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Teluk Mayalibit memiliki ‘pintu masuk’ yang sempit, yang memanjang jauh ke dalam seakan ‘membelah’ Pulau Waigeo menjadi dua. Teluk Mayalibit dipercaya sebagai tempat dari suku asli Raja Ampat, yaitu Suku Maya yang hidup tersebar di 11 kampung di dalam teluk yang diapit dengan hutan tropis lebat di kedua sisinya. Dalam bahasa daerahnya, “Mayalibit” terdiri atas dua kata, yaitu “Maya” dan “Libit” yang berarti “kamar.”",
-      desc2: "Di bawah permukaan airnya, Area II Teluk Mayalibit adalah habitat bagi beragam jenis terumbu karang lunak yang dihuni oleh ikan-ikan bernilai ekonomis tinggi seperti makarel (Scombridae) atau disebut “Lema” oleh masyarakat lokal, samandar (Siganidae), bubara (Carangidae), kakap (Lutjanidae), udang dan kepiting lumpur. Teluk Mayalibit juga merupakan habitat penting bagi buaya muara atau buaya air asin.",
+      desc1: (
+        <>
+          Teluk Mayalibit memiliki ‘pintu masuk’ yang sempit, yang memanjang jauh ke dalam seakan ‘membelah’ Pulau Waigeo menjadi dua. Teluk Mayalibit dipercaya sebagai tempat dari suku asli Raja Ampat, yaitu Suku Maya yang hidup tersebar di 11 kampung di dalam teluk yang diapit dengan hutan tropis lebat di kedua sisinya. Dalam bahasa daerahnya, “Mayalibit” terdiri atas dua kata, yaitu “Maya” dan “Libit” yang berarti “kamar.”
+        </>
+      ),
+      desc2: (
+        <>
+          Di bawah permukaan airnya, Area II Teluk Mayalibit adalah habitat bagi beragam jenis terumbu karang lunak yang dihuni oleh ikan-ikan bernilai ekonomis tinggi seperti makarel (<i>Scombridae</i>) atau disebut “Lema” oleh masyarakat lokal, samandar (<i>Siganidae</i>), bubara (<i>Carangidae</i>), kakap (<i>Lutjanidae</i>), udang dan kepiting lumpur. Teluk Mayalibit juga merupakan habitat penting bagi buaya muara atau buaya air asin.
+        </>
+      ),
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
         { label: "Zona Inti", value: "556,23 Hektare" },
@@ -64,8 +72,16 @@ export default function TelukMayalibit() {
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
         { label: "District/Capital", value: "Mayalibit Bay and Tiplol Mayalibit / Warsambin and Go Village", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Mayalibit Bay has a narrow entrance that extends deep inland, seemingly splitting Waigeo Island into two. It is believed to be the ancestral home of the indigenous people of Raja Ampat, the Maya Tribe, who live across 11 villages within the bay, flanked by dense tropical forests on both sides. In the local language, 'Mayalibit' is derived from two words: 'Maya' and 'Libit,' which means 'room.'",
-      desc2: "Beneath the surface, Area II Mayalibit Bay is a habitat for various types of soft corals inhabited by high-value economic fish such as mackerel (Scombridae)—locally known as 'Lema'—rabbitfish (Siganidae), trevally (Carangidae), snapper (Lutjanidae), shrimp, and mud crabs. Mayalibit Bay is also a critical habitat for saltwater crocodiles.",
+      desc1: (
+        <>
+          Mayalibit Bay has a narrow entrance that extends deep inland, seemingly splitting Waigeo Island into two. It is believed to be the ancestral home of the indigenous people of Raja Ampat, the Maya Tribe, who live across 11 villages within the bay, flanked by dense tropical forests on both sides. In the local language, 'Mayalibit' is derived from two words: 'Maya' and 'Libit,' which means 'room.'
+        </>
+      ),
+      desc2: (
+        <>
+          Beneath the surface, Area II Mayalibit Bay is a habitat for various types of soft corals inhabited by high-value economic fish such as mackerel (<i>Scombridae</i>)—locally known as 'Lema' —rabbitfish (<i>Siganidae</i>), trevally (<i>Carangidae</i>), snapper (<i>Lutjanidae</i>), shrimp, and mud crabs. Mayalibit Bay is also a critical habitat for saltwater crocodiles.
+        </>
+      ),
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
         { label: "Core Zone", value: "556.23 Hectares" },

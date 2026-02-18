@@ -31,9 +31,19 @@ export default function KepulauanAsiaDanAyau() {
       ],
       desc1: "Gugusan Kepulauan Ayau merupakan salah satu pulau terdepan di Indonesia. Jarak dari kepulauan ini lebih ‘dekat’ ke bagian selatan Republik Filipina dan Republik Federal Palau dibandingkan dengan dataran utama Pulau Papua. Berdasarkan pembicaraan dengan penduduk di sana, beberapa nelayan dari Ayau bahkan memutuskan menetap di Filipina untuk beragam alasan.",
       desc2: (
-        <>Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan <Link className="underline font-bold">lokasi penting pemijahan ikan Kerapu Sunu (Plectropomus aereolatus) dan Kerapu Macan (Epinephelus fuscoguttatus)</Link>, serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.</>
+        <>
+          Pulau-pulau di Area I Kepulauan Ayau-Asia berada diantara gugusan terumbu karang dan atol yang luas, dan merupakan{" "}
+          <Link className="underline font-bold">
+            lokasi penting pemijahan ikan Kerapu Sunu (<i>Plectropomus aereolatus</i>) dan Kerapu Macan (<i>Epinephelus fuscoguttatus</i>)
+          </Link>
+          , serta habitat dan lokasi agregasi penting bagi ikan pelagis, atau ikan-ikan yang hidup di permukaan laut, seperti napoleon, tuna, cakalang, tenggiri, bubara, tongkol dan ikan kembung.
+        </>
       ),
-      desc3: "Area I juga merupakan habitat bagi Penyu Hijau (Chelonia mydas), Penyu Belimbing (Dermochelys coriacea), serta mamalia laut seperti lumba-lumba hidung botol dan paus sperma.",
+      desc3: (
+        <>
+          Area I juga merupakan habitat bagi Lumba-lumba Moncong Panjang (<i>Stella longirostris</i>), Penyu Hijau (<i>Chelonia mydas</i>), Penyu Belimbing (<i>Dermochelys coriacea</i>), serta mamalia laut seperti lumba-lumba hidung botol dan paus sperma.
+        </>
+      ),
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
         { label: "Zona Inti", value: "1.003,83 Hektare" },
@@ -70,9 +80,19 @@ export default function KepulauanAsiaDanAyau() {
       ],
       desc1: "The Ayau Islands are among Indonesia's outermost islands. Geographically, they are closer to the southern Philippines and Palau than to mainland Papua. Some local fishers have even chosen to settle in the Philippines due to this proximity.",
       desc2: (
-        <>The islands in Area I Ayau-Asia are surrounded by extensive coral reefs and atolls, making them a <Link className="underline font-bold">critical spawning ground for the Peacock Grouper (Plectropomus aereolatus) and the Tiger Grouper (Epinephelus fuscoguttatus)</Link>, as well as an important habitat and aggregation site for pelagic fish such as Napoleon Wrasse, tuna, skipjack, mackerel, wahoo, and scads.</>
+        <>
+          The islands in Area I Ayau-Asia are surrounded by extensive coral reefs and atolls, making them a{" "}
+          <Link className="underline font-bold">
+            critical spawning ground for the Peacock Grouper (<i>Plectropomus aereolatus</i>) and the Tiger Grouper (<i>Epinephelus fuscoguttatus</i>)
+          </Link>
+          , as well as an important habitat and aggregation site for pelagic fish such as Napoleon Wrasse, tuna, skipjack, mackerel, wahoo, and scads.
+        </>
       ),
-      desc3: "The area also serves as a habitat for Green Turtles, Leatherback Turtles, and marine mammals including Bottlenose Dolphins and Sperm Whales.",
+      desc3: (
+        <>
+          The area also serves as a habitat for Long-nosed Dolphin (<i>Stella longirostris</i>), Green Turtles (<i>Chelonia mydas</i>), Leatherback Turtles (<i>Dermochelys coriacea</i>), and marine mammals including Bottlenose Dolphins and Sperm Whales.
+        </>
+      ),
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
         { label: "Core Zone", value: "1,003.83 Hectares" },

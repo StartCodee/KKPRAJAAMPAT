@@ -29,8 +29,16 @@ export default function SelarDampier() {
         { label: "Pertama Kali Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
         { label: "Distrik/Ibu Kota", value: "Salawati Utara, Meos Mansar, dan Batanta Utara/Kampung Samate, Kabare, Yensawai", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Di dalam kawasan Area III Selat Dampier, terdapat setidak-tidaknya 28 kampung pesisir yang tersebar di Pulau Salawati, Batanta, Waigeo, dan pulau-pulau kecil diantaranya. Lokasinya yang strategis, di tengah perairan Raja Ampat, dan akses yang relatif mudah menjadikan Selat Dampier sebagai salah satu kawasan ‘tersibuk’ dalam hal pemanfaatan pariwisata di Jejaring KKP Kepulauan Raja Ampat. Beberapa kampung wisata yang sekarang popular antara lain Arborek, Arefi, Sauwandarek, Sawinggrai, Saporkren, dan Yenbuba.",
-      desc2: "Di bawah permukaannya, Area III Selat Dampier dipenuhi dengan terumbu karang keras dan lunak beraneka warna, yang menjadi habitat bagi beragam ikan karang, ikan pelagis seperti kakap, kerapu, kue, dan tuna, predator seperti barakuda dan beragam jenis hiu karang. Selat Dampier juga merupakan lokasi agregasi, atau tempat berkumpulnya, bagi pari manta karang dan oseanik, serta koridor migrasi bagi beragam jenis paus dan lumba-lumba.",
+      desc1: (
+        <>
+          Di dalam kawasan Area III Selat Dampier, terdapat setidak-tidaknya 28 kampung pesisir yang tersebar di Pulau Salawati, Batanta, Waigeo, dan pulau-pulau kecil diantaranya. Lokasinya yang strategis, di tengah perairan Raja Ampat, dan akses yang relatif mudah menjadikan Selat Dampier sebagai salah satu kawasan ‘tersibuk’ dalam hal pemanfaatan pariwisata di Jejaring KKP Kepulauan Raja Ampat. Beberapa kampung wisata yang sekarang populer antara lain <span className="font-bold">Arborek, Arefi, Sauwandarek, Sawinggrai, Saporkren, dan Yenbuba</span>.
+        </>
+      ),
+      desc2: (
+        <>
+          Di bawah permukaannya, Area III Selat Dampier dipenuhi dengan terumbu karang keras dan lunak beraneka warna, yang menjadi habitat bagi beragam ikan karang, ikan pelagis seperti kakap, kerapu, kue, dan tuna, predator seperti barakuda dan beragam jenis hiu karang. Selat Dampier juga merupakan lokasi agregasi, atau tempat berkumpulnya, bagi pari manta karang dan oseanik, serta koridor migrasi bagi beragam jenis paus dan lumba-lumba.
+        </>
+      ),
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
         { label: "Zona Inti", value: "4.112,47 Hektare" },
@@ -65,8 +73,16 @@ export default function SelarDampier() {
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
         { label: "District/Capital", value: "North Salawati, Meos Mansar, and North Batanta / Samate, Kabare, and Yensawai Village", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Within the Area III Dampier Strait region, there are at least 28 coastal villages scattered across Salawati, Batanta, and Waigeo islands, as well as the small islands between them. Its strategic location in the heart of Raja Ampat waters, combined with relatively easy access, makes the Dampier Strait one of the 'busiest' areas for tourism utilization within the Raja Ampat MPA Network. Several popular tourism villages today include Arborek, Arefi, Sauwandarek, Sawinggrai, Saporkren, and Yenbuba.",
-      desc2: "Beneath the surface, Area III Dampier Strait is filled with colorful hard and soft corals, providing habitat for various reef fish, pelagic species like snapper, grouper, trevally (kue), and tuna, as well as predators like barracuda and various reef sharks. The Dampier Strait is also an aggregation site for both reef and oceanic manta rays, and serves as a migration corridor for various species of whales and dolphins.",
+     desc1: (
+        <>
+          Within the Area III Dampier Strait region, there are at least 28 coastal villages scattered across Salawati, Batanta, and Waigeo islands, as well as the small islands between them. Its strategic location in the heart of Raja Ampat waters, combined with relatively easy access, makes the Dampier Strait one of the 'busiest' areas for tourism utilization within the Raja Ampat MPA Network. Several popular tourism villages today include <span className="font-bold">Arborek, Arefi, Sauwandarek, Sawinggrai, Saporkren, and Yenbuba</span>.
+        </>
+      ),
+      desc2: (
+        <>
+          Beneath the surface, Area III Dampier Strait is filled with colorful hard and soft corals, providing habitat for various reef fish, pelagic species like snapper, grouper, trevally, and tuna, as well as predators like barracuda and various reef sharks. The Dampier Strait is also an aggregation site for both reef and oceanic manta rays, and serves as a migration corridor for various species of whales and dolphins.
+        </>
+      ),
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
         { label: "Core Zone", value: "4,112.47 Hectares" },

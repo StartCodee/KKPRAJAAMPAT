@@ -29,8 +29,16 @@ export default function KepulauanMisool() {
         { label: "Pertama Kali Ditetapkan", value: "Tahun 2007", icon: <Calendar className="w-6 h-6" /> },
         { label: "Distrik/Ibu Kota", value: "Misool Timur, Misool Selatan, dan Misool Barat/Kampung Folley, Dabatan, Kapatcol", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Misool merupakan kepulauan lain di Raja Ampat dengan latar belakang masyarakat beragam, selain suku-suku asli Tanah Papua yang mendiaminya, kepulauan ini juga adalah kampung halaman bagi beragam suku dari Maluku Utara yang memutuskan untuk menetap mulai dari masa Kesultanan Tidore. Di kepulauan yang terbentuk dari bebatuan kapur ini terdapat tiga danau air asin, sungai-sungai dengan muara yang relatif besar, hutan mangrove yang rapat, serta padang lamun tempat duyung (Dugong dugon) mencari makan.",
-      desc2: "Area IV merupakan salah satu kawasan terluas di Jejaring KKP Kepulauan Raja Ampat, dan seperti kawasan lainnya proses kompleks arus laut membawa nutrisi yang melimpah bagi terumbu karang keras maupun lunak, menjadikannya rumah bagi beragam ikan karang, pelagis, dua jenis pari manta, lokasi peneluran dan habitat penting bagi penyu hijau (Chelonia mydas) dan sisik (Eretmochelys imbricata), jalur migrasi bagi beberapa mamalia laut, serta buaya muara.",
+      desc1: (
+        <>
+          Misool merupakan kepulauan lain di Raja Ampat dengan latar belakang masyarakat beragam, selain suku-suku asli Tanah Papua yang mendiaminya, kepulauan ini juga adalah kampung halaman bagi beragam suku dari Maluku Utara yang memutuskan untuk menetap mulai dari masa Kesultanan Tidore. Di kepulauan yang terbentuk dari bebatuan kapur ini terdapat tiga danau air asin, sungai-sungai dengan muara yang relatif besar, hutan mangrove yang rapat, serta padang lamun tempat duyung (<i>Dugong dugon</i>) mencari makan.
+        </>
+      ),
+      desc2: (
+        <>
+          Area IV merupakan salah satu kawasan terluas di Jejaring KKP Kepulauan Raja Ampat, dan seperti kawasan lainnya proses kompleks arus laut membawa nutrisi yang melimpah bagi terumbu karang keras maupun lunak, menjadikannya rumah bagi beragam ikan karang, pelagis, dua jenis pari manta, lokasi peneluran dan habitat penting bagi penyu hijau (<i>Chelonia mydas</i>) dan sisik (<i>Eretmochelys imbricata</i>), jalur migrasi bagi beberapa mamalia laut, serta buaya muara.
+        </>
+      ),
       zonasiTitle: "Luasan Zonasi",
       zonasiData: [
         { label: "Zona Inti", value: "756,34 Hektare" },
@@ -64,8 +72,16 @@ export default function KepulauanMisool() {
         { label: "Established", value: "Year 2007", icon: <Calendar className="w-6 h-6" /> },
         { label: "District/Capital", value: "East, South, and West Misool / Folley, Dabatan, and Kapatcol Village", icon: <Anchor className="w-6 h-6" /> },
       ],
-      desc1: "Misool is an archipelago in Raja Ampat with a diverse cultural background. In addition to the indigenous tribes of Papua, these islands are home to various tribes from North Maluku who settled here during the era of the Tidore Sultanate. Formed from limestone karst, the archipelago features three saltwater lakes, rivers with relatively large estuaries, dense mangrove forests, and seagrass meadows where dugongs (Dugong dugon) forage.",
-      desc2: "Area IV is one of the largest sectors within the Raja Ampat MPA Network. Like other areas, complex ocean currents bring abundant nutrients for both hard and soft corals, making it a home for diverse reef and pelagic fish, two species of manta rays, and a critical habitat and nesting site for Green turtles (Chelonia mydas) and Hawksbill turtles (Eretmochelys imbricata). It also serves as a migration path for several marine mammals and saltwater crocodiles.",
+      desc1: (
+        <>
+          Misool is an archipelago in Raja Ampat with a diverse cultural background. In addition to the indigenous tribes of Papua, these islands are home to various tribes from North Maluku who settled here during the era of the Tidore Sultanate. Formed from limestone karst, the archipelago features three saltwater lakes, rivers with relatively large estuaries, dense mangrove forests, and seagrass meadows where dugongs (<i>Dugong dugon</i>) forage.
+        </>
+      ),
+      desc2: (
+        <>
+          Area IV is one of the largest sectors within the Raja Ampat MPA Network. Like other areas, complex ocean currents bring abundant nutrients for both hard and soft corals, making it a home for diverse reef and pelagic fish, two species of manta rays, and a critical habitat and nesting site for Green turtles (<i>Chelonia mydas</i>) and Hawksbill turtles (<i>Eretmochelys imbricata</i>). It also serves as a migration path for several marine mammals and saltwater crocodiles.
+        </>
+      ),
       zonasiTitle: "Zoning Coverage",
       zonasiData: [
         { label: "Core Zone", value: "756.34 Hectares" },
