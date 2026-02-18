@@ -28,7 +28,13 @@ export default function KawasanKelolaKami() {
         ID: {
             heroTitle: "Kawasan Kelola Kami",
             heroSub: "KKP di Raja Ampat",
-            intro: "Kami mengelola tujuh area konservasi perairan dengan total luas hampir 2 juta hektar. Jejaring ini dirancang untuk melindungi keanekaragaman hayati laut sekaligus mendukung mata pencaharian masyarakat lokal secara berkelanjutan.",
+            intro: (<>
+                Hingga saat ini, terdapat setidaknya 10 kawasan konservasi di perairan Raja Ampat dengan luasan keseluruhan lebih dari dua juta hektar. Tujuh dari sepuluh kawasan tersebut kami kelola, dua kawasan dikelola Kementerian Kelautan dan Perikanan, dan satu kawasan oleh Kementerian Kehutanan.
+
+                Masing-masing kawasan konservasi perairan tersebut tentu memiliki keanekaragaman hayati yang tinggi dengan keunikannya masing-masing, namun semua kawasan tersebut tak luput dari prinsip interkoneksi.
+
+                Oleh karena itu, koordinasi dan kolaborasi antar pemangku kepentingan adalah kunci dalam memastikan perlindungan dan pengelolaan berkelanjutan dari kawasan perairan.
+            </>),
             btnExplore: "Lihat Detail Area",
             footerNote: "Semua rincian koordinat dan aturan zonasi mengacu pada Keputusan Menteri Kelautan dan Perikanan Republik Indonesia.",
             tabs: ["Kawasan Kelola Kami", "Kawasan Konservasi Perairan Lainnya"],
@@ -56,7 +62,15 @@ export default function KawasanKelolaKami() {
         EN: {
             heroTitle: "Our MPA",
             heroSub: "Raja Ampat Islands Marine Protected Area Network",
-            intro: "We manage seven marine conservation areas totaling nearly 2 million hectares. This network is designed to protect marine biodiversity while supporting the sustainable livelihoods of local communities.",
+            intro: (
+                <>
+                    To date, there are at least 10 marine protected areas (MPAs) in the waters of Raja Ampat, with a total area of over two million hectares. Seven of these ten areas are managed by our authority, two areas are managed by the Ministry of Marine Affairs and Fisheries, and one area is managed by the Ministry of Forestry.
+
+                    Each of these marine conservation areas inherently possesses high biodiversity with its own unique characteristics; however, all these areas are bound by the principle of interconnection.
+
+                    Therefore, coordination and collaboration among stakeholders are key to ensuring the protection and sustainable management of these marine environments.
+                </>
+            ),
             btnExplore: "View Area Details",
             footerNote: "All coordinate details and zoning rules refer to the Decrees of the Minister of Marine Affairs and Fisheries of the Republic of Indonesia.",
             tabs: ["Our MPA", "Other MPA",],
